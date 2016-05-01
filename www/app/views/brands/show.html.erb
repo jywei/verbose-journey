@@ -1,0 +1,9 @@
+<%= render :partial => @admin_brand.get_customization %>
+
+<% if !@admin_brand.show_products_read_more %>
+	<script type="text/javascript">
+		$.each( $(".product_read_more"), function(){
+			$(this).hide();
+		});
+	</script>
+<% end %>

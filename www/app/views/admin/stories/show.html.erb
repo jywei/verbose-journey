@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @admin_story.title %>
+</p>
+
+<p>
+  <strong>Title2:</strong>
+  <%= @admin_story.title2 %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @admin_story.content %>
+</p>
+
+<p>
+  <strong>Button text:</strong>
+  <%= @admin_story.button_text %>
+</p>
+
+<p>
+  <strong>Link url:</strong>
+  <%= @admin_story.link_url %>
+</p>
+
+<%= link_to 'Edit', edit_admin_story_path(@admin_story) %> |
+<%= link_to 'Back', admin_stories_path %>

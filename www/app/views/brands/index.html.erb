@@ -1,0 +1,34 @@
+<div class="brand_wrapper">
+	<section class="fixed">
+		<h1>OUR BRANDS</h1>
+		<% if @admin_brands.present? %>
+			<% @admin_brands.each do |brand| %>
+				<a href="<%= "/brand/#{brand.url_name}" %>" data-no-turbolink>
+					<section>
+						
+						
+						<div class="logo">
+							<%= image_tag(brand.image_of_logo.thumb.url) %>
+						</div>
+						<h1 class='brand_name'><%= brand.name %></h1>
+						
+						
+						<%#= link_to("Show",brand_path(brand.id),:class => "button") %>
+					</section>
+				</a>
+			<% end %>
+
+			<% if @admin_brands.count % 2 != 0 %>
+				<section class="coming_soon">
+					<!-- <div class="logo">
+						<span>COMING SOON...</span>
+					</div> -->
+					<div class="logo">
+						<%= image_tag("c1.jpg") %>
+					</div>
+					<h1 class='brand_name'>即將上市</h1>
+				</section>
+			<% end %>
+		<% end %>
+	</section>
+</div>

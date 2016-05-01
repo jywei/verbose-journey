@@ -1,0 +1,38 @@
+<div class="product_wrapper">
+	<section class='main_visual'>
+		<% if @admin_product.brand.main_visual.present? %>
+			<%= image_tag(@admin_product.brand.main_visual.url) %>
+		<% else %>
+			<%= image_tag('brand1_banner_2.png') %>
+		<% end %>
+	</section>
+	<section class="fixed">
+		<article class='product'>
+			<section class='product_img'>
+				<%= image_tag(@admin_product.main_visual.large.url) %>
+			</section>
+			<section class='product_text'>
+				<div class="brand_logo">
+					<%= image_tag(@admin_product.brand.image_of_logo.url) %>
+				</div>
+
+				<h1 class='product_name'><%= @admin_product.name %></h1>
+
+				<div class='product_description'>
+					<%= simple_format(@admin_product.title) %>
+				</div>
+				<div class='product_description'>
+					<%= simple_format(@admin_product.title2) %>
+				</div>
+				<div class='product_detail'>
+					<%= simple_format(@admin_product.content.gsub(/\r\n?/,"") ) %>
+				</div>
+			</section>
+		</article>
+	</section>
+	
+	<% if @admin_product.is_show_where_to_buy %>
+		<%= render :partial => 'shared/where_block' %>
+	<% end %>
+	
+</div>

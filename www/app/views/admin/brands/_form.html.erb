@@ -1,0 +1,112 @@
+<%= form_for(@admin_brand) do |f| %>
+  <% if @admin_brand.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_brand.errors.count, "error") %> prohibited this admin_brand from being saved:</h2>
+
+      <ul>
+      <% @admin_brand.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label '名字' %><br>
+    <%= f.text_field :name, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label '網址名稱' %><br>
+    不能含有中文、空白符號<br>
+    <%= f.text_field :url_name, :class => "form-control", :required => true %>
+  </div>
+  <!-- <div class="form-group">
+    <%= f.label '品牌故事' %><br>
+     <%= f.cktext_area :content, :ckeditor => {:toolbar => 'mini'} %>
+  </div> -->
+  <div class="form-group">
+    <%= f.label '主視覺( 1080 x 450 )' %><br>
+    <%= image_tag(@admin_brand.main_visual.thumb.url) %>
+    <%= f.file_field :main_visual %>
+  </div>
+  <div class="form-group">
+    <%= f.label '主視覺2' %><br>
+    <%= image_tag(@admin_brand.main_visual2.thumb.url) %>
+    <%= f.file_field :main_visual2 %>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label 'LOGO圖片( 1 : 1 )' %><br>
+    <%= image_tag(@admin_brand.image_of_logo.thumb.url) %>
+    <%= f.file_field :image_of_logo %>
+  </div>
+  <div class="form-group">
+    <%= f.label '品牌圖片( 540 x 750 )' %><br>
+    <%= image_tag(@admin_brand.image_of_brand.thumb.url) %>
+    <%= f.file_field :image_of_brand %>
+  </div>
+  <div class="form-group">
+    <%= f.label '標語' %><br>
+    <%= f.text_field :slogan, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '標語出自' %><br>
+    <%= f.text_field :slogan_by, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '標題1' %><br>
+    <%= f.text_field :title_1, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '內容1' %><br>
+     <%= f.text_area :description_1, :class => "form-control", :rows => 5 %>
+  </div>
+  <div class="form-group">
+    <%= f.label '標題2' %><br>
+    <%= f.text_field :title_2, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '內容2' %><br>
+     <%= f.text_area :description_2, :class => "form-control", :rows => 10 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label '客製化頁面名稱' %><br>
+    <%= f.text_field :cn_name, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '是否為客製化頁面' %><br>
+    <%= f.check_box :is_customization %>
+  </div>
+  <div class="form-group">
+    <%= f.label '是否公開' %><br>
+    <%= f.check_box :is_public %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :show_products_read_more, '產品是否顯現Read More' %><br>
+    <%= f.check_box :show_products_read_more %>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :og_title, 'OG標題' %><br>
+    <%= f.text_field :og_title, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :og_description, 'OG內容' %><br>
+     <%= f.text_area :og_description, :class => "form-control", :rows => 10 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :og_image, 'OG主視覺 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_brand.og_image.thumb.url) %>
+    <%= f.file_field :og_image %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit '品牌 更新', :class => "btn btn-primary btn-full" %>
+  </div>
+<% end %>

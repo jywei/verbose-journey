@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @admin_site_config.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @admin_site_config.description %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_site_config.name %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @admin_site_config.tax_id %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @admin_site_config.phone %>
+</p>
+
+<p>
+  <strong>Fax:</strong>
+  <%= @admin_site_config.fax %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @admin_site_config.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @admin_site_config.email %>
+</p>
+
+<p>
+  <strong>Website url:</strong>
+  <%= @admin_site_config.website_url %>
+</p>
+
+<p>
+  <strong>Facebook url:</strong>
+  <%= @admin_site_config.facebook_url %>
+</p>
+
+<%= link_to 'Edit', edit_admin_site_config_path(@admin_site_config) %> |
+<%= link_to 'Back', admin_site_configs_path %>

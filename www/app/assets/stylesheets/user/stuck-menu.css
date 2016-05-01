@@ -1,0 +1,32 @@
+/* Stuck menu styles
+========================================================*/
+.isStuck {
+  z-index: 999;
+  position: fixed;
+  -webkit-box-shadow: 0 0 4px 0 #000000;
+  box-shadow: 0 0 4px 0 #000000;
+  background: image-url("page1_img1_new.png") no-repeat center;
+  
+  background-size: cover;
+}
+.isStuck .sf-menu ul {
+  padding: 10px;
+  background: #777777;
+}
+.isStuck .sf-menu ul li a {
+  color: #ffffff;
+}
+.isStuck .sf-menu ul li a:hover {
+  color: #1c1c1c;
+}
+.isStuck .sf-menu ul li.sfHover > a {
+  color: #1c1c1c;
+}
+.isStuck nav {
+  margin-top: 20px;
+}
+@media only screen and (max-width: 979px) {
+  .isStuck {
+    display: none !important;
+  }
+}

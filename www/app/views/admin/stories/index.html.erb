@@ -1,0 +1,33 @@
+<h1>故事管理</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>大標題</th>
+      <th>小標題</th>
+      <th>內容</th>
+      <th>按鈕文字</th>
+      <th>按鈕連結</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_stories.each do |admin_story| %>
+      <tr>
+        <td><%= admin_story.title %></td>
+        <td><%= admin_story.title2 %></td>
+        <td><%= admin_story.content %></td>
+        <td><%= admin_story.button_text %></td>
+        <td><%= admin_story.link_url %></td>
+        <!-- <td><%= link_to 'Show', admin_story %></td> -->
+        <td><%= link_to '編輯', edit_admin_story_path(admin_story), :class => "btn btn-info" %></td>
+        <td><%= link_to '刪除', admin_story, method: :delete, data: { confirm: '確定要刪除?' }, :class => "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新增故事', new_admin_story_path, :class => 'btn btn-success' %>

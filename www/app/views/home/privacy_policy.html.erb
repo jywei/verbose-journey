@@ -1,0 +1,62 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+	  	var responsive2 = function(){
+	  		var window_height = $(window).height();
+
+	  		if (detectmob()){
+				window_height = window.screen.height;
+	  		}
+
+	  		var window_width = $(window).width();
+	  		if(window_width>1440){
+	  			$('.privacy_policy_wrapper').height(window_height - 40);
+	  			$('.privacy_policy_wrapper').css('top',(window_height / 2) - ($(".privacy_policy_block").height() / 2) - $("#main_header").height() + 20);
+	  		}else if(window_width>768){
+	  			$('.privacy_policy_wrapper').height(window_height - 40);
+	  			$('.privacy_policy_wrapper').css('margin-top','');
+
+				$('.privacy_policy_wrapper').css('top',(window_height / 2) - ($(".privacy_policy_block").height() / 2) - $("#main_header").height() + 20);
+	  		}else{
+	  			$('.privacy_policy_wrapper').css('height','');
+	  			$('.privacy_policy_wrapper').css('margin-top',-1*window_height+50+60);
+
+				$('.privacy_policy_wrapper').css('top',"");
+	  		}
+	  	};
+	  	responsive2();
+	  	$(window).resize(function(){
+	  		responsive2();
+	  	});
+	});
+</script>
+<div class="privacy_policy_wrapper">
+	<section class="fixed full_height">
+		<div class="privacy_policy_block">
+			<article>
+				<h1>
+					隱私政策
+				</h1>
+				<section class="scrollbar_css" id="scrollbar1">	
+					<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+					<div class="viewport">
+						<div class="overview">
+							<%= simple_format(@admin_site_config.privacy_policy) %>
+						</div>
+					</div>
+				</section>
+			</article>
+		</div>
+	</section>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+                $('#scrollbar1').tinyscrollbar();
+                $('#scrollbar1').find(".scrollbar").fadeOut();
+              });
+            $('#scrollbar1').hover(function(){   
+	    $(this).find(".scrollbar").fadeIn();   
+	}, function(){   
+	    $(this).find(".scrollbar").fadeOut();   
+	}); 
+</script>

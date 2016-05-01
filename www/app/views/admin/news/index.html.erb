@@ -1,0 +1,38 @@
+<h1>新聞管理    <%= link_to '新增新聞', new_admin_news_path, :class => 'btn btn-success' %></h1>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>標題</th>
+      <th>內容</th>
+      <th>主視覺</th>
+      <th>公開</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_news.each do |admin_news| %>
+      <tr>
+        <td><%= admin_news.title %></td>
+        <td><%= strip_tags(admin_news.get_short_content).gsub("&nbsp;", "") %></td>
+        <td>
+          <% if admin_news.main_visual.present? %>
+            <%= image_tag(admin_news.main_visual.thumb.url) %>
+          <% end %>
+        </td>
+        <td><%= admin_news.is_public %></td>
+        <!-- <td><%= link_to 'Show', admin_news %></td> -->
+        <td><%= link_to '編輯', edit_admin_news_path(admin_news), :class => "btn btn-info" %></td>
+        <td><%= link_to '刪除', admin_news, method: :delete, data: { confirm: '確定要刪除?' }, :class => "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<br>
+<br>

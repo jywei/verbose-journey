@@ -1,0 +1,33 @@
+<div class="verification_wrapper">
+	<div class="cover">
+		<article>
+			<div class="logo">
+				<%= image_tag("logo/w6.png") %>
+			</div>
+			<section>
+				<h5>請確認您的年齡</h5>
+				<p>Please enter your date of birth</p>
+			</section>
+			<div class="check_form">
+				<%= form_tag('/home/verification', method: :post) do |f| %>
+					<div class="date">
+						<%= select_date(Time.now ,:start_year => 1920) %>
+					</div>
+					<div class="remember">
+						<%= check_box_tag 'remember' %> Remember Me
+					</div>
+					<br/>
+					<%= submit_tag 'ENTER' %>
+				<% end %>
+			</div>
+		</article>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		if ($(window).width() > 1080) {
+			$('select').selectmenu();
+		}
+	});
+</script>

@@ -1,0 +1,29 @@
+<%= form_for(@admin_info) do |f| %>
+  <% if @admin_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_info.errors.count, "error") %> prohibited this admin_info from being saved:</h2>
+
+      <ul>
+      <% @admin_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label '標題' %><br>
+    <%= f.text_field :title, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '內容' %><br>
+    <%= f.text_area :content, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '連結網址' %><br>
+    <%= f.text_field :link_url, :class => "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit '更新資訊', :class => "btn btn-primary btn-full" %>
+  </div>
+<% end %>

@@ -1,0 +1,5 @@
+1. chmod +x unicorn_jibako.sh
+2. sudo cp unicorn_jibako.sh /etc/init.d/unicorn_neocity
+3. sudo update-rc.d -f unicorn_jibako remove
+4. sudo update-rc.d unicorn_jibako defaults
+5. sudo service unicorn_jibako start

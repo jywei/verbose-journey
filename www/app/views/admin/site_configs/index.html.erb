@@ -1,0 +1,43 @@
+<h1>Listing admin_site_configs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Name</th>
+      <th>Tax</th>
+      <th>Phone</th>
+      <th>Fax</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Website url</th>
+      <th>Facebook url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_site_configs.each do |admin_site_config| %>
+      <tr>
+        <td><%= admin_site_config.title %></td>
+        <td><%= admin_site_config.description %></td>
+        <td><%= admin_site_config.name %></td>
+        <td><%= admin_site_config.tax_id %></td>
+        <td><%= admin_site_config.phone %></td>
+        <td><%= admin_site_config.fax %></td>
+        <td><%= admin_site_config.address %></td>
+        <td><%= admin_site_config.email %></td>
+        <td><%= admin_site_config.website_url %></td>
+        <td><%= admin_site_config.facebook_url %></td>
+        <td><%= link_to 'Show', admin_site_config %></td>
+        <td><%= link_to 'Edit', edit_admin_site_config_path(admin_site_config) %></td>
+        <td><%= link_to 'Destroy', admin_site_config, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Site config', new_admin_site_config_path %>

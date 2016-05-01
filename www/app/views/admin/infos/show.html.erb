@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @admin_info.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @admin_info.content %>
+</p>
+
+<p>
+  <strong>Link url:</strong>
+  <%= @admin_info.link_url %>
+</p>
+
+<%= link_to 'Edit', edit_admin_info_path(@admin_info) %> |
+<%= link_to 'Back', admin_infos_path %>

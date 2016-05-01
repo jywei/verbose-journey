@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_store.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @admin_store.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @admin_store.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @admin_store.address %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @admin_store.sort %>
+</p>
+
+<p>
+  <strong>Is public:</strong>
+  <%= @admin_store.is_public %>
+</p>
+
+<%= link_to 'Edit', edit_admin_store_path(@admin_store) %> |
+<%= link_to 'Back', admin_stores_path %>

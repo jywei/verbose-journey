@@ -1,0 +1,66 @@
+<h1>品牌管理    <%= link_to '新增品牌', new_admin_brand_path, :class => 'btn btn-success' %></h1>
+
+<table class="table brands">
+  <thead>
+    <tr>
+      <th>名字</th>
+      <th>主視覺</th>
+      <th>是否公開</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_brands.each do |admin_brand| %>
+      <tr>
+        <td>
+          <%= admin_brand.name %>
+          <%= form_for admin_brand, :remote => true do |f| %>
+            <%= f.hidden_field :sort %>
+          <% end %>
+          </td>
+        <td>
+          <% if admin_brand.main_visual.present? %>
+            <%= image_tag(admin_brand.main_visual.thumb.url) %>
+          <% end %>
+        </td>
+        <td><%= admin_brand.is_public %></td>
+        <!-- <td><%= link_to 'Show', admin_brand %></td> -->
+        <td><%= link_to '編輯', edit_admin_brand_path(admin_brand), :class => "btn btn-info" %></td>
+        <td><%= link_to '刪除', admin_brand, method: :delete, data: { confirm: '確定要刪除?' }, :class => "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.brands').sortable({
+      items: "tbody tr",
+      sort: function( event, ui ){
+        ui.item.find('td').addClass('sorting');
+      },
+      stop: function( event, ui ){
+        ui.item.find('td').removeClass('sorting')
+      },
+      update: function( event, ui ) {
+        var brand = $(this);
+        $(brand).find('tr').each(function(){
+          $(this).find('#admin_brand_sort').val($(this).index());
+        });
+        $('.loading').find('p').text('Sorting...');
+        $('.loading').show(0);
+        setTimeout(function(){
+          $(brand).find('form').each(function(){
+            $(this).submit();
+          });
+          $(brand).find('form').last().bind("ajax:complete", function(xhr, status) {
+            $('.loading').find('p').text('Sorted');
+            $('.loading').fadeOut(800);
+          });
+        }, 800);
+      }
+    });
+  });
+</script>

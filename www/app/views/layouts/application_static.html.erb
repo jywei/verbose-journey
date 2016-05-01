@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title.present? ? @title : "Direct" %></title>
+  <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no">
+  <meta name="google-site-verification" content="cshRcGpWZY4upcCD-b21cqq6Kj8OgEBOggStKg1uDFw" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'logo/ico3.png' %>
+  <%= csrf_meta_tags %>
+  <meta name="description" content="<%= strip_tags(@meta_description) %>">
+  <meta property="og:title" content="<%= @og_title.present? ? @og_title : @title %>" />
+  <meta property="og:description" content="<%= @og_description.present? ? strip_tags(@description) : strip_tags(@meta_description) %>" />
+  <% if @og_image.present? %>
+  	<meta property="og:image" content="<%= @host_name + @og_image %>" />
+  <% end %>
+  <% if @og_image2.present? %>
+  	<meta property="og:image" content="<%= @host_name + @og_image2 %>" />
+  <% end %>
+  <% if @og_image3.present? %>
+  	<meta property="og:image" content="<%= @host_name + @og_image3 %>" />
+  <% end %>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-63099729-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+
+        <div class="layout_main_contain">
+            <!-- main_header -->
+                    <%= render  "layouts/header" %>
+            <!-- /main_header -->
+                		
+            	<%= yield %>
+
+	<!-- footer -->
+		<%= render  "layouts/footer" %>
+	<!-- /footer -->
+	
+              <script type="text/javascript">
+	  var timer;
+	 	var detectmob = function () { 
+		 if( navigator.userAgent.match(/Android/i)
+		 || navigator.userAgent.match(/webOS/i)
+		 || navigator.userAgent.match(/iPhone/i)
+		 || navigator.userAgent.match(/iPad/i)
+		 || navigator.userAgent.match(/iPod/i)
+		 || navigator.userAgent.match(/BlackBerry/i)
+		 || navigator.userAgent.match(/Windows Phone/i)
+		 ){
+		    return true;
+		  }
+		 else {
+		    return false;
+		  }
+		}
+	  $(document).ready(function(){
+	  	var responsive = function(){
+	  		var window_height = $(window).height();
+	  		var window_width = $(window).width();
+	  		$('.main_visual_banner').height(window_height);
+	  		$('.main_visual_wapper .logo').css({'top':($(window).height()/2) - 65 +26});
+	  		$('.main_visual_wapper').height(window_height - 26);
+
+	  		if ($(window).width() < 768) {
+	  			$('.main_visual_wapper').height(window_height - 26 -10);
+	  		}
+	  	};
+	  	var set_main_visual_width = function(){
+	  		var window_height = $(window).height();
+	  		var window_width = $(window).width();
+	  		if ($(window).width() < 768) {
+	  			// $('.main_visual_banner').css("background-size", window_width + window_width);
+	  			$('.main_visual_banner').css("background-size", window_width + 50);
+	  			$(".pc_main_visual").hide();
+	  			$(".phone_main_visual").show();
+	  			$(".pc_main_visual_verification").hide();
+	  			$(".phone_main_visual_verification").show();
+	  		}else {
+	  			$('.main_visual_banner').css("background-size", window_width + 200);
+	  			$(".pc_main_visual").show();
+	  			$(".phone_main_visual").hide();
+	  			$(".pc_main_visual_verification").show();
+	  			$(".phone_main_visual_verification").hide();
+
+	  			if (window_height >= window_width) {
+	  				$(".pc_main_visual").hide();
+	  				$(".phone_main_visual").show();
+	  				$(".pc_main_visual_verification").hide();
+	  				$(".phone_main_visual_verification").show();
+	  			}
+	  		}
+	  	}
+	  	responsive();
+	  	set_main_visual_width();
+	  	$(window).resize(function(){
+	  		responsive();
+	  		set_main_visual_width();
+	  	});
+
+	  	$( "#menu_button" ).click(function() {
+			// $(".small_header nav").toggleClass("hide", 5000);
+			if($('.small_header nav').hasClass('active')){
+				$('.small_header nav').slideUp(600, function() {
+					$(this).removeClass('active');
+				});    
+			}else{
+				$('.small_header nav').slideDown(600, function() {
+					$(this).addClass('active');
+				});    
+			}
+		});
+	  });
+ 	 </script>
+
+ 	 <!-- Header Fixed -->
+ 	 <script type="text/javascript">
+ 	 	$(window).scroll(function(){
+			change_header();
+		});
+		function change_header(){
+			scrolltop = $(window).scrollTop();
+			// scrolltop = document.body.scrollTop;
+			if ($(window).width() < 768) {
+				$('#main_header').removeClass("follow_header");
+			}else if(scrolltop > $(window).height()) {
+				$('.default_header').addClass("pull_down");
+				$('#main_header').addClass("follow_header");
+			} else {
+				$('.default_header').removeClass("pull_down");
+				$('#main_header').removeClass("follow_header");
+			}
+		}
+ 	 </script>
+
+
+ 	<!-- Image Slider -->
+ 	 <script type="text/javascript">
+ 	 	$.each( $(".pc_main_visual .main_visual_banner"), function(){
+			$(this).show();
+			$(this).css("z-index", -10);
+		});
+
+		var count = $(".pc_main_visual .main_visual_banner").length - 1;
+
+		$(".pc_main_visual .main_visual_banner").eq(0).show();
+		$(".pc_main_visual .main_visual_banner").eq(0).css("z-index", -5);
+
+		$(".pc_main_visual .main_visual_banner").eq(count).css("background-image",$(".pc_main_visual .main_visual_banner").eq(0).css("background-image"));
+		$(".pc_main_visual .main_visual_banner").eq(count).css("z-index", -1);
+
+
+		var index_main_visual = 0;
+		var tmp_index = 0;
+		clearInterval(auto_refresh);
+		if (count > 0) {
+			var auto_refresh = setInterval(function() {
+
+				tmp_index = index_main_visual;
+				index_main_visual = index_main_visual +1 ;
+				index_main_visual = index_main_visual % count;
+
+				if (tmp_index != index_main_visual) {
+					// $(".main_visual_banner").eq(tmp_index).hide();
+					// $(".main_visual_banner").eq(index_main_visual).show();
+
+					$(".pc_main_visual .main_visual_banner").eq(index_main_visual).css("z-index", -5);
+					$(".pc_main_visual .main_visual_banner").eq(tmp_index).css("z-index", -10);
+					$(".pc_main_visual .main_visual_banner").eq(count).animate({opacity: 0},2000);
+					// $(".main_visual_banner").eq(count).delay(2000).css("background-image",$(".main_visual_banner").eq(index_main_visual).css("background-image"));
+					$(".pc_main_visual .main_visual_banner").eq(count).delay(2500).queue(function() {
+						$(this).css("opacity",1).dequeue();
+						$(this).css("background-image",$(".pc_main_visual .main_visual_banner").eq(index_main_visual).css("background-image"));
+					});
+					
+
+					// $(".main_visual_banner").eq(index_main_visual).css("z-index", -1);
+					// $(".main_visual_banner").eq(tmp_index).css("z-index", -2);
+
+					// $(".main_visual_banner").eq(index_main_visual).show( 1000, function() {});
+					// $(".main_visual_banner").eq(tmp_index).delay(2000).hide( "slow", function() {});
+				}
+			}, 5000);
+		}
+ 	 </script>
+
+
+
+	<script type="text/javascript">
+		if ("<%= @controller_name %>" == 'home' && "<%= @action_name %>" == 'new_verification') {
+			$("#main_header").hide();
+			$("#main_footer").hide();
+			$(".yield_wrapper .logo").hide();
+		}
+	</script>
+        </div>
+        <%= render  "layouts/verification" %>
+
+</body>
+</html>

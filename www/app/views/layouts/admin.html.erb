@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= @title.present? ? @title : "Direct" %></title>
+    <%= csrf_meta_tags %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "admin", :media => "all" %>
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+
+    <%= favicon_link_tag 'logo/ico3.png' %>
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Direct</a>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "網站管理", edit_admin_site_config_path(:id => 1) %></li>
+            <li><%= link_to "故事管理", edit_admin_story_path(:id => 1) %></li>
+            <li><%= link_to "關於我們", edit_admin_about_path(:id => 1) %></li>
+            <li><%= link_to "歷史管理", admin_histories_path %></li>
+            <li><%= link_to "新聞管理", admin_news_index_path %></li>
+            <li><%= link_to "品牌管理", admin_brands_path %></li>
+            <li><%= link_to "產品管理", admin_products_path %></li>
+            <li><%= link_to "通路據點", admin_stores_path %></li>
+            <li><%= link_to "資訊管理", admin_infos_path %></li>
+            <li><%= link_to "地區管理", admin_areas_path %></li>
+            <li><%= link_to "與我聯繫", admin_contacts_path %></li>
+            <li><%= link_to "OG管理", edit_admin_og_main_page_path(:id => 1) %></li>
+            <li><%= link_to "GA", "https://www.google.com/analytics/web/?hl=zh-TW&pli=1#realtime/rt-overview/a63099729w98452077p102496108/", :target => "_blank" %></li>
+            <!-- <li><%= link_to "訂閱管理", admin_subscribes_path %></li> -->
+            <!-- <li><%#= link_to "Image", admin_images_path %></li> -->
+            <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <%= bootstrap_flash %>
+          <%= yield %>
+        </div>
+      </div><!--/row-->
+
+      <!-- <footer>
+        <p>&copy; Company 2015</p>
+      </footer> -->
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

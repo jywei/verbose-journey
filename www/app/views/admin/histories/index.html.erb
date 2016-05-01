@@ -1,0 +1,61 @@
+<h1>歷史管理    <%= link_to '新增歷史', new_admin_history_path, :class => 'btn btn-success' %></h1>
+
+<table class="table histories">
+  <thead>
+    <tr>
+      <th>內容</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_histories.each do |admin_history| %>
+      <tr>
+        <td>
+          <%= admin_history.content %>
+          <%= form_for admin_history, :remote => true do |f| %>
+            <%= f.hidden_field :sort %>
+          <% end %>
+        </td>
+        <!-- <td><%#= link_to 'Show', admin_history %></td> -->
+        <td><%= link_to '編輯', edit_admin_history_path(admin_history), :class => "btn btn-info" %></td>
+        <td><%= link_to '刪除', admin_history, method: :delete, data: { confirm: '確定要刪除?' }, :class => "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.histories').sortable({
+      items: "tbody tr",
+      sort: function( event, ui ){
+        ui.item.find('td').addClass('sorting');
+      },
+      stop: function( event, ui ){
+        ui.item.find('td').removeClass('sorting')
+      },
+      update: function( event, ui ) {
+        var history = $(this);
+        $(history).find('tr').each(function(){
+          $(this).find('#admin_history_sort').val($(this).index());
+        });
+        $('.loading').find('p').text('Sorting...');
+        $('.loading').show(0);
+        setTimeout(function(){
+          $(history).find('form').each(function(){
+            $(this).submit();
+          });
+          $(history).find('form').last().bind("ajax:complete", function(xhr, status) {
+            $('.loading').find('p').text('Sorted');
+            $('.loading').fadeOut(800);
+          });
+        }, 800);
+      }
+    });
+  });
+</script>
+
+

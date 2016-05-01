@@ -1,0 +1,184 @@
+/* ======= Main menu variables ======= */
+/* ======= Sub menus common variables ======= */
+/* ======= First level sub menu variables ======= */
+nav {
+  float: right;
+  margin-right: 70px;
+  margin-top: 13px;
+}
+@media (max-width: 979px) {
+  nav {
+    margin-right: 10px;
+  }
+}
+@media (max-width: 767px) {
+  nav {
+    margin-right: 0;
+  }
+}
+/* Main menu styles
+========================================================*/
+.sf-menu > li {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+.sf-menu > li + li {
+  margin-left: 30px;
+}
+.sf-menu > li > .sf-with-ul:after {
+  font-family: FontAwesome;
+  font-size: 10px;
+  position: absolute;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  cursor: default;
+  content: "\f0d7";
+  color: #ffffff;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -3px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.sf-menu > li > a {
+  text-transform: none;
+  font: 700 17px/17px "Lato", sans-serif;
+  display: inline-block;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  color: #ffffff;
+}
+.sf-menu > li > a:hover {
+  color: #333333;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+.sf-menu > li > a:active {
+  background: transparent;
+  color: #333333;
+}
+.sf-menu .sfHover > a:after {
+  color: #333333;
+}
+.sf-menu > li.current > a {
+  color: #333333;
+}
+.sf-menu > li.current > .sf-with-ul:after {
+  color: #333333;
+}
+.sf-menu > li.sfHover > a {
+  color: #333333;
+}
+.sf-menu a {
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+.sf-menu a:hover {
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+/* First level sub-menu styles
+========================================================*/
+.sf-menu ul {
+  display: none;
+  font: 300 17px/17px "Lato", sans-serif;
+  position: absolute;
+  top: 44px;
+  min-width: 155px;
+  left: 0;
+  text-align: left;
+  z-index: 2;
+}
+.sf-menu ul > li + li {
+  margin-top: 11px;
+}
+.sf-menu ul li {
+  position: relative;
+  display: block;
+}
+.sf-menu ul li > .sf-with-ul:after {
+  font-family: FontAwesome;
+  font-size: 10px;
+  position: absolute;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  cursor: default;
+  content: "\f0da";
+  color: #ffffff;
+  bottom: -2px;
+  right: 30px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.sf-menu ul li a {
+  color: #ffffff;
+  text-transform: none;
+}
+.sf-menu ul li a:hover {
+  color: #333333;
+}
+.sf-menu ul > .sfHover > a:after {
+  color: #333333;
+}
+.sf-menu ul li.sfHover > a {
+  color: #333333;
+}
+.sf-menu.common ul {
+  padding: 10px;
+  background: #777777;
+}
+.sf-menu.common ul li a {
+  color: #ffffff;
+}
+.sf-menu.common ul li a:hover {
+  color: #1c1c1c;
+}
+.sf-menu.common ul li.sfHover > a {
+  color: #1c1c1c;
+}
+/* Second level sub-menu styles
+========================================================*/
+.sf-menu ul ul {
+  position: absolute;
+  top: 0;
+  margin-left: 0;
+  left: 160px;
+  z-index: 4;
+}
+@media only screen and (max-width: 767px) {
+  .sf-menu {
+    display: none;
+  }
+  nav {
+    width: 80%;
+    float: none;
+    text-align: center;
+    display: inline-block;
+  }
+  .select-menu {
+    border-radius: none;
+    display: inline-block;
+    text-transform: capitalize;
+    float: none;
+    color: #333333;
+    width: 100%;
+    margin: 0 auto;
+    background: #ffffff;
+    font: 700 17px/17px "Lato", sans-serif;
+    text-align: left;
+    border: 1px solid #c1c1c1;
+    padding: 2px 0;
+    position: relative;
+  }
+  .select-menu option {
+    text-align: left;
+    position: relative;
+  }
+}
+/*Core variables and mixins*/

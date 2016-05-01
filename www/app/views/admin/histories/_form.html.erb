@@ -1,0 +1,21 @@
+<%= form_for(@admin_history) do |f| %>
+  <% if @admin_history.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_history.errors.count, "error") %> prohibited this admin_history from being saved:</h2>
+
+      <ul>
+      <% @admin_history.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label '內容' %><br>
+    <%= f.text_field :content, :class => "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit '歷史 更新', :class => "btn btn-primary btn-full" %>
+  </div>
+<% end %>

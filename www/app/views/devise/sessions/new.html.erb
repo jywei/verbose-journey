@@ -1,0 +1,50 @@
+<script type="text/javascript">
+
+ $(document).ready(function(){
+	  	var responsive2 = function(){
+	  		var window_height = $(window).height();
+	  		var window_width = $(window).width();
+	  		if(window_width>768){
+	  			$('.login_wrapper').height(window_height - 90);
+	  			$('.login_wrapper').css('margin-top','');
+	  		}else{
+	  			$('.login_wrapper').css('height','');
+	  			$('.login_wrapper').css('margin-top',-1*window_height+50+60);
+
+	  		}
+	  	};
+	  	responsive2();
+	  	$(window).resize(function(){
+	  		responsive2();
+	  	});
+  });
+</script>
+<div class="home_wrapper">
+	<section class='fixed'>
+		<%= render :partial => 'shared/brand_block' %>
+	</section>
+</div>
+<div class="login_wrapper">
+	<section class="fixed full_height">
+		<div class="login_block">
+			<article>
+				<h2>管理員 - 登入</h2>
+
+				<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+				  <div><%= f.label :email %><br />
+				  <%= f.email_field :email, :autofocus => true %></div>
+
+				  <div><%= f.label :password %><br />
+				  <%= f.password_field :password %></div>
+
+				  <% if devise_mapping.rememberable? -%>
+				    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+				  <% end -%>
+
+				  <div><%= f.submit "登入" %></div>
+				<% end %>
+			</article>
+		</div>
+	</section>
+</div>
+<%= render "devise/shared/links" %>

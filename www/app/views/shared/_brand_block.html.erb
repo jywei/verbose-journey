@@ -1,0 +1,108 @@
+<div class="brand_block">
+
+	<% if @admin_site_config.brands_list_logo_is_show %>
+		<div class="logo">
+			<a href="/" data-no-turbolink>
+				<%= image_tag("logo/w8.png")  %>
+			</a>
+		</div>
+		<div class="show_all logo_show">
+			<a class="show_bradns_logo"></a>
+			<%#= link_to('','#', :class => "show_bradns_logo") %>
+		</div>
+	<% else %>
+		<div class="show_all">
+			<a class="show_bradns_logo">Show All Brand</a>
+			<%#= link_to('Show All Brand','#', :class => "show_bradns_logo") %>
+		</div>
+	<% end %>
+
+
+	<% if @admin_brands.present? %>
+		<nav data-no-turbolink>
+			<ul>
+				<% @admin_brands.order(:sort).each do |brand| %>
+					<!-- <li><%= link_to(brand.name,brand_path(:id => brand.id)) %></li> -->
+					<li>
+						<%= link_to(brand.name,"/brand/#{brand.url_name}", :class => "normal_link") %>
+						<!-- 舊版漢堡功能 -->
+						<!-- <ul>
+							<li>
+								<div class="image_logo">
+									<%= image_tag(brand.image_of_logo.small.url) %>
+								</div>
+							</li>
+						</ul> -->
+
+						<!-- new漢堡功能 -->
+						<a href="<%= "/brand/#{brand.url_name}" %>" class="logo_link">
+							<div class="image_logo">
+								<%= image_tag(brand.image_of_logo.small.url) %>
+							</div>
+						</a>
+					</li>
+				<% end %>
+			</ul>
+		</nav>
+	<% end %>
+</div>
+
+<script type="text/javascript">
+	// 舊版漢堡功能
+	// $(function() {
+	// 	$( ".show_bradns_logo" ).click(function() {
+	// 		$(".brand_block").toggleClass("show_logos");
+	// 	});
+	// });
+	
+	
+	
+
+	$(document).ready(function(){
+	  	var responsive_brand_home = function(){
+	  		$(".brand_block").width();
+			$(".brand_block .logo").width();
+			$(".brand_block .show_all").width();
+			var nav_only_width = $(".brand_block").width() - $(".brand_block .logo").width() - $(".brand_block .show_all").width() -17;
+			var sum_li_width = 0;
+			if ($(".verification_wrapper").css("display") == "none"){
+				$(".brand_block nav ul li").each(function( index ) {
+					sum_li_width = sum_li_width + $(this).width() + 20;
+					if ( nav_only_width < sum_li_width) {
+						$(this).hide();
+					}else {
+						$(this).show();
+					}
+				});
+			}
+	  	};
+	  	responsive_brand_home();
+	  	$(window).resize(function(){
+	  		responsive_brand_home();
+	  	});
+		// new漢堡功能
+		$(function() {
+			$( ".show_bradns_logo" ).click(function() {
+				if ($(".logo_link").css("display") == "block"){
+					$(".logo_link").hide();
+					// $(".normal_link").show();
+					$(".normal_link").slideDown(600, function() {
+						$(".normal_link").show();
+					});    
+					$(".logo_link").parent().css("margin-top","");
+					$(".logo_link").parent().css("margin-bottom","");
+					responsive_brand_home();
+				}else{
+					// $(".logo_link").css("display","block");
+					$(".normal_link").hide();
+					responsive_brand_home();
+					$(".logo_link").slideDown(600, function() {
+						$(".logo_link").css("display","block");
+					});    
+					$(".logo_link").parent().css("margin-top",0);
+					$(".logo_link").parent().css("margin-bottom",0);
+				}
+			});
+		});
+  	});
+</script>

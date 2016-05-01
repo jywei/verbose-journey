@@ -1,0 +1,144 @@
+<div class="fileupload_wrapper">
+  <article>
+    <%= form_for Admin::Image.new, :html => { :id => "admin_phone_image_file", :multipart => true} do |f| %>
+      <div class='btn btn-success' style="width: 100%;">
+        <h1 class='upload_button_h1'>手機 主視覺 - 選擇檔案或者拖曳至此上傳</h1>
+        <%= hidden_field_tag 'site_config_id', @admin_site_config.id %>
+        <%= f.file_field :file, :class=>'file_field' %>
+        <%= hidden_field_tag 'is_phone', true %>
+      </div>
+    <% end %>
+
+    <div id="progress_phone" class="progress_phone">
+      <div class="progress_phone-bar progress_phone-bar-success"></div>
+    </div>
+
+    <table class='phone_image_uploder_table table'>
+          <tr align="center">
+            <td>圖片</td>
+            <td>檔案名稱</td>
+            <td></td>
+          </tr>
+          
+          <tr align="center" class='hide phone_image_tr'>
+              <td>
+                <img class="tmp_image" src="" data-id='0'>
+              </td>
+              <td>
+                <h6>tmp</h6>
+              </td>
+              <td class='phone_image_delete'>
+                <%= link_to 'Delete', '#', :id=>'delete', :class => 'delete btn btn-danger'  %>
+              </td>
+          </tr>
+
+
+      
+            <% if @admin_site_config.images.count>0 %>
+
+                  <% @admin_site_config.site_config_images.where(:is_phone => true).order(:sort).each do |site_config_image| %>
+                    <% file = site_config_image.image %>
+                    <tr align="center" class='phone_image_tr'>
+                        <td>
+                          <%= form_for file.site_config_image, :remote => true do |f| %>
+                            <%= f.hidden_field :sort %>
+                          <% end %>
+                          <%= image_tag(file.file.small.url, :data => { :id => file.id }) %>
+                        </td>
+                        <td><%= file.file.file.filename %></td>
+                        <td>
+                          <%= link_to 'Delete', admin_image_path(file, :format => :json), :class => 'delete btn btn-danger', method: :delete,:remote=>true %>
+                        </td>
+                    </tr>
+                  <% end %>
+
+
+            <% end %>
+
+
+        </table>
+      </article>
+  </div>
+
+  <script type="text/javascript">
+
+    (function() {
+      $(function() {
+        $('.progress_phone').hide();
+        return $('#admin_phone_image_file').fileupload({
+          dropZone: $('#admin_phone_image_file'),
+          dataType: 'json',
+          done: function(e, data) {
+            return $.each(data.result.files, function(index, file) {
+              var list;
+              list = $('.hide.phone_image_tr').clone();
+              list.find('img').attr('src', file.small_url);
+              list.find('img').attr('data-id', file.id);
+              list.find('h6').text(file.name);
+              list.find('.phone_image_delete a').attr('data-method', file.delete_type).attr('href', file.delete_url).attr('data-remote', true);
+              list.removeClass('hide').appendTo('.phone_image_uploder_table');
+              $('.progress_phone .progress_phone-bar').css('width', "0%");
+              return $('.progress_phone').hide();
+            });
+          },
+          progressall: function(e, data) {
+            var progress_phone;
+            $('.progress_phone').show();
+            $('.progress_phone .progress_phone-bar').css('height', "100%");
+            progress_phone = parseInt(data.loaded / data.total * 100, 10);
+            console.log(progress_phone);
+            return $('.progress_phone .progress_phone-bar').css('width', progress_phone + "%");
+          },
+          error: function(e, data) {
+            return alert("檔案上傳失敗");
+          }
+        });
+      });
+
+    }).call(this);
+
+
+
+
+
+      
+
+    $( document ).ready(function() {
+
+      $('.phone_image_uploder_table').sortable({ 
+        items: "tr:not(:first-child)",
+        sort: function( event, ui ){
+          ui.item.find('td').addClass('sorting');
+        },
+        stop: function( event, ui ){
+          ui.item.find('td').removeClass('sorting')
+        },
+        update: function( event, ui ) {
+          var site_config_image = $(this);
+          $(site_config_image).find('tr').each(function(){
+            $(this).find('#admin_site_config_image_sort').val($(this).index() - 2);
+          });
+          $('.loading').find('p').text('Sorting...');
+          $('.loading').show(0);
+          setTimeout(function(){
+            $(site_config_image).find('form').each(function(){
+              $(this).submit();
+            });
+            $(site_config_image).find('form').last().bind("ajax:complete", function(xhr, status) {
+              $('.loading').find('p').text('Sorted');
+              $('.loading').fadeOut(800);
+            });
+          }, 800);
+        }
+      });
+
+      $.ajaxSettings.dataType = "json";
+      $(document).delegate('a.delete', 'ajax:complete', function(xhr, status){
+        if(status.responseText=='success'){
+          $(this).parents('.phone_image_tr').remove();
+        }
+      });
+
+    });
+
+  </script>

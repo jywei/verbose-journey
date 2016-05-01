@@ -1,0 +1,35 @@
+<h1>通路據點    <%= link_to '新增通路', new_admin_store_path, :class => 'btn btn-success' %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>名稱</th>
+      <th>電話</th>
+      <th>電子郵件</th>
+      <th>地址</th>
+      <th>排序</th>
+      <th>公開</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_stores.each do |admin_store| %>
+      <tr>
+        <td><%= admin_store.name %></td>
+        <td><%= admin_store.phone %></td>
+        <td><%= admin_store.email %></td>
+        <td><%= admin_store.address %></td>
+        <td><%= admin_store.sort %></td>
+        <td><%= admin_store.is_public %></td>
+        <!-- <td><%= link_to 'Show', admin_store %></td> -->
+        <td><%= link_to '編輯', edit_admin_store_path(admin_store), :class => "btn btn-info" %></td>
+        <td><%= link_to '刪除', admin_store, method: :delete, data: { confirm: '確定要刪除?' }, :class => "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

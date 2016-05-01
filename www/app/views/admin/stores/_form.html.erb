@@ -1,0 +1,55 @@
+<%= form_for(@admin_store) do |f| %>
+  <% if @admin_store.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_store.errors.count, "error") %> prohibited this admin_store from being saved:</h2>
+
+      <ul>
+      <% @admin_store.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label '名稱' %><br>
+    <%= f.text_field :name, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '電話' %><br>
+    <%= f.text_field :phone, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '電子郵件' %><br>
+    <%= f.text_field :email, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '城市' %><br>
+    <%= f.collection_select :area_id, Admin::Area.all, :id, :city, {prompt: "請選擇一個城市"}, { :class => "form-control" } %>
+  </div>
+  <div class="form-group">
+    <%= f.label '地址' %><br>
+    <%= f.text_field :address, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label 'Google標記_X' %><br>
+    <%= f.number_field :google_map_x, :class => "form-control", :step => 0.000001 %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Google標記_Y' %><br>
+    <%= f.number_field :google_map_y, :class => "form-control", :step => 0.000001 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label '排序' %><br>
+    <%= f.number_field :sort, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '是否公開' %><br>
+    <%= f.check_box :is_public %>
+  </div>
+  <div class="actions">
+    <%= f.submit '更新通路', :class => "btn btn-primary btn-full" %>
+  </div>
+<% end %>

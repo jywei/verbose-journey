@@ -1,0 +1,81 @@
+<!--========================================================
+                          HEADER
+=========================================================-->
+  
+
+<header id="header" class="stellar-block header_video" data-stellar-background-ratio="0.5">
+  
+
+
+  <div id="stuck_container">
+    <h1 class='fixed_logo'><!--  #左上logo -->
+      <a href="index.html">
+        <span class="first">Opul Union</span><br>
+        <!-- <span class="second">Agricultural technique</span> -->
+      </a>
+    </h1>
+
+    <nav>
+      <ul class="sf-menu common">
+        <li class="current"><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", abouts_path %></li>
+        <!-- <li><a href="index-1.html">About</a> -->
+          <!-- <ul>
+            <li><a href="#">Lorem ipsum dolor</a></li>
+            <li><a href="#">Sit amet conse</a>
+              <ul>
+                <li><a href="#">Lorem ipsum dolor</a></li>
+                <li><a href="#">Sit amet conse</a></li>
+                <li><a href="#">Ctetur adipisicing</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Ctetur adipisicing</a></li>
+          </ul> -->
+        </li>
+        <li><%= link_to "Product", products_path %></li>
+        <li><a href="#">Inspection</a></li>
+        <li><%= link_to "News", news_index_path %></li>
+        <li><%= link_to "Contacts", contacts_path %></li>
+        <li><%= link_to "Where to buy", contacts_path %></li>
+      </ul>
+      <div class="clearfix"></div>
+    </nav>
+  </div>
+
+
+<% if current_page?(:controller => '/home', :action => 'index') %>
+     <div id="js-container" style='z-index:-1;'>
+      <div id="js-wrapper" class="page-home">
+        <header id="js-intro-header">
+          <div class="particles" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+          </div>
+          <div class="video" style="margin-top: -48px;width:101%; height:100%;position: absolute;">
+            <iframe id="js-youtube" class="youtube" style="width: 120%; height: 142%;margin-top: -10%;margin-left: -10%;" frameborder="0" allowfullscreen="1" title="YouTube video player" width="1440" height="860" src="https://www.youtube.com/embed/x_7J9_kxe-8?showinfo=0&amp;autohide=1&amp;autoplay=1&amp;controls=0&amp;rel=0&amp;loop=1&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fzeppelin.co.jp"></iframe>
+          </div>
+        </header>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+  <div class="banner1">
+    <div class="container">
+      <div class="row">
+        <div class="grid_10 preffix_1">
+          <div class="slogan">
+            <h6 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">Opul Union</h6>
+            <h5 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">Way back to happiness</h5>
+            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">We uphold the purpose of the spirit of scientific experiment and social welfare contribution.</p>
+            <ul  class="socials1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+</header>
+

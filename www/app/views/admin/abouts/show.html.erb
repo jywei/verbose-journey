@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title area 1:</strong>
+  <%= @admin_about.title_area_1 %>
+</p>
+
+<p>
+  <strong>Content area 1:</strong>
+  <%= @admin_about.content_area_1 %>
+</p>
+
+<p>
+  <strong>Title area 2:</strong>
+  <%= @admin_about.title_area_2 %>
+</p>
+
+<p>
+  <strong>Content area 2:</strong>
+  <%= @admin_about.content_area_2 %>
+</p>
+
+<%= link_to 'Edit', edit_admin_about_path(@admin_about) %> |
+<%= link_to 'Back', admin_abouts_path %>

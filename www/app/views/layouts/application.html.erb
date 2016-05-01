@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title.present? ? @title : "OpulUnion" %></title>
+  <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+   <%= favicon_link_tag asset_path('images/favicon.png') %>
+  <%= csrf_meta_tags %>
+  <meta name="description" content="<%= strip_tags(@meta_description) %>">
+  <meta property="og:title" content="<%= @og_title.present? ? @og_title : @title %>" />
+  <meta property="og:description" content="<%= @og_description.present? ? strip_tags(@og_description) : strip_tags(@meta_description) %>" />
+  <% if @og_image.present? %>
+  	<meta property="og:image" content="<%= @host_name + @og_image %>" />
+  <% end %>
+  <% if @og_image2.present? %>
+  	<meta property="og:image" content="<%= @host_name + @og_image2 %>" />
+  <% end %>
+  <% if @og_image3.present? %>
+  	<meta property="og:image" content="<%= @host_name + @og_image3 %>" />
+  <% end %>
+
+
+
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <script>
+    $(document).ready(function () {
+      if ($('html').hasClass('desktop')) {
+        new WOW().init();
+      }
+    });
+  </script>
+  <!--<![endif]-->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <div id="ie6-alert" style="width: 100%; text-align:center;">
+    <img src="http://beatie6.frontcube.com/images/ie6.jpg" alt="Upgrade IE 6" width="640" height="344" border="0" usemap="#Map" longdesc="http://die6.frontcube.com" />
+    <map name="Map" id="Map"><area shape="rect" coords="496,201,604,329" href="http://www.microsoft.com/windows/internet-explorer/default.aspx" target="_blank" alt="Download Interent Explorer" /><area shape="rect" coords="380,201,488,329" href="http://www.apple.com/safari/download/" target="_blank" alt="Download Apple Safari" /><area shape="rect" coords="268,202,376,330" href="http://www.opera.com/download/" target="_blank" alt="Download Opera" /><area shape="rect" coords="155,202,263,330" href="http://www.mozilla.com/" target="_blank" alt="Download Firefox" />
+      <area shape="rect" coords="35,201,143,329" href="http://www.google.com/chrome" target="_blank" alt="Download Google Chrome" />
+    </map>
+  </div>
+  <![endif]-->
+
+
+
+
+<style type="text/css">
+  .header_video{
+    /*overflow-y: hidden;*/
+  }
+  .fixed_logo{
+    padding-top: 7px;
+  }
+  .particles {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: -4;
+    visibility: hidden;
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+
+}
+#js-intro-header, #js-wrapper, #js-container{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 840px;
+    position: absolute;
+    overflow: hidden;
+}
+.video{
+  z-index: -5;
+}
+.intro-header-bg, .intro-header-bg-wrap, .intro-header::after, .mouse, .particles, .wheel, a.scroll-down, a.scroll-down {
+    position: absolute;
+}
+#header.stellar-block{
+       z-index: 5; 
+       /*background-image:none*/
+}
+
+/*#stuck_container{
+  z-index: 999;
+}*/
+</style>
+
+
+</head>
+<body>
+  
+  <!-- main_header -->
+    <%= render  "layouts/header" %>
+  <!-- /main_header -->
+	
+        	<%= yield %>
+
+	<!-- footer -->
+		<%= render  "layouts/footer" %>
+	<!-- /footer -->
+
+
+</body>
+</html>

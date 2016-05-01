@@ -1,0 +1,38 @@
+<%= form_for(@admin_about) do |f| %>
+  <% if @admin_about.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_about.errors.count, "error") %> prohibited this admin_about from being saved:</h2>
+
+      <ul>
+      <% @admin_about.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label '標題-區塊1' %><br>
+    <%= f.text_field :title_area_1, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '內容-區塊1' %><br>
+    <%= f.cktext_area :content_area_1, :ckeditor => {:toolbar => 'onlybasicstyles'} %>
+  </div>
+  <div class="form-group">
+    <%= f.label '標題-區塊2' %><br>
+    <%= f.text_field :title_area_2, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '內容-區塊2' %><br>
+    <%= f.cktext_area :content_area_2, :ckeditor => {:toolbar => 'onlybasicstyles'} %>
+  </div>
+
+  <%= f.fields_for :staff do |s|%>
+        <%= render :partial => 'staff', :locals => {:f => s} %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit '關於我們 更新', :class => "btn btn-primary btn-full" %>
+  </div>
+<% end %>

@@ -1,0 +1,345 @@
+<div class='brand2_wrapper'>
+	<section class='main_visual'>
+		<div class='logo_wrapper'>
+			<div class='logo'>
+				<% if @admin_brand.image_of_logo.present? %>
+					<%= image_tag(@admin_brand.image_of_logo.thumb.url) %>
+				<% else %>
+					<%= image_tag('brand_logo/casamigos.png') %>
+				<% end %>
+			</div>
+		</div>
+		<div class='d_logo_wrapper drop_down_block'>
+			<div class='logo'>
+					<%= image_tag('logo/w8.png') %>
+			</div>
+			<div class='down blink_animation' id='arrow'>
+				<%= image_tag('arrow.png') %>
+			</div>
+		</div>
+		<% if @admin_brand.main_visual.present? %>
+			<%= image_tag(@admin_brand.main_visual.verylarge.url) %>
+		<% else %>
+			<%= image_tag('brand1_banner_2.png') %>
+		<% end %>	
+
+	</section>
+	<section class='fixed'>
+		<div class='brand2_container'>
+			
+			<!-- <div class='products_menu'> -->
+				<!-- <div class='logo'>
+					<%= image_tag(@admin_brand.image_of_logo.thumb.url) %>
+				</div> -->
+				<!-- <div class='menu_item'>
+					Maynmar Beer
+					<span class='cc'>
+						330cc
+					</span>
+				</div>
+				<div class='menu_item'>
+					Maynmar Beer
+					<span class='cc'>
+						640cc 
+					</span>
+				</div> -->
+			<!-- </div> -->
+
+			<h1 class='slogan'><%= @admin_brand.slogan %> 
+				<% if @admin_brand.slogan_by.present? %>
+					<em>– <%= @admin_brand.slogan_by %></em>
+				<% end %>
+				<%= image_tag(@admin_brand.image_of_logo.small.url) %>
+			</h1>
+			<h3 class=''><%= @admin_brand.title_1 %></h3>
+			<p class='detail'><%= @admin_brand.description_1 %></p>
+			
+
+
+			<div class='all_product'>
+				<% if @admin_brand.image_of_brand.present? %>
+					<%= image_tag(@admin_brand.image_of_brand.url) %>
+				<% else %>
+					<%= image_tag('brand1_img1.png') %>
+				<% end %>
+
+				<!-- <div class='detail'>
+					<div class='detail_item'>
+						<ul>
+							<li>產地：緬甸</li>
+							<li>酒精：5 %</li>
+							<li>容量：640ml(瓶裝)</li>
+						</ul>
+					</div>
+					<div class='detail_item'>
+						<ul>
+							<li>產地：緬甸</li>
+							<li>酒精：5 %</li>
+							<li>容量：330ml(罐裝)</li>
+						</ul>
+					</div>
+				</div> -->
+			</div>
+			
+			<hr />
+
+			
+			
+<!-- 			<h3 class=''><%= @admin_brand.title_2 %></h3>
+
+			<div class='all_product_detail detail'>
+				<%= simple_format(@admin_brand.description_2) %>
+			</div>
+ -->
+			
+			
+			
+<section class='products_index'>
+				
+
+<%# 2.times do %>
+				<% @admin_brand.products.each do |product|  %>
+					<article class='product'>
+						<section class='product_img'>
+							<%= image_tag(product.main_visual.large.url) %>
+						</section>
+						<section class='product_text'>
+							<h1 class='product_name'><%= product.name %>
+								<div class='price_block'>
+									<!-- <span class='price_title'>PEICE : </span> -->
+									<span class='price'>$<%= product.price %> NTD</span>
+								</div>
+							 </h1>
+
+							<!-- <p class='product_description'>
+								<%= product.title %>
+							</p> -->
+							<div class='product_detail'>
+								<%= simple_format(product.content.gsub(/\r\n?/,"") ) %>
+							</div>
+
+							<div class='buttom_block'>
+								<a href='<%= product_path(product.id) %>' class='buttom product_read_more'>
+									READ MORE >>
+								</a>
+								
+								<a href='<%= stores_path(:product_id => product.id) %>' class='buttom' data-no-turbolink>
+									WHERE TO BUY ?
+								</a>
+							</div>
+
+
+						</section>
+					</article>
+				<% end %>
+
+
+
+				<!-- <article class='product'>
+					<section class='product_img'>
+						<%= image_tag('brand1_tmp/c1.png') %>
+					</section>
+					<section class='product_text'>
+						<h1 class='product_name'>Blanco
+							<div class='price_block'>
+								<span class='price'>$2380 NTD</span>
+							</div>
+						 </h1>
+
+						<p class='product_description'>
+							純淨代表作品。蒸餾製程後靜置兩個月才裝瓶。輕盈順滑的口感，淺淺的柑橘、香草、和龍舌蘭本身的甘甜香味，無論純飲或調酒皆為入門首選。
+						</p>
+						<div class='product_detail'>
+							<ul>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+							</ul>
+						</div>
+
+						<div class='buttom_block'>
+							<a href='#' class='buttom'>
+								READ MORE >>
+							</a>
+							<a href='#' class='buttom'>
+								WHERE TO BUY ?
+							</a>
+						</div>
+
+
+					</section>
+				</article>
+
+
+
+
+
+
+				<article class='product'>
+					<section class='product_img'>
+						<%= image_tag('brand1_tmp/c2.png') %>
+					</section>
+					<section class='product_text'>
+						<h1 class='product_name'>Blanco
+							<div class='price_block'>
+								<span class='price'>$2380 NTD</span>
+							</div>
+						 </h1>
+
+						<p class='product_description'>
+							純淨代表作品。蒸餾製程後靜置兩個月才裝瓶。輕盈順滑的口感，淺淺的柑橘、香草、和龍舌蘭本身的甘甜香味，無論純飲或調酒皆為入門首選。
+						</p>
+						<div class='product_detail'>
+							<ul>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+								<li>
+									<span class='title'>AGAVE :</span>
+									100% Highland Blue Agave, aged 7-9 years, hand cut
+								</li>
+							</ul>
+						</div>
+
+						<div class='buttom_block'>
+							<a href='#' class='buttom'>
+								READ MORE >>
+							</a>
+							<a href='#' class='buttom'>
+								WHERE TO BUY ?
+							</a>
+						</div>
+
+
+					</section>
+				</article> -->
+
+<%# end %>				
+			</section>
+
+
+		</div>
+
+
+	</section>
+		<section class='main_visual'>
+			
+			<% if @admin_brand.main_visual2.present? %>
+				<%= image_tag(@admin_brand.main_visual2.verylarge.url) %>
+			<% else %>
+				<%= image_tag('banner8.jpg') %>
+			<% end %>
+		</section>
+
+	<%= render :partial => 'shared/where_block' %>
+	
+</div>
+
+<script type="text/javascript">
+	  
+	  $(document).ready(function(){
+
+
+
+	  	var body = $("html, body");
+	  	var to_show_height =$(window).height()-($(window).height()*0.1)
+	  	$('.drop_down_block').click(function(event) {
+	  		body.animate({scrollTop:to_show_height}, '1500', 'swing', function() { 
+			   
+			});
+	  	});
+
+	  	
+	  	if ($(window).width() > 768) {
+		  	$("article.product section.product_text").each(function() {
+		  		if ($(this).height() < $(this).parent().find(".product_img").height()){
+			  		$(this).height($(this).parent().find(".product_img").height());
+		  		}else{
+		  			$(this).height($(this).height()+130);
+		  		}
+
+			});
+	  	}
+		$(window).resize(function(){
+		  	if ($(window).width() < 768) {
+	  			$("article.product section.product_text").each(function() {
+				  $(this).height("");
+				});
+		  	}else {
+			  	$("article.product section.product_text").each(function() {
+				  	$(this).height($(this).parent().find(".product_img").height());
+				});
+		  	}
+		});
+	  });
+</script>

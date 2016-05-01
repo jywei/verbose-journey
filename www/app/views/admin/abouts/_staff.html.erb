@@ -1,0 +1,27 @@
+<!-- <div class="form-group">
+	<%= f.label '創辦人姓名' %><br>
+	<%= f.text_field :name, :class => "form-control" %>
+</div>
+<div class="form-group">
+	<%= f.label '創辦人職稱' %><br>
+	<%= f.text_field :office, :class => "form-control" %>
+</div>
+<div class="form-group">
+	<%= f.label '創辦人標語' %><br>
+	<%= f.text_field :slogan, :class => "form-control" %>
+</div>
+<div class="form-group">
+	<%= f.label '創辦人標語2' %><br>
+	<%= f.text_field :slogan2, :class => "form-control" %>
+</div> -->
+<div class="form-group">
+	<%= f.label '創辦人故事' %><br>
+	<%#= f.cktext_area :content, :ckeditor => {:toolbar => 'mini'} %>
+	<%= f.text_area :content, :class => "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label '照片' %><br>
+	<%= image_tag(@admin_about.staff.photo.thumb.url) %>
+	<%= f.file_field :photo %>
+</div>

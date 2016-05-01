@@ -1,0 +1,29 @@
+<h1>資訊管理    <%= link_to '新增資訊', new_admin_info_path, :class => 'btn btn-success' %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>標題</th>
+      <th>內容</th>
+      <!-- <th>Link url</th> -->
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_infos.each do |admin_info| %>
+      <tr>
+        <td><%= admin_info.title %></td>
+        <td><%= admin_info.content %></td>
+        <!-- <td><%= admin_info.link_url %></td> -->
+        <!-- <td><%= link_to 'Show', admin_info %></td> -->
+        <td><%= link_to '編輯', edit_admin_info_path(admin_info), :class => "btn btn-info" %></td>
+        <td><%= link_to '刪除', admin_info, method: :delete, data: { confirm: '確定要刪除?' }, :class => "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

@@ -1,0 +1,104 @@
+ 	<div class='yield_wrapper verification_yield'>
+            		<div class="main_visual_wapper">
+            			<% if @main_visials_verification.present? || @phone_main_visials_verification.present?  %>
+				<div class="pc_main_visual_verification">
+					<div class="main_visual_banner" style="">
+					</div>
+	            				<% @main_visials_verification.each do |image| %>
+						<div class="main_visual_banner" style="background-image: url('<%=  image.file.verylarge.url %>');">
+						</div>
+					<% end %>
+				</div>
+				<div class="phone_main_visual_verification">
+					<div class="main_visual_banner" style="">
+					</div>
+					<% @phone_main_visials_verification.each do |image| %>
+						<div class="main_visual_banner" style="background-image: url('<%=  image.file.fill_phone_image.url %>');">
+						</div>
+					<% end %>
+				</div>
+			<% else %>
+				<div class="pc_main_visual_verification">
+					<div class="main_visual_banner" style="">
+					</div>
+				</div>
+				<div class="phone_main_visual_verification">
+					<div class="main_visual_banner" style="">
+					</div>
+				</div>
+			<% end %>
+			<% if @admin_site_config.main_visual_logo_is_show %>
+				<div class="logo">
+					<%= image_tag("logo/w6.png")  %>
+				</div>
+			<% end %>
+		</div>
+            </div> 
+
+<div class="verification_wrapper" data-old="<%= @old_is_over_18 %>">
+	<div class="cover">
+		<article>
+			<div class="logo">
+				<%= image_tag("logo/w6.png") %>
+			</div>
+			<section>
+				<h5>請確認您的年齡</h5>
+				<p>Please enter your date of birth</p>
+			</section>
+			<div class="check_form">
+				<%= form_tag('/home/verification', method: :post, remote: true, :id => "verification_form") do |f| %>
+					<div class="error_message"></div>
+					<div class="date">
+						<%= select_date(Time.now ,:start_year => 1920,:end_year => Time.now.strftime("%Y").to_i) %>
+					</div>
+					<div class="remember">
+						<%= check_box_tag 'remember' %> Remember Me
+					</div>
+					<br/>
+					<%= submit_tag 'ENTER' %>
+				<% end %>
+			</div>
+		</article>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		if ($(window).width() > 1080) {
+			$('#verification_form select').selectmenu();
+		}
+
+
+		if ($(".verification_wrapper").data("old") == false) {
+			$(".verification_wrapper").show();
+			// $(".layout_main_contain").hide();
+			$(".yield_wrapper.verification_yield").show();
+
+			$(".layout_main_contain").css("opacity", 0);
+			$(".layout_main_contain").css("height", 0);
+			$(".layout_main_contain").css("overflow", "hidden");
+		}else{
+			$(".verification_wrapper").hide();
+			// $(".layout_main_contain").show();
+			$(".yield_wrapper.verification_yield").hide();
+
+			$(".layout_main_contain").css("opacity", 1);
+			$(".layout_main_contain").css("height", "");
+			$(".layout_main_contain").css("overflow", "");
+		}
+
+		$('#verification_form').bind('ajax:complete', function(xhr, status){
+			if (status.responseText == "success"){
+				$(".verification_wrapper").fadeOut();
+				// $(".layout_main_contain").show();
+				$(".yield_wrapper.verification_yield").fadeOut();
+				
+				$(".layout_main_contain").css("opacity", 1);
+				$(".layout_main_contain").css("height", "");
+				$(".layout_main_contain").css("overflow", "");
+			}else if(status.responseText == "error"){
+				$(".error_message").html("您尚未滿18歲");
+			}
+		});
+	});
+</script>

@@ -1,0 +1,184 @@
+<%= form_for(@admin_og_main_page) do |f| %>
+  <% if @admin_og_main_page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_og_main_page.errors.count, "error") %> prohibited this admin_og_main_page from being saved:</h2>
+
+      <ul>
+      <% @admin_og_main_page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <br />
+  <h3>Home</h3>
+  <div class="form-group">
+    <%= f.label :home_title, 'Home_OG標題' %><br>
+    <%= f.text_field :home_title, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :home_description, 'Home_OG內容' %><br>
+    <%= f.text_area :home_description, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :home_image, 'Home_OG主視覺 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.home_image.thumb.url) %>
+    <%= f.file_field :home_image %>
+  </div>
+  <div class="form-group">
+    <%= f.label :home_image2, 'Home_OG主視覺2 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.home_image2.thumb.url) %>
+    <%= f.file_field :home_image2 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :home_image3, 'Home_OG主視覺3 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.home_image3.thumb.url) %>
+    <%= f.file_field :home_image3 %>
+  </div>
+
+
+  <br />
+  <br />
+  <h3>About</h3>
+  <div class="form-group">
+    <%= f.label :about_title, 'About_OG標題' %><br>
+    <%= f.text_field :about_title, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :about_description, 'About_OG內容' %><br>
+    <%= f.text_area :about_description, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :about_image, 'About_OG主視覺 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.about_image.thumb.url) %>
+    <%= f.file_field :about_image %>
+  </div>
+  <div class="form-group">
+    <%= f.label :about_image2, 'About_OG主視覺2 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.about_image2.thumb.url) %>
+    <%= f.file_field :about_image2 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :about_image3, 'About_OG主視覺3 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.about_image3.thumb.url) %>
+    <%= f.file_field :about_image3 %>
+  </div>
+
+
+  <br />
+  <br />
+  <h3>Contact</h3>
+  <div class="form-group">
+    <%= f.label :contact_title, 'Contact_OG標題' %><br>
+    <%= f.text_field :contact_title, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_description, 'Contact_OG內容' %><br>
+    <%= f.text_area :contact_description, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_image, 'Contact_OG主視覺 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.contact_image.thumb.url) %>
+    <%= f.file_field :contact_image %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_image2, 'Contact_OG主視覺2 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.contact_image2.thumb.url) %>
+    <%= f.file_field :contact_image2 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_image3, 'Contact_OG主視覺3 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.contact_image3.thumb.url) %>
+    <%= f.file_field :contact_image3 %>
+  </div>
+
+
+  <br />
+  <br />
+  <h3>Store</h3>
+  <div class="form-group">
+    <%= f.label :store_title, 'Store_OG標題' %><br>
+    <%= f.text_field :store_title, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :store_description, 'Store_OG內容' %><br>
+    <%= f.text_area :store_description, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :store_image, 'STORE_OG主視覺 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.store_image.thumb.url) %>
+    <%= f.file_field :store_image %>
+  </div>
+  <div class="form-group">
+    <%= f.label :store_image2, 'STORE_OG主視覺2 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.store_image2.thumb.url) %>
+    <%= f.file_field :store_image2 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :store_image3, 'STORE_OG主視覺3 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.store_image3.thumb.url) %>
+    <%= f.file_field :store_image3 %>
+  </div>
+
+
+  <br />
+  <br />
+  <h3>News</h3>
+  <div class="form-group">
+    <%= f.label :news_title, 'News_OG標題' %><br>
+    <%= f.text_field :news_title, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :news_description, 'News_OG內容' %><br>
+    <%= f.text_area :news_description, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :news_image, 'News_OG主視覺 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.news_image.thumb.url) %>
+    <%= f.file_field :news_image %>
+  </div>
+  <div class="form-group">
+    <%= f.label :news_image2, 'News_OG主視覺2 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.news_image2.thumb.url) %>
+    <%= f.file_field :news_image2 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :news_image3, 'News_OG主視覺3 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.news_image3.thumb.url) %>
+    <%= f.file_field :news_image3 %>
+  </div>
+
+
+  <br />
+  <br />
+  <h3>Brand</h3>
+  <div class="form-group">
+    <%= f.label :brand_title, 'Brand_OG標題' %><br>
+    <%= f.text_field :brand_title, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :brand_description, 'Brand_OG內容' %><br>
+    <%= f.text_area :brand_description, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :brand_image, 'Brand_OG主視覺 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.brand_image.thumb.url) %>
+    <%= f.file_field :brand_image %>
+  </div>
+  <div class="form-group">
+    <%= f.label :brand_image2, 'Brand_OG主視覺2 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.brand_image2.thumb.url) %>
+    <%= f.file_field :brand_image2 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :brand_image3, 'Brand_OG主視覺3 (2:1) (1200 * 628)' %><br>
+    <%= image_tag(@admin_og_main_page.brand_image3.thumb.url) %>
+    <%= f.file_field :brand_image3 %>
+  </div>
+
+  <br />
+  <div class="actions">
+    <%= f.submit 'OG 更新', :class => "btn btn-primary btn-full" %>
+  </div>
+<% end %>

@@ -1,0 +1,339 @@
+<style type="text/css" media="screen">
+			body{
+				background-color: #111;
+			}
+			/* I wanted to center my loader */
+			#cycle-loader {
+				height:32px;
+				left:50%;
+				margin:-8px 0 0 -8px;
+				position:absolute;
+				top:50%;
+				width:32px;
+				z-index:98;
+			}
+			
+			/*I want to avoid jumpiness as the JS loads, so I initially hide my cycle*/
+			#maximage {
+				display:none;/* Only use this if you fade it in again after the images load */
+				position:fixed !important;
+			}
+			
+			/*Set my gradient above all images*/
+			#gradient {
+				left:0;
+				height:100%;
+				position:absolute;
+				top:0;
+				width:100%;
+				z-index:98;
+			}
+			
+			/*Set my logo in bottom left*/
+			#logo {
+				bottom:30px;
+				height:auto;
+				left:30px;
+				position:absolute;
+				width:34%;
+				z-index:99;
+			}
+			#logo img {
+				width:100%;
+			}
+			
+			#arrow_left, #arrow_right {
+				bottom:30px;
+				height:67px;
+				position:absolute;
+				right:30px;
+				width:36px;
+				z-index:99;
+			}
+			#arrow_left {
+				right:86px;
+			}
+			
+			#arrow_left:hover, #arrow_right:hover {
+				bottom:29px;
+			}
+			#arrow_left:active, #arrow_right:active {
+				bottom:28px;
+			}
+			
+			a {color:#666;text-decoration:none;}
+			a:hover {text-decoration:underline;}
+			
+			
+			.light-text {color:#ddd;text-shadow: 0 1px 0 #666;}
+			.smaller-text {font-size:30px;}
+			.youtube-video, video {
+				left:0;
+				position:absolute;
+				top:0;
+			}
+		</style>
+		
+
+
+<div class='brand4_wrapper'>
+
+	<div class='maximage_wrapper blink_animation' id="arrow" style="zoom: 1;">
+		<a href="" id="arrow_left">
+			<%= image_tag('arrow_left.png') %>
+		</a>
+		<a href="" id="arrow_right">
+			<%= image_tag('arrow_right.png') %>
+		</a>
+	</div>
+		<div id="maximage">
+				<div>
+					<%= image_tag('agarwood/1.jpg') %>
+					<div class="in-slide-content content1" style="display:none;">
+						<p class='en'>
+							Aquilania Agallocha is a valuable Chinese medichine, a rare high class scent, and the tribute and sacred object in religion.
+						</p>
+						
+						<p class='title phone_title'> 沉香酒 </p>
+						<p class='ch'>
+							沉香酒既是名貴中草藥材，也是稀有高級香料，更是宗教界修行之貢品，聖物，聖經舊約也有沉香做成香水的記載。
+						</p>
+						<p class='title'> 沉香酒 </p>
+						<p class='title2'>Agarwood Wine</p>
+						<p class='more'>| 詳細資料 |</p>
+					</div>
+					<div class="in-slide-content content2" style="display:none;">
+						<p>Country of Origin : Vietnam</p>
+						<p>Processing Country : Taiwan</p>
+						<p>Content : 1000ml</p>
+						<p>Alcohol : 72%、66%</p>
+						<p>Bottle : Made in Taiwan</p>
+						<p>原料產地 : 越南</p>
+						<p>加工製造地 : 台灣</p>
+						<p>內容量 : 1000ml</p>
+						<p>酒精濃度 : 72%、66%</p>
+						<p>瓶身 : 台灣製</p>
+						
+					</div>
+				</div>
+				<div>
+					<%= image_tag('agarwood/3.jpg') %>
+					<div class="in-slide-content content1" style="display:none;">
+						<p class='en'>
+							Aquilania Agallocha is a valuable Chinese medichine, a rare high class scent, and the tribute and sacred object in religion.
+						</p>
+						
+						<p class='title phone_title'> 沉香酒 </p>
+						<p class='ch'>
+							沉香酒既是名貴中草藥材，也是稀有高級香料，更是宗教界修行之貢品，聖物，聖經舊約也有沉香做成香水的記載。
+						</p>
+						<p class='title'> 沉香酒 </p>
+						<p class='title2'>Agarwood Wine</p>
+						<p class='more'>| 詳細資料 |</p>
+					</div>
+					<div class="in-slide-content content2" style="display:none;">
+						<p>Country of Origin : Vietnam</p>
+						<p>Processing Country : Taiwan</p>
+						<p>Content : 1000ml</p>
+						<p>Alcohol : 72%、66%</p>
+						<p>Bottle : Made in Taiwan</p>
+						<p>原料產地 : 越南</p>
+						<p>加工製造地 : 台灣</p>
+						<p>內容量 : 1000ml</p>
+						<p>酒精濃度 : 72%、66%</p>
+						<p>瓶身 : 台灣製</p>
+						
+					</div>
+				</div>
+				<div>
+					<%= image_tag('agarwood/2.jpg') %>
+					<div class="in-slide-content content1" style="display:none;">
+						<p class='en'>
+							Aquilania Agallocha is a valuable Chinese medichine, a rare high class scent, and the tribute and sacred object in religion.
+						</p>
+							
+						<p class='title phone_title'> 沉香酒 </p>
+						<p class='ch'>
+							沉香酒既是名貴中草藥材，也是稀有高級香料，更是宗教界修行之貢品，聖物，聖經舊約也有沉香做成香水的記載。
+						</p>
+						<p class='title'> 沉香酒 </p>
+						<p class='title2'>Agarwood Wine</p>
+						<p class='more'>| 詳細資料 |</p>
+					</div>
+					<div class="in-slide-content content2" style="display:none;">
+						<p>Country of Origin : Vietnam</p>
+						<p>Processing Country : Taiwan</p>
+						<p>Content : 1000ml</p>
+						<p>Alcohol : 72%、66%</p>
+						<p>Bottle : Made in Taiwan</p>
+						<p>原料產地 : 越南</p>
+						<p>加工製造地 : 台灣</p>
+						<p>內容量 : 500ml</p>
+						<p>酒精濃度 : 72%、66%</p>
+						<p>瓶身 : 台灣製</p>
+						
+					</div>
+				</div>
+				
+
+		</div>
+	</div>	
+
+
+
+
+	<section id='margin_ta' class='fixed'>
+		<div class='brand4_container'>
+			
+		</div>
+	</section>
+	<%= render :partial => 'shared/where_block' %>
+	
+
+
+<script type="text/javascript" charset="utf-8">
+  var address_bar_height = 0;
+  $(document).ready(function(){
+
+
+
+
+
+  		var responsive_b4 = function(){
+	  		var window_height = $(window).height();
+	  		if (detectmob()){
+	  			if (address_bar_height == 0) {
+	  				address_bar_height = window.screen.height -$(window).height();
+	  			}
+				window_height = window.screen.height - address_bar_height; 
+
+				$("#maximage").css("max-height",window_height);
+				$("#maximage .mc-image").css("max-height",window_height);
+	  		}
+	  		$('#margin_ta').css('margin-top',window_height);
+
+	  		 if ($(window).width() < 700) {
+	  		 	$('p.en').hide();
+	  		 	$('.content2').hide();
+	  		 	$('.title2').hide();
+	  		 }else{
+	  		 	$('p.en').show();
+	  		 	$('.content2').show();
+	  		 	$('.title2').show();
+	  		 }
+
+	  		 if ($(window).width() < 700) {
+	  		 	$('.title').hide();
+	  		 	$('.phone_title').show();
+	  		 	$('.more').show();
+	  		 }else{
+	  		 	$('.title').show();
+	  		 	$('.phone_title').hide();
+	  		 	$('.more').hide();
+	  		 }
+
+	  		 if ($(window).width() > 1440) {
+	  		 	$("#arrow_left").css("height","100vh");
+	  		 	$("#arrow_left").css("width","20%");
+	  		 	$("#arrow_left").css("left","30%");
+	  		 	$("#arrow_right").css("height","100vh");
+	  		 	$("#arrow_right").css("width","20%");
+	  		 	$("#arrow_right").css("right","30%");
+
+	  		 	$("#arrow_left img").css("margin-top","45vh");
+	  		 	$("#arrow_left img").css("float","left");
+	  		 	$("#arrow_right img").css("margin-top","45vh");
+	  		 	$("#arrow_right img").css("float","right");
+	  		 }else {
+	  		 	$("#arrow_left").css("height","");
+	  		 	$("#arrow_left").css("width","");
+	  		 	$("#arrow_left").css("left","");
+	  		 	$("#arrow_right").css("height","");
+	  		 	$("#arrow_right").css("width","");
+	  		 	$("#arrow_right").css("right","");
+
+	  		 	$("#arrow_left img").css("margin-top","");
+	  		 	$("#arrow_left img").css("float","");
+	  		 	$("#arrow_right img").css("margin-top","");
+	  		 	$("#arrow_right img").css("float","");
+
+	  		 }
+
+	  	};
+
+
+		responsive_b4();
+	  	$(window).resize(function(){
+	  		responsive_b4();
+	  	});
+
+
+
+
+			$(function(){
+				$('#maximage').maximage({
+					cycleOptions: {
+						fx: 'fade',
+						speed: 1000, // Has to match the speed for CSS transitions in jQuery.maximage.css (lines 30 - 33)
+						timeout: 0,
+						prev: '#arrow_left',
+						next: '#arrow_right',
+						pause: 1,
+						before: function(last,current){
+							// if(!$.browser.msie){
+							// 	// Start HTML5 video when you arrive
+							// 	if($(current).find('video').length > 0) $(current).find('video')[0].play();
+							// }
+						},
+						after: function(last,current){
+							// if(!$.browser.msie){
+							// 	// Pauses HTML5 video when you leave it
+							// 	if($(last).find('video').length > 0) $(last).find('video')[0].pause();
+							// }
+						}
+					},
+					onFirstImageLoaded: function(){
+						jQuery('#cycle-loader').hide();
+						jQuery('#maximage').fadeIn('fast');
+					}
+				});
+	
+				// Helper function to Fill and Center the HTML5 Video
+				jQuery('video,object').maximage('maxcover');
+	
+				// To show it is dynamic html text
+				if ($(window).width() > 700) {
+					jQuery('.in-slide-content').delay(1000).fadeIn();
+				}else{
+					jQuery('.content1').delay(1000).fadeIn();
+					$('.content2').hide();
+	  		 		$('.title2').hide();
+	  		 		$('.more').click(function() {
+				  		$('.content1').addClass('more_info');
+				  		$('.content2').show();
+				  		$('.content2').addClass('more_info2');
+
+				  		$('.more').hide();
+				  	});
+
+				  	$('#arrow_right').click(function() {
+				  		$('.content1').removeClass('more_info');
+				  		$('.content2').hide();
+				  		$('.content2').removeClass('more_info2');
+
+				  		$('.more').show();
+				  	});
+
+				  	$('#arrow_left').click(function() {
+				  		$('.content1').removeClass('more_info');
+				  		$('.content2').hide();
+				  		$('.content2').removeClass('more_info2');
+
+				  		$('.more').show();
+				  	});
+				}
+			});
+
+  });
+		</script>
+		

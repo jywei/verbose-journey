@@ -1,0 +1,59 @@
+<h1>Listing admin_og_main_pages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Home title</th>
+      <th>Home description</th>
+      <th>Home image</th>
+      <th>About title</th>
+      <th>About description</th>
+      <th>About image</th>
+      <th>Contact title</th>
+      <th>Contact description</th>
+      <th>Contact image</th>
+      <th>Store title</th>
+      <th>Store description</th>
+      <th>Store image</th>
+      <th>News title</th>
+      <th>News description</th>
+      <th>News image</th>
+      <th>Brand title</th>
+      <th>Brand description</th>
+      <th>Brand image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_og_main_pages.each do |admin_og_main_page| %>
+      <tr>
+        <td><%= admin_og_main_page.home_title %></td>
+        <td><%= admin_og_main_page.home_description %></td>
+        <td><%= admin_og_main_page.home_image %></td>
+        <td><%= admin_og_main_page.about_title %></td>
+        <td><%= admin_og_main_page.about_description %></td>
+        <td><%= admin_og_main_page.about_image %></td>
+        <td><%= admin_og_main_page.contact_title %></td>
+        <td><%= admin_og_main_page.contact_description %></td>
+        <td><%= admin_og_main_page.contact_image %></td>
+        <td><%= admin_og_main_page.store_title %></td>
+        <td><%= admin_og_main_page.store_description %></td>
+        <td><%= admin_og_main_page.store_image %></td>
+        <td><%= admin_og_main_page.news_title %></td>
+        <td><%= admin_og_main_page.news_description %></td>
+        <td><%= admin_og_main_page.news_image %></td>
+        <td><%= admin_og_main_page.brand_title %></td>
+        <td><%= admin_og_main_page.brand_description %></td>
+        <td><%= admin_og_main_page.brand_image %></td>
+        <td><%= link_to 'Show', admin_og_main_page %></td>
+        <td><%= link_to 'Edit', edit_admin_og_main_page_path(admin_og_main_page) %></td>
+        <td><%= link_to 'Destroy', admin_og_main_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Og main page', new_admin_og_main_page_path %>

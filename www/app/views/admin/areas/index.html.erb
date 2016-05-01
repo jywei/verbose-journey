@@ -1,0 +1,25 @@
+<h1>地區管理    <%= link_to '新增地區', new_admin_area_path, :class => 'btn btn-success' %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>城市</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_areas.each do |admin_area| %>
+      <tr>
+        <td><%= admin_area.city %></td>
+        <!-- <td><%= link_to 'Show', admin_area %></td> -->
+        <td><%= link_to '編輯', edit_admin_area_path(admin_area), :class => "btn btn-info" %></td>
+        <td><%= link_to '刪除', admin_area, method: :delete, data: { confirm: '確定要刪除?' }, :class => "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

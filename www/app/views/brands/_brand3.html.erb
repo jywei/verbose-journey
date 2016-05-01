@@ -1,0 +1,309 @@
+<style type="text/css">
+	.product_wrapper3 {
+		width: 100%;
+	}
+</style>
+<div class='brand3_wrapper'>
+			<div class='bg_top'>
+				<% if @admin_brand.main_visual2.present? %>
+					<%= image_tag(@admin_brand.main_visual2.verylarge.url) %>
+				<% else %>
+					<%= image_tag('cb/bg_top.png') %>
+				<% end %>
+			</div>
+<!-- 	<section class='main_visual'>
+		<% if @admin_brand.main_visual.present? %>
+			<%= image_tag(@admin_brand.main_visual.verylarge.url) %>
+		<% else %>
+			<%= image_tag('brand1_banner_2.png') %>
+		<% end %>		
+	</section> -->
+	<section class='fixed'>
+		<div class='brand3_container'>
+			<div class='logo'>
+				<%#= image_tag('cb/logo.png') %>
+				<%= image_tag(@admin_brand.image_of_logo.medium.url) %>
+				<h3><%= @admin_brand.title_1 %></h3>
+			</div>
+			<div id="wrap">
+				<div id="showcase">
+					<% if @admin_brand.products.present? %>
+						<% @admin_brand.products.each do |product| %>
+							<%= image_tag(product.main_visual.large.url, :class=>'cloud9-item', :alt=>"#{product.name}", :show_id=>"#{product.id}") %>
+						<% end %>
+						<div class="nav nav_left">
+							<button class="left"><%= image_tag('arrow_black_left.png') %></button>
+						</div>
+						<div class="nav nav_right">
+							<button class="right"><%= image_tag('arrow_black_right.png') %></button>
+						</div>
+					<% end %>
+					<%#= image_tag('cb/1.png', :class=>'cloud9-item', :alt=>'Merlot', :show_id=>'1') %>
+					<%#= image_tag('cb/2.png', :class=>'cloud9-item', :alt=>'PETITE SIRAH', :show_id=>'2') %>
+					<%#= image_tag('cb/3.png', :class=>'cloud9-item', :alt=>'CHARDONNAY', :show_id=>'3') %>
+					<%#= image_tag('cb/4.png', :class=>'cloud9-item', :alt=>'MOSCATO', :show_id=>'4') %>
+					<!-- <div class="nav">
+						<button class="left">←</button>
+						<button class="right">→</button>
+					</div> -->
+				</div>
+				<p id="item-title"></p>
+				
+				<% if @admin_brand.products.present? %>
+					<% @admin_brand.products.each do |product| %>
+						<div id='p<%= product.id %>' class='product_wrapper3'>
+							<section class='product_text'>
+								<h1 class='product_name'><%= product.name %></h1>
+
+								<div class='product_description'>
+									<%= simple_format(product.title) %>
+								</div>
+								<div class='product_description product_description2'>
+									<%= simple_format(product.title2) %>
+								</div>
+								<div class='product_detail'>
+									<%= simple_format(product.content.gsub(/\r\n?/,"")) %>
+								</div>
+
+								<div class='buttom_block'>
+									
+									<% if product.url_name.present? %>
+										<a href='<%= "/product/#{product.url_name}" %>' class='buttom product_read_more'>
+											READ MORE >>
+										</a>
+									<% else %>
+										<a href='<%= product_path(product.id) %>' class='buttom product_read_more'>
+											READ MORE >>
+										</a>
+									<% end %>
+
+									<a href='/stores?product_id=<%= product.id %>' class='buttom' data-no-turbolink>
+										WHERE TO BUY ?
+									</a>
+								</div>
+
+							</section>
+						</div>
+
+					<% end %>
+				<% end %>
+				<!-- <div id='p1' class='product_wrapper3'>
+					<section class='product_text'>
+						<h1 class='product_name'>Merlot 梅洛</h1>
+
+						<p class='product_description'>
+							精選加州各優質產地的Merlot來釀造，並在葡萄成熟度極高時進行採收，此國際品種於世界各國家有生產，在法國通常用於搭配Cabernet Sauvignon使整體口感更為柔和。加州豐富的陽光與使這邊的Merlot成熟飽滿，足以令自己獨當一面。
+						</p>
+						<p class='product_description'>
+							拜加州豐富的陽光所賜，此款梅洛成熟度非常的高，口感甜美飽滿，酸度低,，充分的表現出Merlot應有的特色，有著成熟的李子與黑莓等香氣. 由於此酒款是混和法國橡木桶與美國橡木桶，因此有著些許的焦糖氣息但又不會過於肥美，一款優質且平衡感非常好的入門酒款
+						</p>
+						<div class='product_detail'>
+							<p>產區：California 美國加州</p>
+							<p>主要品種：Merlot 梅洛</p>
+							<p>酒精度：12.5%</p>
+							<p>內容量：750ml</p>
+							<p>評分：85 (Yes Wine)</p>
+						</div>
+
+						<div class='buttom_block'>
+							<a href='/products/10' class='buttom product_read_more'>
+								READ MORE >>
+							</a>
+							<a href='/stores?product_id=10' class='buttom' data-no-turbolink>
+								WHERE TO BUY ?
+							</a>
+						</div>
+
+					</section>
+				</div>
+				<div id='p2' class='product_wrapper3'>
+					<section class='product_text'>
+						<h1 class='product_name'>PETITE SIRAH</h1>
+
+						<p class='product_description'>
+							精選加州各優質產地的Petite Sirah來釀造，並在葡萄成熟度極高時進行採收，此品種原生種在法國稱為Durif，但歐洲國家較為少見，主要普遍種植於北美與南美洲。這品種十分適合加州的風土條件，並且其釀出來的酒十分反映其風土特色，因此可以說是加州酒的代表性品種。加州豐富的陽光與使這邊的Petite Sirah成熟飽滿，足以令自己獨當一面。
+						</p>
+						<p class='product_description'>
+							開瓶後即可感受到加州酒熱情奔放的特色，十分甜美的藍莓漿與辛香料香氣撲鼻而來，簡單大方不做作的風格非常的討人喜歡。入口柔順到幾乎感受不到任何的單寧，口中只有滿滿的莓果香氣，可以說是一款大家都會喜愛、不酸不澀的討喜酒款。非常適合平時在家與朋友小酌或是帶出去餐廳與大眾一同分享
+						</p>
+						<div class='product_detail'>
+							<p>產區：California 美國加州</p>
+							<p>年份：2012</p>
+							<p>主要品種：Petite Sirah</p>
+							<p>酒精度：12.5%</p>
+							<p>內容量：750ml</p>
+						</div>
+
+						<div class='buttom_block'>
+							<a href='/products/11' class='buttom product_read_more'>
+								READ MORE >>
+							</a>
+							<a href='/stores?product_id=11' class='buttom' data-no-turbolink>
+								WHERE TO BUY ?
+							</a>
+						</div>
+					</section>
+				</div>	
+				<div id='p3' class='product_wrapper3'>
+					<section class='product_text'>
+						<h1 class='product_name'>CHARDONNAY 夏多內</h1>
+
+						<p class='product_description'>
+							精選加州地區的優質Chardonnay葡萄的佳釀。此國際品種於世界各國家有生產，並且忠實地反映出當地的風土特色。此款酒在法國與美國橡木桶發酵熟成5個月再進行混釀以賦予它更為豐富的味道。是一款物超所值的優秀佳釀。
+						</p>
+						<p class='product_description'>
+							沉穩的香氣與輕柔的酒體十分的平易近人，開始時有著淡淡的青蘋果、柑橘香氣，漸漸的熱帶水果的香氣如鳳梨、柿子慢慢的浮現並且伴隨著少許的香草氣息。入口時可感受到豐沛的香瓜、鳳梨等香氣，口感滑潤清脆。
+						</p>
+						<div class='product_detail'>
+							<p>產區: Calfornia加州</p>
+							<p>年份: 2013</p>
+							<p>主要品種: Chardonnay</p>
+							<p>酒精度: 12.5%</p>
+							<p>內容量: 750ml</p>
+							<p>評分: 85 (CT)</p>
+						</div>
+
+						<div class='buttom_block'>
+							<a href='/products/12' class='buttom product_read_more'>
+								READ MORE >>
+							</a>
+							<a href='/stores?product_id=12' class='buttom' data-no-turbolink>
+								WHERE TO BUY ?
+							</a>
+						</div>
+					</section>
+				</div>	
+				<div id='p4' class='product_wrapper3'>
+					<section class='product_text'>
+						<h1 class='product_name'>MOSCATO 蜜思嘉</h1>
+
+						<p class='product_description'>
+							精選加州各優質產地的Moscato來釀造，並在葡萄成熟度極高時進行採收，此國際品種於世界各國家有生產，其中以義大利的Moscato d’Asti最廣為人知，水蜜桃與蜂蜜的香氣為此品種的特色，相較於義大利的Asti 的6%左右的酒精濃度，此款把葡萄裡的糖分轉化至10%酒精，使其飲用起來更為爽口。
+						</p>
+						<p class='product_description'>
+							有別於一般市面上常見的義大利Moscato d’Asti的香甜但缺乏酸度以致容易喝膩。這款酒有著蜜思嘉典型的香氣，如水蜜桃，蜂蜜和玫瑰等香氣。但由於把糖分轉化成酒精的比例拉高，並且有著漂亮的酸度，因此喝起來較易覺得過度甜膩，也使整個酒的架構更為完整。並且在搭餐時，使這款酒與各式辛香料做結合的同時也不易因過甜搶去食材的原味。
+						</p>
+						<div class='product_detail'>
+							<p>產區：California 美國加州</p>
+							<p>年份：2013</p>
+							<p>主要品種：Moscato 蜜思嘉</p>
+							<p>酒精度：10%</p>
+							<p>內容量：750ml</p>
+							<p>獲獎：2014開國酒展千元下酒款最高分</p>
+						</div>
+
+						<div class='buttom_block'>
+							<a href='/products/13' class='buttom product_read_more'>
+								READ MORE >>
+							</a>
+							<a href='/stores?product_id=13' class='buttom' data-no-turbolink>
+								WHERE TO BUY ?
+							</a>
+						</div>
+					</section>
+				</div>	 -->
+
+
+
+			</div>
+		</div>
+	</section>
+	<%= render :partial => 'shared/where_block' %>
+	
+
+	<div class="resize_loading_cover" style="z-index: 9999;position: fixed; height: 100vh; width: 100%;  top: 0;left: 0; background: rgba(0, 0, 0, 0.8); display: none;">
+		<div class="resize_loading_img" style="position: fixed; top: 50vh; width: 100%; text-align: center;">
+			<%= image_tag("loading_wall.gif") %>
+		</div>
+	</div>
+</div>
+
+
+<script>
+    $(function() {
+      var showcase = $("#showcase")
+
+      showcase.Cloud9Carousel( {
+        yPos: 48,
+        yRadius: 15,
+        mirrorOptions: {
+          gap:12,
+          height: 0.7
+        },
+        buttonLeft: $(".nav > .left"),
+        buttonRight: $(".nav > .right"),
+        // autoPlay: false,
+        bringToFront: true,
+        onRendered: showcaseUpdated,
+        onLoaded: function() {
+          showcase.css( 'visibility', 'visible' )
+          showcase.css( 'display', 'none' )
+          showcase.fadeIn( 1500 )
+        }
+      } )
+
+      function showcaseUpdated( showcase ) {
+        
+        var title = $('#item-title').html(
+          // $(showcase.nearestItem()).attr( 'data_d' )
+          $('.cloud9-item').filter(function () { return $(this).css('z-index') == 100 }).attr('alt')
+        )
+        <% if @admin_brand.products.present? %>
+		<% @admin_brand.products.each do |product| %>
+		        if($('.cloud9-item').filter(function () { return $(this).css('z-index') == 100 }).attr('show_id')=='<%= product.id %>'){
+		        	$('.product_wrapper3').hide();
+		        	$('#p<%= product.id %>').fadeIn(800);
+		        }
+		<% end %>
+        <% end %>
+        // if($('.cloud9-item').filter(function () { return $(this).css('z-index') == 100 }).attr('show_id')=='1'){
+        // 	$('.product_wrapper3').hide();
+        // 	$('#p1').fadeIn(800);
+        // }
+        // if($('.cloud9-item').filter(function () { return $(this).css('z-index') == 100 }).attr('show_id')=='2'){
+        // 	$('.product_wrapper3').hide();
+        // 	$('#p2').fadeIn(800);
+        // }
+        // if($('.cloud9-item').filter(function () { return $(this).css('z-index') == 100 }).attr('show_id')=='3'){
+        // 	$('.product_wrapper3').hide();
+        // 	$('#p3').fadeIn(800);
+        // }
+        // if($('.cloud9-item').filter(function () { return $(this).css('z-index') == 100 }).attr('show_id')=='4'){
+        // 	$('.product_wrapper3').hide();
+        // 	$('#p4').fadeIn(800);
+        // }
+        var c = Math.cos((showcase.floatIndex() % 1) * 2 * Math.PI)
+        title.css('opacity', 0.5 + (0.5 * c))
+      }
+
+      // Simulate physical button click effect
+      $('.nav > button').click( function( e ) {
+        var b = $(e.target).addClass( 'down' )
+        setTimeout( function() { b.removeClass( 'down' ) }, 180 )
+      } )
+
+      $(document).keydown( function( e ) {
+        //
+        // More codes: http://www.javascripter.net/faq/keycodes.htm
+        //
+        switch( e.keyCode ) {
+          /* left arrow */
+          case 37:
+            $('.nav > .left').click()
+            break
+
+          /* right arrow */
+          case 39:
+            $('.nav > .right').click()
+        }
+      } );
+
+      var ori_width = $(window).width();
+      $(window).resize(function(){
+      	if (ori_width !=  $(window).width()){
+      		$(".resize_loading_cover").show();
+      		location.reload();
+      	}
+      });
+    });
+  </script> 
