@@ -4979,35 +4979,46 @@ textarea {
 }
 /* Stuck menu styles
 ========================================================*/
-
+/* line 4, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/stuck-menu.css.scss */
 .isStuck {
   z-index: 999;
   position: fixed;
   -webkit-box-shadow: 0 0 4px 0 #000000;
   box-shadow: 0 0 4px 0 #000000;
-  background: asset_path("page1_img1_new.png") ;
+  background: url(/assets/page1_img1_new.png);
   background-repeat: no-repeat;
   background-position: center;
-  
   background-size: cover;
 }
+
+/* line 15, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/stuck-menu.css.scss */
 .isStuck .sf-menu ul {
   padding: 10px;
   background: #777777;
 }
+
+/* line 19, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/stuck-menu.css.scss */
 .isStuck .sf-menu ul li a {
   color: #ffffff;
 }
+
+/* line 22, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/stuck-menu.css.scss */
 .isStuck .sf-menu ul li a:hover {
   color: #1c1c1c;
 }
+
+/* line 25, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/stuck-menu.css.scss */
 .isStuck .sf-menu ul li.sfHover > a {
   color: #1c1c1c;
 }
+
+/* line 28, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/stuck-menu.css.scss */
 .isStuck nav {
   margin-top: 20px;
 }
+
 @media only screen and (max-width: 979px) {
+  /* line 32, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/stuck-menu.css.scss */
   .isStuck {
     display: none !important;
   }
@@ -5264,7 +5275,7 @@ h6 {
 =========================================================*/
 /* line 180, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/style.css.scss */
 #header {
-  background-image: url("/assets/page1_img1_new.png");
+  background-image: url(/assets/page1_img1_new.png);
   padding: 48px 0 93px;
 }
 
@@ -5310,7 +5321,7 @@ h1 a span.first {
 
 /* line 214, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/style.css.scss */
 h1 a span.first:after {
-  background-image: url("/assets/logoicon.png");
+  background-image: url(/assets/logoicon.png);
   background-size: 50px;
   font-family: FontAwesome;
   font-size: 29px;
@@ -5644,7 +5655,7 @@ nav {
   position: fixed;
   -webkit-box-shadow: 0 0 4px 0 #000000;
   box-shadow: 0 0 4px 0 #000000;
-  background: url("/assets/page1_img1_new.png" no-repeat center);
+  background: url(/assets/page1_img1_new.png) no-repeat center;
   background-size: cover;
 }
 
@@ -5732,25 +5743,25 @@ nav {
 /* line 528, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/style.css.scss */
 .banner2.banner2__inset1 {
   padding: 234px 0 257px;
-  background-image: url("/assets/page1_img5.png");
+  background-image: url(/assets/page1_img5.png);
 }
 
 /* line 532, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/style.css.scss */
 .banner2.banner2__inset2 {
   padding: 234px 0 257px;
-  background-image: url("/assets/page1_img6.png");
+  background-image: url(/assets/page1_img6.png);
 }
 
 /* line 536, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/style.css.scss */
 .banner2.banner2__inset3 {
   padding: 234px 0 267px;
-  background-image: url("/assets/page2_img1.png");
+  background-image: url(/assets/page2_img1.png);
 }
 
 /* line 540, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/style.css.scss */
 .banner2.banner2__inset4 {
   padding: 234px 0 263px;
-  background-image: url("/assets/page2_img2.png");
+  background-image: url(/assets/page2_img2.png);
 }
 
 /* line 544, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/style.css.scss */
@@ -5761,7 +5772,7 @@ nav {
 /* line 547, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/style.css.scss */
 .banner2.banner2__inset5 {
   padding: 171px 0 193px;
-  background-image: url("/assets/page2_img3.png");
+  background-image: url(/assets/page2_img3.png);
 }
 
 /* line 551, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/style.css.scss */
@@ -6010,7 +6021,7 @@ nav {
 /* line 725, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/style.css.scss */
 .banner3 {
   padding: 71px 0 81px;
-  background-image: url("/assets/page1_img9.png");
+  background-image: url(/assets/page1_img9.png);
 }
 
 /* line 729, /Users/chenhongfu/rails/opul/www/app/assets/stylesheets/user/style.css.scss */

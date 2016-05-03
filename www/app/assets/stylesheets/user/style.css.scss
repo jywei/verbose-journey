@@ -177,7 +177,7 @@ h6 {
                     HEADER styles
 =========================================================*/
 #header {
-  background-image: url(image-path("page1_img1_new.png"));
+  background-image: asset_url("page1_img1_new.png");
   padding: 48px 0 93px;
   
 }
@@ -211,7 +211,7 @@ h1 a span.first {
   padding-right: 29px;
 }
 h1 a span.first:after {
-  background-image: url(image-path('logoicon.png'));
+  background-image: asset_url('logoicon.png');
   background-size: 50px;
     font-family: FontAwesome;
     font-size: 29px; 
@@ -466,7 +466,7 @@ nav {
   position: fixed;
   -webkit-box-shadow: 0 0 4px 0 #000000;
   box-shadow: 0 0 4px 0 #000000;
-  background: url(image-path("page1_img1_new.png") no-repeat center);
+  background: asset_url("page1_img1_new.png") no-repeat center;
   background-size: cover;
 }
 .isStuck .sf-menu ul {
@@ -526,26 +526,26 @@ nav {
 }
 .banner2.banner2__inset1 {
   padding: 234px 0 257px;
-  background-image: url(image-path("page1_img5.png"));
+  background-image: asset_url("page1_img5.png");
 }
 .banner2.banner2__inset2 {
   padding: 234px 0 257px;
-  background-image: url(image-path("page1_img6.png"));
+  background-image: asset_url("page1_img6.png");
 }
 .banner2.banner2__inset3 {
   padding: 234px 0 267px;
-  background-image: url(image-path("page2_img1.png"));
+  background-image: asset_url("page2_img1.png");
 }
 .banner2.banner2__inset4 {
   padding: 234px 0 263px;
-  background-image: url(image-path("page2_img2.png"));
+  background-image: asset_url("page2_img2.png");
 }
 .banner2.banner2__inset4 .slogan .btn-big {
   margin-top: 43px;
 }
 .banner2.banner2__inset5 {
   padding: 171px 0 193px;
-  background-image: url(image-path("page2_img3.png"));
+  background-image: asset_url("page2_img3.png");
 }
 .banner2.banner2__inset5 h6 {
   font-size: 90px;
@@ -723,7 +723,7 @@ nav {
 /* ======= Banner 3 Team ======= */
 .banner3 {
   padding: 71px 0 81px;
-  background-image: url(image-path("page1_img9.png"));
+  background-image: asset_url("page1_img9.png");
 }
 .banner3 h2 {
   color: #ffffff;
