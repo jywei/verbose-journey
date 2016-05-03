@@ -5,7 +5,7 @@
   position: fixed;
   -webkit-box-shadow: 0 0 4px 0 #000000;
   box-shadow: 0 0 4px 0 #000000;
-  background: image-url("page1_img1_new.png") no-repeat center;
+  background: url("page1_img1_new.png") no-repeat center;
   
   background-size: cover;
 }
