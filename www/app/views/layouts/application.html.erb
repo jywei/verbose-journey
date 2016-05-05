@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
-   <%= favicon_link_tag asset_path('images/favicon.png') %>
+  <%= favicon_link_tag asset_path('images/favicon.ico') %>
   <%= csrf_meta_tags %>
   <meta name="description" content="<%= strip_tags(@meta_description) %>">
   <meta property="og:title" content="<%= @og_title.present? ? @og_title : @title %>" />
@@ -79,7 +79,7 @@
     position: absolute;
 }
 #header.stellar-block{
-       z-index: 5; 
+       z-index: 5;
        /*background-image:none*/
 }
 
@@ -91,11 +91,11 @@
 
 </head>
 <body>
-  
+
   <!-- main_header -->
     <%= render  "layouts/header" %>
   <!-- /main_header -->
-	
+
         	<%= yield %>
 
 	<!-- footer -->

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= @title.present? ? @title : "Direct" %></title>
+  <title><%= @title.present? ? @title : "OpulUnion" %></title>
   <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no">
   <meta name="google-site-verification" content="cshRcGpWZY4upcCD-b21cqq6Kj8OgEBOggStKg1uDFw" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= favicon_link_tag 'logo/ico3.png' %>
+  <%= favicon_link_tag asset_path('images/favicon.ico') %>
   <%= csrf_meta_tags %>
   <meta name="description" content="<%= strip_tags(@meta_description) %>">
   <meta property="og:title" content="<%= @og_title.present? ? @og_title : @title %>" />
@@ -37,16 +37,16 @@
             <!-- main_header -->
                     <%= render  "layouts/header" %>
             <!-- /main_header -->
-                		
+
             	<%= yield %>
 
 	<!-- footer -->
 		<%= render  "layouts/footer" %>
 	<!-- /footer -->
-	
+
               <script type="text/javascript">
 	  var timer;
-	 	var detectmob = function () { 
+	 	var detectmob = function () {
 		 if( navigator.userAgent.match(/Android/i)
 		 || navigator.userAgent.match(/webOS/i)
 		 || navigator.userAgent.match(/iPhone/i)
@@ -110,11 +110,11 @@
 			if($('.small_header nav').hasClass('active')){
 				$('.small_header nav').slideUp(600, function() {
 					$(this).removeClass('active');
-				});    
+				});
 			}else{
 				$('.small_header nav').slideDown(600, function() {
 					$(this).addClass('active');
-				});    
+				});
 			}
 		});
 	  });
@@ -179,7 +179,7 @@
 						$(this).css("opacity",1).dequeue();
 						$(this).css("background-image",$(".pc_main_visual .main_visual_banner").eq(index_main_visual).css("background-image"));
 					});
-					
+
 
 					// $(".main_visual_banner").eq(index_main_visual).css("z-index", -1);
 					// $(".main_visual_banner").eq(tmp_index).css("z-index", -2);
