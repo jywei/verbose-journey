@@ -891,7 +891,7 @@ nav {
   }
 }
 /* ======= Box 7 Gallery ======= */
-.box7 .vimeo-video3 {
+.box7 .egg_pic {
   margin-bottom: 26px;
 }
 .box7 h4 {
@@ -1113,3 +1113,9 @@ nav {
   }
 }
 /*Core variables and mixins*/
+
+.element-item .indent {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+

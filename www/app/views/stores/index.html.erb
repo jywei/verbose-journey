@@ -1,7 +1,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&language=zh-tw"></script>
 <div class="home_wrapper">
 	<section class='fixed'>
-		<%= render :partial => 'shared/brand_block' %>
+		<%#= render :partial => 'shared/brand_block' %>
 	</section>
 </div>
 <script type="text/javascript">
@@ -15,10 +15,10 @@
 	  		}
 
 	  		var window_width = $(window).width();
-	  		if(window_width>1440){
+	  		if(window_width > 1440){
 	  			$('.store_wrapper').height(window_height - 90);
 	  			$('.store_wrapper').css('top',(window_height / 2) - ($(".store_block").height() / 2) - $("#main_header").height());
-	  		}else if(window_width>768){
+	  		}else if(window_width > 768){
 	  			$('.store_wrapper').height(window_height - 90);
 	  			$('.store_wrapper').css('margin-top','');
 
@@ -26,10 +26,10 @@
 				$('.store_wrapper').css('top',(window_height / 2) - ($(".store_block").height() / 2) - $("#main_header").height());
 	  		}else{
 	  			$('.store_wrapper').css('height','');
-	  			$('.store_wrapper').css('margin-top',-1*window_height+50+60);
+	  			$('.store_wrapper').css('margin-top', -1 * window_height + 50 + 60);
 
 	  			var map_width = $('#map-canvas').width();
-				$('#map-canvas').css({'height':map_width+'px'});
+				$('#map-canvas').css({'height':map_width + 'px'});
 				$('.store_wrapper').css('top',"");
 	  		}
 	  	};
