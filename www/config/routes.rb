@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :stores
   resources :subscribes
   resources :products
+  resources :inspections
   mount Ckeditor::Engine => '/ckeditor'
 
   namespace :admin do
