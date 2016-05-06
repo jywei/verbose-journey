@@ -2,6 +2,7 @@
 
 .store_wrapper {
 
+  position: absolute;
   width: 100%;
   top: 24px;
 
@@ -24,7 +25,6 @@
     margin-top: 20px;
 
     .store_block {
-
       @include span(12);
       height: 85%;
       background-color: rgba(0, 0, 0, 0.85);
