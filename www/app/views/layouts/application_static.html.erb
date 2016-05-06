@@ -32,19 +32,16 @@
   </script>
 </head>
 <body>
-
-        <div class="layout_main_contain">
-            <!-- main_header -->
-                    <%= render  "layouts/header" %>
-            <!-- /main_header -->
-
-            	<%= yield %>
-
+  <div class="layout_main_contain">
+  <!-- main_header -->
+    <%= render  "layouts/header" %>
+  <!-- /main_header -->
+    <%= yield %>
 	<!-- footer -->
 		<%= render  "layouts/footer" %>
 	<!-- /footer -->
 
-              <script type="text/javascript">
+  <script type="text/javascript">
 	  var timer;
 	 	var detectmob = function () {
 		 if( navigator.userAgent.match(/Android/i)
@@ -200,8 +197,10 @@
 			$(".yield_wrapper .logo").hide();
 		}
 	</script>
-        </div>
-        <%= render  "layouts/verification" %>
+  </div>
+        <%#= render  "layouts/verification" %>
+
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 
 </body>
 </html>

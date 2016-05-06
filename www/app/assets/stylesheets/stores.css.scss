@@ -1,0 +1,397 @@
+@import "susy_base";
+
+.store_wrapper {
+
+  width: 100%;
+  top: 24px;
+
+  @include susy-breakpoint($max_width_pc){
+  }
+
+  @include susy-breakpoint($max_width_small_pc){
+  }
+
+  @include susy-breakpoint($max_width_pad,$pad){
+    position: relative;
+    top: 0px;
+    margin-bottom: 40px;
+  }
+
+  @include susy-breakpoint($max_width_phone,$phone){
+  }
+  section{
+    margin: 0 auto;
+    margin-top: 20px;
+
+    .store_block {
+
+      @include span(12);
+      height: 85%;
+      background-color: rgba(0, 0, 0, 0.85);
+      max-height: 668px;
+      @include susy-breakpoint($max_width_pc){
+        max-height: 482px;
+      }
+      @include susy-breakpoint($max_width_pad){
+        max-height: 100%;
+      }
+      article {
+        height: 100%;
+        position: relative;
+        h1 {
+          @include span(10);
+          margin-left: span(1) + span(0 wider);
+          margin-right: span(1) + span(0 wider) + span(0 wider);
+
+          color: #fff;
+          font-size: 1.8em;
+          @include susy-breakpoint($max_width_pc){
+          }
+
+          @include susy-breakpoint($max_width_small_pc){
+          }
+
+          @include susy-breakpoint($max_width_pad,$pad){
+            @include span(3);
+          }
+
+          @include susy-breakpoint($max_width_phone,$phone){
+          }
+          small {
+            color: #fff;
+            font-size: 0.6em;
+          }
+        }
+
+        .left {
+          @include span(6);
+          margin-left: span(1) + span(0 wider);
+          margin-right: span(0 wider);
+          height: 70%;
+          @include susy-breakpoint($max_width_pc){
+          }
+
+          @include susy-breakpoint($max_width_small_pc){
+          }
+
+          @include susy-breakpoint($max_width_pad,$pad){
+            @include span(3);
+            min-height: 50px;
+          }
+
+          @include susy-breakpoint($max_width_phone,$phone){
+          }
+          .map {
+            width: 100%;
+            height: 100%;
+            #map-canvas {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        .right {
+          @include span(4);
+          margin-left: span(0 wider);
+          margin-right: span(1) + span(0 wider);
+          height: 70%;
+          @include susy-breakpoint($max_width_pc){
+          }
+
+          @include susy-breakpoint($max_width_small_pc){
+          }
+
+          @include susy-breakpoint($max_width_pad,$pad){
+            @include span(3);
+          }
+
+          @include susy-breakpoint($max_width_phone,$phone){
+          }
+
+          .search {
+            position: relative;
+            height: 55%;
+            margin-bottom: 5%;
+            section {
+              margin-top: 0;
+              height: 100%;
+              form {
+                height: 100%;
+                select {
+                  background-color: #DDDCDD;
+                  width: 100%;
+                  height: 20%;
+                  margin-bottom: 2%;
+                  padding-left: 10px;
+                  @include susy-breakpoint($max_width_pc){
+                  }
+
+                  @include susy-breakpoint($max_width_small_pc){
+                  }
+
+                  @include susy-breakpoint($max_width_pad,$pad){
+                    height:55px;
+                  }
+
+                  @include susy-breakpoint($max_width_phone,$phone){
+                  }
+                }
+                input {
+                  width: 100%;
+                  height: 20%;
+                  background-color: #2F736A;
+                  color: #fff;
+                  border: 0;
+                  @include susy-breakpoint($max_width_pc){
+                  }
+
+                  @include susy-breakpoint($max_width_small_pc){
+                  }
+
+                  @include susy-breakpoint($max_width_pad,$pad){
+                    height:55px;
+                    font-size: 1.5em;
+                  }
+
+                  @include susy-breakpoint($max_width_phone,$phone){
+                  }
+                }
+              }
+            }
+          }
+          .resault {
+            position: relative;
+            height: 40%;
+            border: 1px solid #999;
+            overflow-x: hidden;
+            overflow-y: auto;
+            min-height: 100px;
+            section {
+              @include span(11);
+              margin-left: span(1);
+              margin-top: 5px;
+              header {
+                color: #fff;
+              }
+              span {
+                @include span(10);
+                margin-left: span(2);
+                color: #fff;
+              }
+            }
+          }
+        }
+        footer {
+          @include span(10);
+          margin-left: span(1) + span(0 wider);
+          margin-right: span(1) + span(0 wider) + span(0 wider);
+
+          position: absolute;
+          bottom: 5%;
+          @include susy-breakpoint($max_width_pc){
+          }
+
+          @include susy-breakpoint($max_width_small_pc){
+          }
+
+          @include susy-breakpoint($max_width_pad,$pad){
+            @include span(3);
+            margin-top: 4%;
+            margin-bottom: 2%;
+            position: relative;
+          }
+
+          @include susy-breakpoint($max_width_phone,$phone){
+          }
+          span {
+            color: #fff;
+            font-size: 1.1em;
+          }
+        }
+      }
+
+    }
+  }
+
+}
+
+
+.where_block {
+  background-color: #121212;
+  @include susy-breakpoint($max_width_phone,$phone){
+    display: none;
+  }
+  article.where {
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+    h1 {
+      @include span(12);
+
+      color: #fff;
+      font-size: 2.2em;
+      @include susy-breakpoint($max_width_pc){
+      }
+
+      @include susy-breakpoint($max_width_small_pc){
+      }
+
+      @include susy-breakpoint($max_width_pad,$pad){
+        @include span(3);
+      }
+
+      @include susy-breakpoint($max_width_phone,$phone){
+      }
+      small {
+        color: #fff;
+        font-size: 0.6em;
+      }
+    }
+
+    .left {
+      @include span(8);
+      min-height: 270px;
+      @include susy-breakpoint($max_width_pc){
+      }
+
+      @include susy-breakpoint($max_width_small_pc){
+      }
+
+      @include susy-breakpoint($max_width_pad,$pad){
+        @include span(3);
+        min-height: 50px;
+      }
+
+      @include susy-breakpoint($max_width_phone,$phone){
+      }
+      .map {
+        width: 100%;
+        height: 100%;
+        #map-canvas {
+          width: 100%;
+          height: 100%;
+          min-height: 350px;
+        }
+      }
+    }
+    .right {
+      @include span(4);
+      min-height: 270px;
+      @include susy-breakpoint($max_width_pc){
+      }
+
+      @include susy-breakpoint($max_width_small_pc){
+      }
+
+      @include susy-breakpoint($max_width_pad,$pad){
+        @include span(3);
+        margin-top: 20px;
+      }
+
+      @include susy-breakpoint($max_width_phone,$phone){
+      }
+
+      .search {
+        position: relative;
+        height: 55%;
+        margin-bottom: 20px;
+        section {
+          margin-top: 0;
+          height: 100%;
+          form {
+            height: 100%;
+            select {
+              background-color: #DDDCDD;
+              width: 100%;
+              height: 20%;
+              margin-bottom: 20px;
+              padding-left: 10px;
+              height:40px;
+              @include susy-breakpoint($max_width_pc){
+              }
+
+              @include susy-breakpoint($max_width_small_pc){
+              }
+
+              @include susy-breakpoint($max_width_pad,$pad){
+                height:55px;
+              }
+
+              @include susy-breakpoint($max_width_phone,$phone){
+              }
+            }
+            input {
+              width: 100%;
+              background-color: #2F736A;
+              color: #fff;
+              border: 0;
+              height:40px;
+              @include susy-breakpoint($max_width_pc){
+              }
+
+              @include susy-breakpoint($max_width_small_pc){
+              }
+
+              @include susy-breakpoint($max_width_pad,$pad){
+                height:55px;
+                font-size: 1.5em;
+              }
+
+              @include susy-breakpoint($max_width_phone,$phone){
+              }
+            }
+          }
+        }
+      }
+      .resault {
+        position: relative;
+        border: 1px solid #999;
+        overflow-x: hidden;
+        overflow-y: auto;
+        min-height: 110px;
+        height: 110px;
+        @include susy-breakpoint($max_width_pad,$pad){
+          height: 100%;
+        }
+        section {
+          @include span(11);
+          margin-left: span(1);
+          margin-top: 5px;
+          header {
+            color: #fff;
+          }
+          span {
+            @include span(10);
+            margin-left: span(2);
+            color: #fff;
+          }
+        }
+      }
+    }
+    footer {
+      @include span(12);
+      margin-top: 15px;
+      margin-bottom: 15px;
+      @include susy-breakpoint($max_width_pc){
+      }
+
+      @include susy-breakpoint($max_width_small_pc){
+      }
+
+      @include susy-breakpoint($max_width_pad,$pad){
+        @include span(3);
+        margin-top: 4%;
+        margin-bottom: 2%;
+        position: relative;
+      }
+
+      @include susy-breakpoint($max_width_phone,$phone){
+      }
+      span {
+        color: #fff;
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+

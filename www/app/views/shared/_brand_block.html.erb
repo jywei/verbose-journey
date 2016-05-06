@@ -7,7 +7,7 @@
 			</a>
 		</div>
 		<div class="show_all logo_show">
-			<a class="show_bradns_logo"></a>
+			<a class="show_brands_logo"></a>
 			<%#= link_to('','#', :class => "show_bradns_logo") %>
 		</div>
 	<% else %>
@@ -54,9 +54,9 @@
 	// 		$(".brand_block").toggleClass("show_logos");
 	// 	});
 	// });
-	
-	
-	
+
+
+
 
 	$(document).ready(function(){
 	  	var responsive_brand_home = function(){
@@ -88,7 +88,7 @@
 					// $(".normal_link").show();
 					$(".normal_link").slideDown(600, function() {
 						$(".normal_link").show();
-					});    
+					});
 					$(".logo_link").parent().css("margin-top","");
 					$(".logo_link").parent().css("margin-bottom","");
 					responsive_brand_home();
@@ -98,7 +98,7 @@
 					responsive_brand_home();
 					$(".logo_link").slideDown(600, function() {
 						$(".logo_link").css("display","block");
-					});    
+					});
 					$(".logo_link").parent().css("margin-top",0);
 					$(".logo_link").parent().css("margin-bottom",0);
 				}
