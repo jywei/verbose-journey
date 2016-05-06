@@ -916,15 +916,34 @@ nav {
     .closeButton{
       transition: .7s;
       font-size:30px;
-      top:70px;
-      right:70px;
       position: absolute;
       cursor:pointer;
+      top:60px;
+      right:70px;
+      @media(max-width:480px){
+        top:20px;
+        right:20px;
+      }
     }
     .black_box{
-      position:relative;width:80%;left:10%;top:35%;
+      position:relative;
+      width:80%;
+      left:10%;
+      top:20%;
+      @media(min-width:1200px){
+        top:40%;
+      }
+      @media(max-width:480px){
+        top:5px;
+      }
       h3{color:white;text-align: center;}
-      p{vertical-align:middle;display:table-cell;}
+      p{
+        vertical-align:middle;
+        display:table-cell;
+        font-size: 20px;
+        letter-spacing: 1px;
+        line-height: 25px;
+      }
     }
   }
   .active{
