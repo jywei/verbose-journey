@@ -3,8 +3,8 @@
 <head>
   <title><%= @title.present? ? @title : "OpulUnion" %></title>
   <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no">
-  <meta name="google-site-verification" content="cshRcGpWZY4upcCD-b21cqq6Kj8OgEBOggStKg1uDFw" />
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<!--   <meta name="google-site-verification" content="AIzaSyDB14uf1LKx6Wm1cwBRcET0JHSWeT_j2xA" />
+ -->  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= favicon_link_tag asset_path('images/favicon.ico') %>
   <%= csrf_meta_tags %>
@@ -200,7 +200,9 @@
   </div>
         <%#= render  "layouts/verification" %>
 
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB14uf1LKx6Wm1cwBRcET0JHSWeT_j2xA&callback=initMap">
+  </script>
 
 </body>
 </html>
