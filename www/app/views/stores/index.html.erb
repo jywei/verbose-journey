@@ -108,7 +108,7 @@
 
                 <br>
 
-                <div class="result">
+                <div class="result" id="result">
                   <section>
                     <header>尚未搜尋</header>
                   </section>
@@ -192,22 +192,22 @@
   $(document).ready(function(){
     $('#search_form').on('ajax:success',function(e, data, status, xhr){
       // $('#search_form').text('Done.');
-      $(".result").html("");
+      $("#result").html("");
 
       var tmpPoint = [];
       var centerPoint_x;
       var centerPoint_y;
-      for (i = 0; i< data.length; i++){
+      for (i = 0; i < data.length; i++){
         var tmpStr = "";
         if (data[i]["name"] != "" && data[i]["address"] != "") {
           tmpStr = "<section>";
           tmpStr = tmpStr + "<header>"+ String.fromCharCode(65 + i) + ". "  + data[i]["name"] + "</header>";
-      tmpStr = tmpStr +"<span>- " + data[i]["address"] + "</span>"
+          tmpStr = tmpStr +"<span>- " + data[i]["address"] + "</span>"
           if (data[i]["phone"] != "") {
             tmpStr = tmpStr +"<span>- <a href='tel:" + data[i]["phone"] + "'>" + data[i]["phone"] + "<a></span>"
           }
           tmpStr = tmpStr + "</section>";
-          $( ".result" ).append( tmpStr );
+          $("#result").append(tmpStr);
 
           var twoPoint = [[data[i]["google_map_x"]],[data[i]["google_map_y"]]];
           tmpPoint.push(twoPoint);
@@ -220,7 +220,7 @@
       point_to_map(centerPoint_x, centerPoint_y, tmpPoint);
     }).on('ajax:error',function(e, xhr, status, error){
       var tmpStr = "<section><header>未搜尋到任何結果</header></section>";
-      $( ".result" ).html( tmpStr );
+      $( "#result" ).html( tmpStr );
       point_to_map(default_center_x, default_center_y, point);
     });
   });
