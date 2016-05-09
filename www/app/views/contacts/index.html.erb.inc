@@ -55,9 +55,9 @@
 					<p>Address : <a href="http://maps.google.com/maps?daddr=<%= @admin_site_config.address %>"><%= @admin_site_config.address %></a></p>
 				</section>
 				<section class="contact_form">
-					
+
 					<% if flash[:notice] %>
-						<% if flash[:notice]=="發送成功" %>
+						<% if flash[:notice] == "發送成功" %>
 							<!-- <div class="notice">您的訊息已經發送成功</div> -->
 							<div class="alert alert-success" style="display: none;padding-top: 7px;padding-bottom: 7px;margin-bottom: 10px;">
 							  <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> 發送成功!您的訊息已經成功寄給管理員.

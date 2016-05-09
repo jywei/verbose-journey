@@ -11,10 +11,10 @@
         }
 
         var window_width = $(window).width();
-        if(window_width>1440){
+        if(window_width > 1440){
           $('.store_wrapper').height(window_height - 90);
           $('.store_wrapper').css('top',(window_height / 2) - ($(".store_block").height() / 2) - $("#main_header").height());
-        }else if(window_width>768){
+        }else if(window_width > 768){
           $('.store_wrapper').height(window_height - 90);
           $('.store_wrapper').css('margin-top','');
 
@@ -22,7 +22,7 @@
         $('.store_wrapper').css('top',(window_height / 2) - ($(".store_block").height() / 2) - $("#main_header").height());
         }else{
           $('.store_wrapper').css('height','');
-          $('.store_wrapper').css('margin-top',-1*window_height+50+60);
+          $('.store_wrapper').css('margin-top', -1 * window_height + 50 + 60);
 
           var map_width = $('#map-canvas').width();
         $('#map-canvas').css({'height':map_width+'px'});
@@ -54,7 +54,7 @@
         <div class="grid_5">
           <section class="left">
             <div class="map">
-              <div id="map-canvas" style="width:100%;height:400px;">
+              <div id="map-canvas" style="width:100%; height:400px;">
 
               </div>
             </div>
@@ -108,7 +108,7 @@
 
                 <br>
 
-                <div class="resault">
+                <div class="result">
                   <section>
                     <header>尚未搜尋</header>
                   </section>
@@ -187,17 +187,17 @@
 </script>
 
 
-<!-- search resault -->
+<!-- search result -->
 <script type="text/javascript">
   $(document).ready(function(){
     $('#search_form').on('ajax:success',function(e, data, status, xhr){
       // $('#search_form').text('Done.');
-      $(".resault").html("");
+      $(".result").html("");
 
       var tmpPoint = [];
       var centerPoint_x;
       var centerPoint_y;
-      for (i=0;i< data.length;i++){
+      for (i = 0; i< data.length; i++){
         var tmpStr = "";
         if (data[i]["name"] != "" && data[i]["address"] != "") {
           tmpStr = "<section>";
@@ -207,7 +207,7 @@
             tmpStr = tmpStr +"<span>- <a href='tel:" + data[i]["phone"] + "'>" + data[i]["phone"] + "<a></span>"
           }
           tmpStr = tmpStr + "</section>";
-          $( ".resault" ).append( tmpStr );
+          $( ".result" ).append( tmpStr );
 
           var twoPoint = [[data[i]["google_map_x"]],[data[i]["google_map_y"]]];
           tmpPoint.push(twoPoint);
@@ -220,7 +220,7 @@
       point_to_map(centerPoint_x, centerPoint_y, tmpPoint);
     }).on('ajax:error',function(e, xhr, status, error){
       var tmpStr = "<section><header>未搜尋到任何結果</header></section>";
-      $( ".resault" ).html( tmpStr );
+      $( ".result" ).html( tmpStr );
       point_to_map(default_center_x, default_center_y, point);
     });
   });
