@@ -171,11 +171,14 @@
   }
 
   function set_marker(map, map_point) {
-    for (i = 0; i < map_point.length; i++){
+    for (i = 0; i < 1; i++){
       new google.maps.Marker({
         map: map,
-        position: new google.maps.LatLng(map_point[i][0], map_point[i][1]),
-        icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + String.fromCharCode(65 + i) + '|FF0000|000000'
+        position: new google.maps.LatLng(25.013608, 121.470816),
+        icon: image,
+        shape: shape,
+        title: beach[0],
+        zIndex: beach[3]
       });
     }
   }
