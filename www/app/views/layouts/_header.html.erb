@@ -22,8 +22,8 @@
 
     <nav>
       <ul class="sf-menu common">
-        <li class="current"><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", abouts_path %></li>
+        <li class="<%= current_path(root_path) %>"><%= link_to "Home", root_path %></li>
+        <li class="<%= current_path(abouts_path) %>"><%= link_to "About", abouts_path %></li>
         <!-- <li><a href="index-1.html">About</a> -->
           <!-- <ul>
             <li><a href="#">Lorem ipsum dolor</a></li>
@@ -39,15 +39,15 @@
         </li>
 
         <!-- <li><%= link_to "Product", products_path, :class=>'commingsoon_alert' %></li> -->
-        <li><%= link_to "Product", products_path %></li>
+        <li class="<%= current_path(products_path) %>"><%= link_to "Product", products_path %></li>
         <!-- <li><a href="#" class='commingsoon_alert' onclick="alert('CommingSoon..資料上傳中')">Product</a></li> -->
 
-        <li><%= link_to "Inspection", inspections_path %></li>
+        <li class="<%= current_path(inspections_path) %>"><%= link_to "Inspection", inspections_path %></li>
 
-        <li><%= link_to "News", news_index_path %></li>
-        <li><%= link_to "Contacts", contacts_path %></li>
+        <li class="<%= current_path(news_index_path) %>"><%= link_to "News", news_index_path %></li>
+        <li class="<%= current_path(contacts_path) %>"><%= link_to "Contacts", contacts_path %></li>
 
-        <li><%= link_to "Where To Buy", stores_path %></li>
+        <li class="<%= current_path(stores_path) %>"><%= link_to "Where To Buy", stores_path %></li>
         <!-- <li><a href="#" class='commingsoon_alert' onclick="alert('CommingSoon..資料上傳中')">Where to buy</a></li> -->
       </ul>
       <div class="clearfix"></div>
