@@ -63,43 +63,16 @@
           <div class="search">
             <section>
               <%= form_tag('/stores/search', :id => 'search_form', method: :post, remote: true) do %>
-              <%#= form_tag({:controller => "stores", :action => "search"}, :method => "post") do %>
                 <label class="map_w wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                  <!-- <input type="text" name="name" placeholder="Name*:" data-constraints="@Required @JustLetters"/>
-                  <span class="empty-message">*This field is required.</span> -->
                   <%= select_tag "brand", options_from_collection_for_select(Admin::Brand.where(:is_public => true), "id", "select_name", @brand_id), include_blank: false %>
                 </label>
                 <label class="map_w wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                  <!-- <input type="text" name="email" placeholder="Email*:" value=""
-                         data-constraints="@Required @Email"/>
-                  <span class="empty-message">*This field is required.</span>
-                  <span class="error-message">*This is not a valid email.</span> -->
                   <%= grouped_collection_select( :product, :id, Admin::Brand.order('name'), :products, "select_name", :id, "select_name" ) %>
                 </label>
                 <label class="map_w wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
-                  <!-- <input type="text" name="phone" placeholder="Phone:" value=""
-                         data-constraints="@JustNumbers"/>
-                  <span class="empty-message">*This field is required.</span>
-                  <span class="error-message">*This is not a valid phone.</span> -->
                   <%= select_tag "area", options_from_collection_for_select(Admin::Area.all, "id", "select_name"), include_blank: false %>
                 </label>
-
-<!--               <div class="row">
-              <div class="grid_6"></div>
-              <div class="grid_5">
-                <label class="message wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                  <textarea name="message" placeholder="Message:"
-                            data-constraints='@Required @Length(min=20,max=999999)'></textarea>
-                  <span class="empty-message">*This field is required.</span>
-                  <span class="error-message">*The message is too short.</span>
-                </label>
-              </div>
-            </div> -->
-            <!-- <label class="recaptcha"><span class="empty-message">*This field is required.</span></label> -->
-
                 <div class="contact-form-buttons">
-            <!-- <a href="#" data-type="submit" class="btn-filled wow fadeIn" data-wow-duration="1s"
-               data-wow-delay="0.5s">Send</a> -->
                   <%= submit_tag 'Search', class: "btn-filled wow fadeIn"%>
                 </div>
               <% end %>
@@ -109,11 +82,6 @@
               <div class="result" id="result">
                 <section>
                   <header>尚未搜尋</header>
-<!--                       <% if flash[:notice] %>
-                      <div class="notice">
-                        <%= flash[:notice] %>
-                      </div>
-                    <% end %> -->
                 </section>
               </div>
             </section>
@@ -168,12 +136,12 @@
     var map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
       if (map_point.length > 0) {
-      set_marker(map, map_point);
+      set_marker(map,map_point);
     }
   }
 
   function set_marker(map, map_point) {
-    for (i = 0; i < 1; i++){
+    for (i = 0; i <map_point.length; i++){
       new google.maps.Marker({
         map: map,
         position: new google.maps.LatLng(map_point[i][0], map_point[i][1]),
@@ -185,7 +153,7 @@
   function point_to_map(x, y, map_point) {
     google.maps.event.addDomListener(window, 'load', initialize(x, y, map_point));
   }
-    google.maps.event.addDomListener(window, 'load', initialize(default_center_x, default_center_y, point));
+  google.maps.event.addDomListener(window, 'load', initialize(default_center_x, default_center_y, point));
 </script>
 
 
@@ -194,7 +162,7 @@
   $(document).ready(function(){
     $('#search_form').on('ajax:success',function(e, data, status, xhr){
       // $('#search_form').text('Done.');
-      $("#result").html("");
+      $(".result").html("");
 
       var tmpPoint = [];
       var centerPoint_x;
@@ -204,12 +172,12 @@
         if (data[i]["name"] != "" && data[i]["address"] != "") {
           tmpStr = "<section>";
           tmpStr = tmpStr + "<header>"+ String.fromCharCode(65 + i) + ". "  + data[i]["name"] + "</header>";
-          tmpStr = tmpStr +"<span>- " + data[i]["address"] + "</span>"
+      tmpStr = tmpStr +"<span>- " + data[i]["address"] + "</span>"
           if (data[i]["phone"] != "") {
             tmpStr = tmpStr +"<span>- <a href='tel:" + data[i]["phone"] + "'>" + data[i]["phone"] + "<a></span>"
           }
           tmpStr = tmpStr + "</section>";
-          $("#result").append(tmpStr);
+          $( ".result" ).append( tmpStr );
 
           var twoPoint = [[data[i]["google_map_x"]],[data[i]["google_map_y"]]];
           tmpPoint.push(twoPoint);
@@ -222,11 +190,10 @@
       point_to_map(centerPoint_x, centerPoint_y, tmpPoint);
     }).on('ajax:error',function(e, xhr, status, error){
       var tmpStr = "<section><header>未搜尋到任何結果</header></section>";
-      $( "#result" ).html( tmpStr );
+      $( ".result" ).html( tmpStr );
       point_to_map(default_center_x, default_center_y, point);
     });
   });
-
 </script>
 
 <!-- click search -->
@@ -239,14 +206,3 @@
     });
   </script>
 <% end %>
-
-<script type="text/javascript">
-
-// $('#get_max_rows').submit(function(event){
-//   $.getJSON('http://localhost:4000/yeah', function(data) {
-//     debugger;
-//   });
-//   event.preventDefault();
-// });
-
-</script>

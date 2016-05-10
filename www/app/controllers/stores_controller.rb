@@ -26,20 +26,13 @@ class StoresController < ApplicationController
         stores = area.search_store(params[:brand], params[:product][:id])
       end
 
-      # if stores.present?
-      #   render json: stores.to_json( :include => { :area => { :only => [:google_map_x, :google_map_y] } } )
-      # end
-
       respond_to do |format|
         if stores.present?
           format.json { render json: stores.to_json( :include=>{:area => { :only => [:google_map_x, :google_map_y]}}), status: 200}
-          #format.html { redirect_to 'index' }
         else
           format.json { render json: stores.errors, status: :unprocessable_entity }
         end
       end
-
-      #redirect_to :index
 
     end
   end

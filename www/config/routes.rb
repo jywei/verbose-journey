@@ -16,9 +16,7 @@ Rails.application.routes.draw do
     resources :areas
   end
 
-  post "stores/search" => "stores#search"#, :defaults => { :format => 'json' }
-
-  #get 'ajax/:action', to: 'ajax#:action', :defaults => { :format => 'json' }
+  post "stores/search" => "stores#search"
 
   resources :brands
   resources :abouts
