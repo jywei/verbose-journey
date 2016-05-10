@@ -8,6 +8,9 @@
 /*========================================================
                     Main layout styles
 =========================================================*/
+html{
+  -webkit-font-smoothing: antialiased;
+}
 body {
   font: 300 17px/28px "Lato", sans-serif;
   color: #333333;
@@ -915,7 +918,8 @@ nav {
     color:white;
     .closeButton{
       transition: .7s;
-      font-size:30px;
+      font-size:40px;
+      font-weight: 900;
       position: absolute;
       cursor:pointer;
       top:60px;
@@ -944,8 +948,34 @@ nav {
         letter-spacing: 1px;
         line-height: 25px;
       }
+      .item{top:-20%;}
+      .item > img {
+        top:-20%;
+        width:100%;
+        height:auto;
+      }
     }
   }
+  .inspection_black_box{
+    .black_box{
+      position: absolute;
+      top:5%;
+      left:15%;
+      width:70%;
+      height:70%;
+      text-align: center;
+      .slick_box{
+        width:100%;
+        height:auto;
+        text-align: center;
+        @media (max-width: 479px) {top:30%;}
+        @media (max-width: 767px) {top:10%;}
+        @media (max-width: 979px) {top:15%;}
+      }
+    }
+    .black_box > img {width:auto;height:130%;}
+  }
+  .inspection_black_box > p {z-index: 5;top:30px;right:30px;}
   .active{
     opacity: 1;
     z-index: 3;
@@ -953,6 +983,24 @@ nav {
       -webkit-transform: rotate(270deg);
       transform: rotate(270deg);
     }
+  }
+}
+.inspection_box{
+  text-align: center;
+  .inspection_view{
+    transition: .5s;
+    font: 700 20px/20px "Lato", sans-serif;
+    color: #333333;
+    display: inline-block;
+    border: 2px solid #333333;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px 20px 10px;
+    margin: 2px 0;
+  }
+  .inspection_view:hover{
+    color: white;
+    background: #333333;
   }
 }
 /* ======= Vimeo video 3 ======= */
@@ -1172,4 +1220,12 @@ nav {
 .element-item .indent {
   padding-left: 60px;
   padding-right: 60px;
+}
+.slick-prev:before, .slick-next:before {
+    color:black !important;
+    size: 50px !important;
+    font-size: 50px !important;
+}
+.slick-prev{
+  left:-55px !important;
 }

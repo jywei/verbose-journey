@@ -7,6 +7,10 @@
 
 </style>
 
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+
 <script>
 // $(document).ready(function () {
 //   if ($('html').hasClass('desktop')) {
@@ -54,7 +58,6 @@
     });
   </script>
 
-
 <section id="content" class="common">
 <div class="wrapper5">
   <div class="container">
@@ -66,82 +69,197 @@
         </div>
       </div>
     </div>
-    <!-- <div class="row">
+    <div class="row">
       <div class="grid_12">
         <div id="filters" class="button-group">
           <button class="button is-checked wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">show all</button>
-          <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".first">Egg</button>
-          <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s" data-filter=".second">Essence of Chicken</button>
-          <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" data-filter=".third">Chicken</button>
+          <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".first" style="text-transform:capitalize">SGS</button>
+          <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s" data-filter=".second" style="text-transform:capitalize">NAIF</button>
+          <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" data-filter=".third" style="text-transform:capitalize">TÜV Rheinland</button>
+          <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" data-filter=".fourth" style="text-transform:capitalize">Cargill</button>
         </div>
       </div>
-    </div> -->
+    </div>
     <div class="row">
       <div class="isotope wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
         <div class="grid_12">
           <div class="row">
             <div class="grid_6 element-item first" data-category="first">
-              <div class="box7">
-                <div class="black_box_holder" id="black_box_holder1">
-                  <p class="closeButton" id="closeButton1" style="z-index: 5;">×</p>
-                  <div class="black_box" style="position: absolute;top:5%;left:5%;width:90%;height:90%;">
-                    <%= image_tag 'page1_img1-.png', :class=>'brand_ico',style:"width:100%;height:100%;" %>
-                  </div>
-                </div>
-                <div style="text-align: center;">
-                  <%= image_tag('cargill-01.png', :class=>'brand_ico') %>
-                </div>
-                <br>
-                <a class="btn-black wow fadeIn readmore" id="readmore1" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
-              </div>
-            </div>
-            <div class="grid_6 element-item first" data-category="first">
-              <div class="box7">
-                <div class="black_box_holder" id="black_box_holder2">
-                  <p class="closeButton" id="closeButton2" style="z-index: 5;">×</p>
-                  <div class="black_box" style="position: absolute;top:5%;left:5%;width:90%;height:90%;">
-                    <%= image_tag 'cargill-01.png', :class=>'brand_ico',style:"width:100%;height:100%;" %>
-                  </div>
-                </div>
-                <div style="text-align: center;">
-                  <%= image_tag('NAIF.png', :class=>'brand_ico') %>
-                </div>
-                <br>
-                <a class="btn-black wow fadeIn readmore" id="readmore2" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="grid_6 element-item first" data-category="first">
-              <div class="box7">
-                <div class="black_box_holder" id="black_box_holder3">
-                  <p class="closeButton" id="closeButton3">×</p>
+              <div class="box7 inspection_box">
+                <div class="black_box_holder inspection_black_box" id="black_box_holder3-1" style="height:125%;">
+                  <p class="closeButton" id="closeButton3-1" style="top:30px;right:30px;">×</p>
                   <div class="black_box">
-                    <%= image_tag 'cargill-01.png', :class=>'brand_ico',style:"width:100%;height:100%;" %>
+                    <div class="slick_box">
+                      <div class="item">
+                        <%= image_tag 'sgsreport1-1.jpg' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport1-2.jpg' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport1-3.jpg' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport1-4.jpg' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport1-5.jpg' %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="black_box_holder inspection_black_box" id="black_box_holder3-2" style="height:125%;">
+                  <p class="closeButton" id="closeButton3-2" style="top:30px;right:30px;">×</p>
+                  <div class="black_box">
+                    <div class="slick_box">
+                      <div class="item">
+                        <%= image_tag 'sgsreport2-1.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport2-2.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport2-3.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport2-4.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport2-5.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport2-6.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport2-7.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport2-8.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport2-9.png' %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="black_box_holder inspection_black_box" id="black_box_holder3-3" style="height:125%;">
+                  <p class="closeButton" id="closeButton3-3" style="top:30px;right:30px;">×</p>
+                  <div class="black_box">
+                    <div class="slick_box">
+                      <div class="item">
+                        <%= image_tag 'sgsreport3-1.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport3-2.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport3-3.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport3-4.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport3-5.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport3-6.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport3-7.png' %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="black_box_holder inspection_black_box" id="black_box_holder3-4" style="height:125%;">
+                  <p class="closeButton" id="closeButton3-4" style="top:30px;right:30px;">×</p>
+                  <div class="black_box">
+                    <div class="slick_box">
+                      <div class="item">
+                        <%= image_tag 'sgsreport4-1.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport4-2.png' %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="black_box_holder inspection_black_box" id="black_box_holder3-5" style="height:125%;">
+                  <p class="closeButton" id="closeButton3-5" style="top:30px;right:30px;">×</p>
+                  <div class="black_box">
+                    <div class="slick_box">
+                      <div class="item">
+                        <%= image_tag 'sgsreport5-1.png' %>
+                      </div>
+                      <div class="item">
+                        <%= image_tag 'sgsreport5-2.png' %>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div style="text-align: center;">
                   <%= image_tag('SGS-01.png', :class=>'brand_ico') %>
                 </div>
                 <br>
-                <a class="btn-black wow fadeIn readmore" id="readmore3" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
+                <a class="wow fadeIn readmore inspection_view" id="readmore3-1" data-wow-duration="1s" data-wow-delay="0.4s" href="#">蛋品檢驗單</a>
+                <a class="wow fadeIn readmore inspection_view" id="readmore3-2" data-wow-duration="1s" data-wow-delay="0.4s" href="#">匡和蛋盒原料安全檢驗報告</a>
+                <a class="wow fadeIn readmore inspection_view" id="readmore3-3" data-wow-duration="1s" data-wow-delay="0.4s" href="#">蛋品檢驗</a>
+                <a class="wow fadeIn readmore inspection_view" id="readmore3-4" data-wow-duration="1s" data-wow-delay="0.4s" href="#">蛋檢驗報告A</a>
+                <a class="wow fadeIn readmore inspection_view" id="readmore3-5" data-wow-duration="1s" data-wow-delay="0.4s" href="#">蛋檢驗報告B</a>
               </div>
             </div>
+            <div class="grid_6 element-item second" data-category="second">
+              <div class="box7 inspection_box">
+                <div class="black_box_holder inspection_black_box" id="black_box_holder2-1">
+                  <p class="closeButton" id="closeButton2-1">×</p>
+                  <div class="black_box">
+                    <%= image_tag 'NAIFreport1.jpg' %>
+                  </div>
+                </div>
+                <div class="black_box_holder inspection_black_box" id="black_box_holder2-2">
+                  <p class="closeButton" id="closeButton2-2">×</p>
+                  <div class="black_box">
+                    <%= image_tag 'NAIFreport2.jpg' %>
+                  </div>
+                </div>
+                <div style="text-align: center;">
+                  <%= image_tag('NAIF.png', :class=>'brand_ico') %>
+                </div>
+                <br>
+                <a class="btn-black wow fadeIn readmore inspection_view" id="readmore2-1" data-wow-duration="1s" data-wow-delay="0.4s" href="#">蛋包裝檢驗</a>
+                <a class="btn-black wow fadeIn readmore inspection_view" id="readmore2-2" data-wow-duration="1s" data-wow-delay="0.4s" href="#">雞肝檢驗</a>
+              </div>
+            </div>
+          </div>
 
-            <div class="grid_6 element-item first" data-category="first">
-              <div class="box7">
-                <div class="black_box_holder" id="black_box_holder4">
+          <div class="row">
+            <div class="grid_6 element-item third" data-category="third">
+              <div class="box7 inspection_box">
+                <div class="black_box_holder inspection_black_box" id="black_box_holder4">
                   <p class="closeButton" id="closeButton4">×</p>
                   <div class="black_box">
-                    <%= image_tag 'cargill-01.png', :class=>'brand_ico',style:"width:100%;height:100%;" %>
+                    <%= image_tag 'tuvreport.jpg' %>
                   </div>
                 </div>
                 <div style="text-align: center;">
                   <%= image_tag('TUV-01.png', :class=>'brand_ico') %>
                 </div>
                 <br>
-                <a class="btn-black wow fadeIn readmore" id="readmore4" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
+                <a class="btn-black wow fadeIn readmore inspection_view" id="readmore4" data-wow-duration="1s" data-wow-delay="0.4s" href="#">檢測報告</a>
+              </div>
+            </div>
+            <div class="grid_6 element-item fourth" data-category="fourth">
+              <div class="box7 inspection_box">
+                <div class="black_box_holder inspection_black_box" id="black_box_holder1">
+                  <p class="closeButton" id="closeButton1">×</p>
+                  <div class="black_box">
+                    <%= image_tag 'cargillreport.jpg' %>
+                  </div>
+                </div>
+                <div style="text-align: center;">
+                  <%= image_tag('cargill-01.png', :class=>'brand_ico') %>
+                </div>
+                <br>
+                <a class="btn-black wow fadeIn readmore inspection_view" id="readmore1" data-wow-duration="1s" data-wow-delay="0.4s" href="#">飼料無汙染切結書</a>
               </div>
             </div>
           </div>
@@ -155,49 +273,91 @@
 
 <script>
   $('.readmore').click(function(){
-    $('#black_box_holder1').removeClass('active');
-    $('#black_box_holder2').removeClass('active');
-    $('#black_box_holder3').removeClass('active');
-    $('#black_box_holder4').removeClass('active');
-    $('#black_box_holder5').removeClass('active');
-    $('#black_box_holder6').removeClass('active');
+    $('.black_box_holder').removeClass('active');
     if ($(this).attr('id') == "readmore1"){
       $('#black_box_holder1').addClass('active');
     }
-    if ($(this).attr('id') == "readmore2"){
-      $('#black_box_holder2').addClass('active');
+    if ($(this).attr('id') == "readmore2-1"){
+      $('#black_box_holder2-1').addClass('active');
     }
-    if ($(this).attr('id') == "readmore3"){
-      $('#black_box_holder3').addClass('active');
+    if ($(this).attr('id') == "readmore2-2"){
+      $('#black_box_holder2-2').addClass('active');
+    }
+    if ($(this).attr('id') == "readmore3-1"){
+      $('#black_box_holder3-1').addClass('active');
+    }
+    if ($(this).attr('id') == "readmore3-2"){
+      $('#black_box_holder3-2').addClass('active');
+    }
+    if ($(this).attr('id') == "readmore3-3"){
+      $('#black_box_holder3-3').addClass('active');
+    }
+    if ($(this).attr('id') == "readmore3-4"){
+      $('#black_box_holder3-4').addClass('active');
+    }
+    if ($(this).attr('id') == "readmore3-5"){
+      $('#black_box_holder3-5').addClass('active');
     }
     if ($(this).attr('id') == "readmore4"){
       $('#black_box_holder4').addClass('active');
-    }
-    if ($(this).attr('id') == "readmore5"){
-      $('#black_box_holder5').addClass('active');
-    }
-    if ($(this).attr('id') == "readmore6"){
-      $('#black_box_holder6').addClass('active');
     }
   })
   $('.closeButton').click(function(){
     if($(this).attr('id') == 'closeButton1'){
       $('#black_box_holder1').removeClass('active');
     }
-    if($(this).attr('id') == 'closeButton2'){
-      $('#black_box_holder2').removeClass('active');
+    if($(this).attr('id') == 'closeButton2-1'){
+      $('#black_box_holder2-1').removeClass('active');
     }
-    if($(this).attr('id') == 'closeButton3'){
-      $('#black_box_holder3').removeClass('active');
+    if($(this).attr('id') == 'closeButton2-2'){
+      $('#black_box_holder2-2').removeClass('active');
+    }
+    if($(this).attr('id') == 'closeButton3-1'){
+      $('#black_box_holder3-1').removeClass('active');
+    }
+    if($(this).attr('id') == 'closeButton3-2'){
+      $('#black_box_holder3-2').removeClass('active');
+    }
+    if($(this).attr('id') == 'closeButton3-3'){
+      $('#black_box_holder3-3').removeClass('active');
+    }
+    if($(this).attr('id') == 'closeButton3-4'){
+      $('#black_box_holder3-4').removeClass('active');
+    }
+    if($(this).attr('id') == 'closeButton3-5'){
+      $('#black_box_holder3-5').removeClass('active');
     }
     if($(this).attr('id') == 'closeButton4'){
       $('#black_box_holder4').removeClass('active');
     }
-    if($(this).attr('id') == 'closeButton5'){
-      $('#black_box_holder5').removeClass('active');
-    }
-    if($(this).attr('id') == 'closeButton6'){
-      $('#black_box_holder6').removeClass('active');
-    }
   })
 </script>
+
+<script>
+  $(document).ready(function(){
+    $('.slick_box').slick({
+      infinite: true,
+      slidesToShow: 1,
+   
+      //slide animation direction and amount (if set -1 means slder animated from left to right) , the dot will disappear
+      // and you should set rtl = true ,too
+      slidesToScroll: 1,
+   
+                 // Enables auto play of slides
+      autoplay: false,
+   
+      // Auto play change interval
+
+      arrows: true,
+ 
+      // prev arrow
+      prevArrow: '<button type="button" data-role="none" class="slick-prev">Previous</button>',
+       
+      // next arrow
+       
+      nextArrow: '<button type="button" data-role="none" class="slick-next">Next</button>',
+    });
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
