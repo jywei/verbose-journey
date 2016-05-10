@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require chosen
+ *= require jquery-ui
  *= require jquery-ui/selectmenu
  *= require_tree ./user
  *= require_self

@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     resources :areas
   end
 
+  post "stores/search" => "stores#search"#, :defaults => { :format => 'json' }
+
+  #get 'ajax/:action', to: 'ajax#:action', :defaults => { :format => 'json' }
+
   resources :brands
   resources :abouts
   resources :contacts
@@ -45,7 +49,6 @@ Rails.application.routes.draw do
 
   get "home/new_verification" => "home#new_verification"
   post "home/verification" => "home#verification"
-  post "stores/search" => "stores#search"
   get 'home/terms_of_service'
   get 'home/privacy_policy'
   devise_for :users
