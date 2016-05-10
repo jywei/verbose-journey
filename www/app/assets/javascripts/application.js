@@ -10,10 +10,10 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
 //= require jquery2
 //= require imagesloaded
 //= require jquery_ujs
+//= require jquery-ui
 //= require jquery-ui/sortable
 //= require jquery-ui/selectmenu
 //= require jquery-fileupload/basic

@@ -1,4 +1,5 @@
 class StoresController < ApplicationController
+  respond_to :json, :html
 
   def index
   	@title = "WHERE? | " + Admin::SiteConfig.first.title
@@ -19,24 +20,28 @@ class StoresController < ApplicationController
   end
 
   def search
-  	if params[:area].present?
-  		area = Admin::Area.find(params[:area])
-	  	if params[:brand].present?
-	  		stores = area.search_store(params[:brand], params[:product][:id])
-        flash[:notice] = '900000000000000000'
-	  	end
+    if params[:area].present?
+      area = Admin::Area.find(params[:area])
+      if params[:brand].present?
+        stores = area.search_store(params[:brand], params[:product][:id])
+      end
 
-	  	respond_to do |format|
-    		if stores.present?
-  				format.json { render json: stores.to_json(include: { area: { only: [:google_map_x, :google_map_y]}}), status: 200}
-          flash[:notice] = '900000000000000001'
-  			else
-  				format.json { render json: 'null', status: :unprocessable_entity}
-          flash[:notice] = '900000000000000002'
-  			end
-  		end
-  	end
+      # if stores.present?
+      #   render json: stores.to_json( :include => { :area => { :only => [:google_map_x, :google_map_y] } } )
+      # end
 
+      respond_to do |format|
+        if stores.present?
+          format.json { render json: stores.to_json( :include=>{:area => { :only => [:google_map_x, :google_map_y]}}), status: 200}
+          #format.html { redirect_to 'index' }
+        else
+          format.json { render json: stores.errors, status: :unprocessable_entity }
+        end
+      end
+
+      #redirect_to :index
+
+    end
   end
 
 end

@@ -1,40 +1,40 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&language=zh-tw"></script>
 
-<script type="text/javascript">
+// <script type="text/javascript">
 
- $(document).ready(function(){
-      var responsive2 = function(){
-        var window_height = $(window).height();
+//  $(document).ready(function(){
+//       var responsive2 = function(){
+//         var window_height = $(window).height();
 
-        if (detectmob()){
-        window_height = window.screen.height;
-        }
+//         if (detectmob()){
+//         window_height = window.screen.height;
+//         }
 
-        var window_width = $(window).width();
-        if(window_width > 1440){
-          $('.store_wrapper').height(window_height - 90);
-          $('.store_wrapper').css('top',(window_height / 2) - ($(".store_block").height() / 2) - $("#main_header").height());
-        }else if(window_width > 768){
-          $('.store_wrapper').height(window_height - 90);
-          $('.store_wrapper').css('margin-top','');
+//         var window_width = $(window).width();
+//         if(window_width > 1440){
+//           $('.store_wrapper').height(window_height - 90);
+//           $('.store_wrapper').css('top',(window_height / 2) - ($(".store_block").height() / 2) - $("#main_header").height());
+//         }else if(window_width > 768){
+//           $('.store_wrapper').height(window_height - 90);
+//           $('.store_wrapper').css('margin-top','');
 
-        $('#map-canvas').css({'height':""});
-        $('.store_wrapper').css('top',(window_height / 2) - ($(".store_block").height() / 2) - $("#main_header").height());
-        }else{
-          $('.store_wrapper').css('height','');
-          $('.store_wrapper').css('margin-top', -1 * window_height + 50 + 60);
+//         $('#map-canvas').css({'height':""});
+//         $('.store_wrapper').css('top',(window_height / 2) - ($(".store_block").height() / 2) - $("#main_header").height());
+//         }else{
+//           $('.store_wrapper').css('height','');
+//           $('.store_wrapper').css('margin-top', -1 * window_height + 50 + 60);
 
-          var map_width = $('#map-canvas').width();
-        $('#map-canvas').css({'height':map_width+'px'});
-        $('.store_wrapper').css('top',"");
-        }
-      };
-      responsive2();
-      $(window).resize(function(){
-        responsive2();
-      });
-  });
-</script>
+//           var map_width = $('#map-canvas').width();
+//         $('#map-canvas').css({'height':map_width+'px'});
+//         $('.store_wrapper').css('top',"");
+//         }
+//       };
+//       responsive2();
+//       $(window).resize(function(){
+//         responsive2();
+//       });
+//   });
+// </script>
 
 <section id="content">
 
@@ -52,70 +52,72 @@
       <div class="row">
         <div class="grid_1"></div>
         <div class="grid_5">
-          <section class="left">
-            <div class="map">
-              <div id="map-canvas" style="width:100%; height:400px;">
+          <div class="map">
+            <div id="map-canvas" style="width:100%; height:400px;">
 
-              </div>
             </div>
-          </section>
+          </div>
         </div>
 
         <div class="grid_5">
-          <form id="contact-form">
-            <div class="contact-form-loader search">
-              <section class="right">
-                <%= form_tag('/stores/search', :id => 'search_form', method: :post, remote: true) do |f| %>
-                  <label class="map_w wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                    <!-- <input type="text" name="name" placeholder="Name*:" data-constraints="@Required @JustLetters"/>
-                    <span class="empty-message">*This field is required.</span> -->
-                    <%= select_tag "brand", options_from_collection_for_select(Admin::Brand.where(:is_public => true), "id", "select_name", @brand_id), include_blank: false%>
-                  </label>
-                  <label class="map_w wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                    <!-- <input type="text" name="email" placeholder="Email*:" value=""
-                           data-constraints="@Required @Email"/>
-                    <span class="empty-message">*This field is required.</span>
-                    <span class="error-message">*This is not a valid email.</span> -->
-                    <%= grouped_collection_select( :product, :id, Admin::Brand.order('name'), :products, "select_name", :id, "select_name" ) %>
-                  </label>
-                  <label class="map_w wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
-                    <!-- <input type="text" name="phone" placeholder="Phone:" value=""
-                           data-constraints="@JustNumbers"/>
-                    <span class="empty-message">*This field is required.</span>
-                    <span class="error-message">*This is not a valid phone.</span> -->
-                    <%= select_tag "area", options_from_collection_for_select(Admin::Area.all, "id", "select_name"), include_blank: false %>
-                  </label>
+          <div class="search">
+            <section>
+              <%= form_tag('/stores/search', :id => 'search_form', method: :post, remote: true) do %>
+              <%#= form_tag({:controller => "stores", :action => "search"}, :method => "post") do %>
+                <label class="map_w wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                  <!-- <input type="text" name="name" placeholder="Name*:" data-constraints="@Required @JustLetters"/>
+                  <span class="empty-message">*This field is required.</span> -->
+                  <%= select_tag "brand", options_from_collection_for_select(Admin::Brand.where(:is_public => true), "id", "select_name", @brand_id), include_blank: false %>
+                </label>
+                <label class="map_w wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                  <!-- <input type="text" name="email" placeholder="Email*:" value=""
+                         data-constraints="@Required @Email"/>
+                  <span class="empty-message">*This field is required.</span>
+                  <span class="error-message">*This is not a valid email.</span> -->
+                  <%= grouped_collection_select( :product, :id, Admin::Brand.order('name'), :products, "select_name", :id, "select_name" ) %>
+                </label>
+                <label class="map_w wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+                  <!-- <input type="text" name="phone" placeholder="Phone:" value=""
+                         data-constraints="@JustNumbers"/>
+                  <span class="empty-message">*This field is required.</span>
+                  <span class="error-message">*This is not a valid phone.</span> -->
+                  <%= select_tag "area", options_from_collection_for_select(Admin::Area.all, "id", "select_name"), include_blank: false %>
+                </label>
 
 <!--               <div class="row">
-                <div class="grid_6"></div>
-                <div class="grid_5">
-                  <label class="message wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                    <textarea name="message" placeholder="Message:"
-                              data-constraints='@Required @Length(min=20,max=999999)'></textarea>
-                    <span class="empty-message">*This field is required.</span>
-                    <span class="error-message">*The message is too short.</span>
-                  </label>
+              <div class="grid_6"></div>
+              <div class="grid_5">
+                <label class="message wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                  <textarea name="message" placeholder="Message:"
+                            data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+                  <span class="empty-message">*This field is required.</span>
+                  <span class="error-message">*The message is too short.</span>
+                </label>
+              </div>
+            </div> -->
+            <!-- <label class="recaptcha"><span class="empty-message">*This field is required.</span></label> -->
+
+                <div class="contact-form-buttons">
+            <!-- <a href="#" data-type="submit" class="btn-filled wow fadeIn" data-wow-duration="1s"
+               data-wow-delay="0.5s">Send</a> -->
+                  <%= submit_tag 'Search', class: "btn-filled wow fadeIn"%>
                 </div>
-              </div> -->
-              <!-- <label class="recaptcha"><span class="empty-message">*This field is required.</span></label> -->
+              <% end %>
 
-                  <div class="contact-form-buttons">
-              <!-- <a href="#" data-type="submit" class="btn-filled wow fadeIn" data-wow-duration="1s"
-                 data-wow-delay="0.5s">Send</a> -->
-                    <%= submit_tag 'Search 搜尋', class: "btn-filled wow fadeIn" %>
-                  </div>
-                <% end %>
+              <br>
 
-                <br>
-
-                <div class="result" id="result">
-                  <section>
-                    <header>尚未搜尋</header>
-                  </section>
-                </div>
-              </section>
-            </div>
-          </form>
+              <div class="result" id="result">
+                <section>
+                  <header>尚未搜尋</header>
+<!--                       <% if flash[:notice] %>
+                      <div class="notice">
+                        <%= flash[:notice] %>
+                      </div>
+                    <% end %> -->
+                </section>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </div>
@@ -160,13 +162,13 @@
     var geocoder;
     geocoder = new google.maps.Geocoder();
     var mapOptions = {
-      zoom: 11,
+      zoom: 12,
       center: new google.maps.LatLng(center_x, center_y)
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
       if (map_point.length > 0) {
-      set_marker(map,map_point);
+      set_marker(map, map_point);
     }
   }
 
@@ -183,7 +185,7 @@
   function point_to_map(x, y, map_point) {
     google.maps.event.addDomListener(window, 'load', initialize(x, y, map_point));
   }
-  google.maps.event.addDomListener(window, 'load', initialize(default_center_x, default_center_y, point));
+    google.maps.event.addDomListener(window, 'load', initialize(default_center_x, default_center_y, point));
 </script>
 
 
@@ -236,3 +238,14 @@
     });
   </script>
 <% end %>
+
+<script type="text/javascript">
+
+// $('#get_max_rows').submit(function(event){
+//   $.getJSON('http://localhost:4000/yeah', function(data) {
+//     debugger;
+//   });
+//   event.preventDefault();
+// });
+
+</script>

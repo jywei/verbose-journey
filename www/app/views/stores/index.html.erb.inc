@@ -1,4 +1,9 @@
-
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&language=zh-tw"></script>
+<div class="home_wrapper">
+	<section class='fixed'>
+		<%= render :partial => 'shared/brand_block' %>
+	</section>
+</div>
 <script type="text/javascript">
 
  $(document).ready(function(){
@@ -80,6 +85,10 @@
 						</section> -->
 					</div>
 				</section>
+
+				<footer>
+					<span>電話洽詢/訂購:<a href="tel:<%= @admin_site_config.phone %>"><%= @admin_site_config.phone %></a> 鴻向國際</span>
+				</footer>
 			</article>
 		</div>
 	</section>
@@ -134,7 +143,7 @@
 	}
 
 	function set_marker(map, map_point) {
-		for (i = 0; i < map_point.length; i++){
+		for (i = 0; i <map_point.length; i++){
 			new google.maps.Marker({
 				map: map,
 				position: new google.maps.LatLng(map_point[i][0], map_point[i][1]),
@@ -160,7 +169,7 @@
       var tmpPoint = [];
       var centerPoint_x;
       var centerPoint_y;
-      for (i = 0; i< data.length; i++){
+      for (i=0;i< data.length;i++){
       	var tmpStr = "";
       	if (data[i]["name"] != "" && data[i]["address"] != "") {
       		tmpStr = "<section>";

@@ -3,10 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :default_data
+  # respond_to :html, :json
   # before_action :check_old
-
-
-
 
 
   def default_data
@@ -24,7 +22,7 @@ class ApplicationController < ActionController::Base
 
       get_controller()
       get_action()
-  end	
+  end
 
   def check_old
       @old_is_over_18 = false;
@@ -36,8 +34,8 @@ class ApplicationController < ActionController::Base
   	# else
   	# 	session[:controller] = get_controller()
   	# 	session[:action] = get_action()
-   #            session[:previous_url] = request.fullpath 
-   #            puts request.fullpath 
+   #            session[:previous_url] = request.fullpath
+   #            puts request.fullpath
   	# 	redirect_to home_new_verification_path
       elsif get_controller() == 'devise/sessions' && (get_action() == 'new' || get_action() == 'create')
           @old_is_over_18 = true;
