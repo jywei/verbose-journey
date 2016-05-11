@@ -50,18 +50,18 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "網站管理", edit_admin_site_config_path(:id => 1) %></li>
-            <li><%= link_to "故事管理", edit_admin_story_path(:id => 1) %></li>
-            <li><%= link_to "關於我們", edit_admin_about_path(:id => 1) %></li>
-            <li><%= link_to "歷史管理", admin_histories_path %></li>
-            <li><%= link_to "新聞管理", admin_news_index_path %></li>
+            <li><%#= link_to "故事管理", edit_admin_story_path(:id => 1) %></li>
+            <li><%#= link_to "關於我們", edit_admin_about_path(:id => 1) %></li>
+            <li><%#= link_to "歷史管理", admin_histories_path %></li>
+            <li><%#= link_to "新聞管理", admin_news_index_path %></li>
             <li><%= link_to "品牌管理", admin_brands_path %></li>
             <li><%= link_to "產品管理", admin_products_path %></li>
             <li><%= link_to "通路據點", admin_stores_path %></li>
-            <li><%= link_to "資訊管理", admin_infos_path %></li>
+            <li><%#= link_to "資訊管理", admin_infos_path %></li>
             <li><%= link_to "地區管理", admin_areas_path %></li>
             <li><%= link_to "與我聯繫", admin_contacts_path %></li>
-            <li><%= link_to "OG管理", edit_admin_og_main_page_path(:id => 1) %></li>
-            <li><%= link_to "GA", "https://www.google.com/analytics/web/?hl=zh-TW&pli=1#realtime/rt-overview/a63099729w98452077p102496108/", :target => "_blank" %></li>
+            <li><%#= link_to "OG管理", edit_admin_og_main_page_path(:id => 1) %></li>
+            <li><%#= link_to "GA", "https://www.google.com/analytics/web/?hl=zh-TW&pli=1#realtime/rt-overview/a63099729w98452077p102496108/", :target => "_blank" %></li>
             <!-- <li><%= link_to "訂閱管理", admin_subscribes_path %></li> -->
             <!-- <li><%#= link_to "Image", admin_images_path %></li> -->
             <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
