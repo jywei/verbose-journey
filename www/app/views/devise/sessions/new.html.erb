@@ -21,30 +21,44 @@
 </script>
 <div class="home_wrapper">
 	<section class='fixed'>
-		<%= render :partial => 'shared/brand_block' %>
+		<%#= render :partial => 'shared/brand_block' %>
 	</section>
 </div>
+<br>
 <div class="login_wrapper">
 	<section class="fixed full_height">
 		<div class="login_block">
-			<article>
-				<h2>管理員 - 登入</h2>
+			<div class="row">
+				<div class="grid_4"></div>
 
-				<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-				  <div><%= f.label :email %><br />
-				  <%= f.email_field :email, :autofocus => true %></div>
-
-				  <div><%= f.label :password %><br />
-				  <%= f.password_field :password %></div>
-
-				  <% if devise_mapping.rememberable? -%>
-				    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-				  <% end -%>
-
-				  <div><%= f.submit "登入" %></div>
-				<% end %>
-			</article>
+				<article class="grid_5">
+					<div class="heading1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+	          <h3 style="color: #333333"><strong>管理員 - 登入</strong></h3>
+	        </div>
+					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), id: "contact-form") do |f| %>
+					  <label class="map_w wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+					  	<%= f.label :email, class: "map_w wow fadeIn" %><br />
+						  <%= f.email_field :email, :autofocus => true, type: "text", style: "width: 460px; height: 30px;" %><br />
+						</label>
+						<br>
+						<label class="map_w wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+						  <%= f.label :password %><br />
+						  <%= f.password_field :password, type: "text", style: "width: 460px; height: 30px;" %><br />
+					  </label>
+					  <br>
+						<label class="map_w wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+						  <% if devise_mapping.rememberable? -%>
+						    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+						  <% end -%>
+					  </label>
+					  <br>
+						<div class="contact-form-buttons">
+						  <%= f.submit "Log In", class: "btn-filled wow fadeIn" %>
+					  </div>
+					<% end %>
+				</article>
+			</div>
 		</div>
 	</section>
 </div>
-<%= render "devise/shared/links" %>
+<%#= render "devise/shared/links" %>
