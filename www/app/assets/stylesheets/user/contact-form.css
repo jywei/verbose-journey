@@ -1,6 +1,6 @@
 /* Contact Form variables
 ========================================================*/
-/* Contact Form Basic Styles 
+/* Contact Form Basic Styles
 ========================================================*/
 #contact-form {
   position: relative;
@@ -29,7 +29,7 @@
 #contact-form fieldset {
   border: none;
 }
-/* Contact Form Placeholder Styles 
+/* Contact Form Placeholder Styles
 ========================================================*/
 #contact-form ._placeholder {
   width: 100% !important;
@@ -60,7 +60,7 @@
 #contact-form .file ._placeholder {
   display: none;
 }
-/* Contact Form Input 
+/* Contact Form Input
 ========================================================*/
 #contact-form input[type='text'] {
   font-weight: 300;
@@ -82,7 +82,9 @@
   margin: 0;
   -webkit-appearance: none;
 }
-/* Contact Form Textarea 
+
+
+/* Contact Form Textarea
 ========================================================*/
 #contact-form textarea {
   font-weight: 300;
@@ -143,7 +145,7 @@
     margin-top: 15px;
   }
 }
-/* Contact Form Modal 
+/* Contact Form Modal
 ========================================================*/
 .modal-open {
   overflow: hidden;
@@ -240,7 +242,7 @@
     margin: 10px;
   }
 }
-/* Contact Form Close icon 
+/* Contact Form Close icon
 ========================================================*/
 .close {
   float: right;
