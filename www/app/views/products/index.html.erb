@@ -71,32 +71,33 @@
             </div>
           </div>
         </div>
+        <% @admin_products.each do |product| %>
         <div class="row">
           <div class="isotope wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
             <div class="grid_12">
               <div class="row" style="overflow: hidden;">
-                <div class="grid_6 element-item first" data-category="first">
+                <div class="grid_6 element-item <%= category(product.price) %>" data-category="<%= category(product.price) %>">
                   <div class="box7 indent">
                     <div class="black_box_holder" id="black_box_holder1">
                       <p class="closeButton" id="closeButton1">×</p>
                       <div class="black_box">
-                        <h3>樂活蛋</h3>
+                        <h3><%= product.name %></h3>
                         <br>
-                        <p>在歐美國家外國人總以生活快樂，樂活的步調悠然自在的享受生活，日本則以"優自慢"恬然生活，透過興聯快樂農場所產出的"樂活蛋"讓每位消費者於日常食衣住行中，皆能樂在其中快活優想於生活品味中.</p>
+                        <p><%= product.title %></p>
                       </div>
                     </div>
                     <div class="egg_pic" style="text-align: center;">
-                      <%= image_tag('page1_img10.png', :class=>'brand_ico') %>
+                      <%= image_tag(product.main_visual.url, :class=>'brand_ico') %>
                     </div>
                     <h4>
-                      樂活蛋
+                      <%= product.name %>
                     </h4>
-                    <p style="width:450px;">在歐美國家外國人總以生活快樂，樂活的步調悠然自在的享受...</p>
+                    <p style="width:450px;"><%= strip_tags(product.get_short_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
                     <br>
                     <a class="btn-black wow fadeIn readmore" id="readmore1" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
                   </div>
                 </div>
-                <div class="grid_6 element-item first" data-category="first">
+<!--                 <div class="grid_6 element-item first" data-category="first">
                   <div class="box7 indent">
                     <div class="black_box_holder" id="black_box_holder2">
                       <p class="closeButton" id="closeButton2">×</p>
@@ -209,11 +210,12 @@
                     <a class="btn-black wow fadeIn readmore" id="readmore6" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
             </div>
           </div>
         </div>
+        <% end %>
       </div>
     </div>
     </section>

@@ -11,4 +11,20 @@ class Admin::Product < ActiveRecord::Base
 	def select_name
 		'產品 / ' + self.name.upcase
 	end
+
+  def get_long_content
+    if strip_tags(self.content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 125
+      strip_tags(self.content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..125] + '......'
+    else
+      strip_tags(self.content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")
+    end
+  end
+
+  def get_short_content
+    if strip_tags(self.content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 25
+      strip_tags(self.content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..25] + '......'
+    else
+      strip_tags(self.content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")
+    end
+  end
 end

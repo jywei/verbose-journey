@@ -10,6 +10,10 @@ puts "set admin user..."
 admin = User.create!(email: 'root@jibako.com', password: 'zxcvasdf')
 admin.save
 
+puts "set admin user..."
+admin = User.create!(email: 'admin@opulunion.com', password: 'password')
+admin.save
+
 puts 'set SiteConfig'
 Admin::SiteConfig.create!(:title => "OpulUnion")
 
