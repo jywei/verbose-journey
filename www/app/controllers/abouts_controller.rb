@@ -1,4 +1,5 @@
 class AboutsController < ApplicationController
+
   def index
     @title = "關於我們 | " + Admin::SiteConfig.first.title
     @admin_about = Admin::About.first
