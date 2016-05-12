@@ -14,4 +14,7 @@ module ApplicationHelper
     end
   end
 
+  def wordcount(word)
+    word.size
+  end
 end

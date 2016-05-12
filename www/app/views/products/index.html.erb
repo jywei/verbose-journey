@@ -71,16 +71,17 @@
             </div>
           </div>
         </div>
-        <% @admin_products.each do |product| %>
         <div class="row">
           <div class="isotope wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <% i = 1 %>
+            <% @admin_products.each do |product| %>
             <div class="grid_12">
               <div class="row" style="overflow: hidden;">
                 <div class="grid_6 element-item <%= category(product.price) %>" data-category="<%= category(product.price) %>">
                   <div class="box7 indent">
-                    <div class="black_box_holder" id="black_box_holder1">
-                      <p class="closeButton" id="closeButton1">×</p>
-                      <div class="black_box">
+                    <div class="black_box_holder" id="black_box_holder<%= i %>">
+                      <p class="closeButton" id="closeButton<%= i %>">×</p>
+                      <div class="black_box <%= "stonetiggeregg" if wordcount(product.title)>150 %>">
                         <h3><%= product.name %></h3>
                         <br>
                         <p><%= product.title %></p>
@@ -94,128 +95,14 @@
                     </h4>
                     <p style="width:450px;"><%= strip_tags(product.get_short_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
                     <br>
-                    <a class="btn-black wow fadeIn readmore" id="readmore1" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
+                    <a class="btn-black wow fadeIn readmore" id="readmore<%= i %>" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
                   </div>
                 </div>
-<!--                 <div class="grid_6 element-item first" data-category="first">
-                  <div class="box7 indent">
-                    <div class="black_box_holder" id="black_box_holder2">
-                      <p class="closeButton" id="closeButton2">×</p>
-                      <div class="black_box">
-                        <h3>達人蛋</h3>
-                        <br>
-                        <p>以出產優良雞肉和蛋品為傲，故以達人自許，期盼所出產之蛋品皆為蛋品類之佼佼者，如同達人雞蛋博士一樣，為消費者品質把關與嚴選每一顆蛋.</p>
-                      </div>
-                    </div>
-                    <div class="egg_pic" style="text-align: center;">
-                      <%= image_tag('drgee-01.png', :class=>'brand_ico') %>
-                    </div>
-                    <h4>
-                      達人蛋
-                    </h4>
-                    <p style="width:450px;">以出產優良雞肉和蛋品為傲，故以達人自許，期盼所出產之蛋品...</p>
-                    <br>
-                    <a class="btn-black wow fadeIn readmore" id="readmore2" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
-                  </div>
-                </div>
+                <% i+=1 %>
               </div>
-
-              <div class="row" style="overflow: hidden;">
-                <div class="grid_6 element-item first" data-category="first">
-                  <div class="box7 indent">
-                    <div class="black_box_holder" id="black_box_holder3">
-                      <p class="closeButton" id="closeButton3">×</p>
-                      <div class="black_box">
-                        <h3>珍香蛋</h3>
-                        <br>
-                        <p>所成立的興聯第一個蛋品品牌，珍香蛋能讓每位家庭及婆婆媽媽們的桌上佳餚，添加珍香味美與健康，不僅於價格上親民，更能為大家精心挑選每一顆食用無虞的良心好蛋.</p>
-                      </div>
-                    </div>
-                    <div class="egg_pic" style="text-align: center;">
-                      <%= image_tag('jan_shan-01.png', :class=>'brand_ico') %>
-                    </div>
-                    <h4>
-                      珍香蛋
-                    </h4>
-                    <p style="width:450px;">所成立的興聯第一個蛋品品牌，珍香蛋能讓每位家庭及婆婆媽媽們...</p>
-                    <br>
-                    <a class="btn-black wow fadeIn readmore" id="readmore3" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
-                  </div>
-                </div>
-
-                <div class="grid_6 element-item first" data-category="first">
-                  <div class="box7 indent">
-                    <div class="black_box_holder" id="black_box_holder4">
-                      <p class="closeButton" id="closeButton4">×</p>
-                      <div class="black_box stonetiggeregg">
-                        <h3>石虎蛋</h3>
-                        <br>
-                        <p>全國第一家結合農委會特有生物研究保育中心之石虎保育類動物所推出合作商品，由農委會特生組，特別給予一個對於商品品質，農場人到管理及無抗生素等之優良產品認證編號。為石虎好朋友之001石虎蛋，不僅僅喚起對這塊土地的動物保育，環境生態的重視，更於每項石虎蛋商品售出時，捐助該品項之五元，給農委會特生組，作為石虎保育類動物之保育基金，為台灣盡一份棉薄之力，更為後代子孫保留屬於台灣的稀世國寶</p>
-                      </div>
-                    </div>
-                    <div class="egg_pic" style="text-align: center;">
-                      <%= image_tag('shiwhoegg.png', :class=>'brand_ico') %>
-                    </div>
-                    <h4>
-                      石虎蛋
-                    </h4>
-                    <p style="width:450px;">全國第一家結合農委會特有生物研究保育中心之石虎保育類動物所...</p>
-                    <br>
-                    <a class="btn-black wow fadeIn readmore" id="readmore4" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row" style="overflow: hidden;">
-                <div class="grid_6 element-item first" data-category="first">
-                  <div class="box7 indent">
-                    <div class="black_box_holder" id="black_box_holder5">
-                      <p class="closeButton" id="closeButton5">×</p>
-                      <div class="black_box">
-                        <h3>Fun蛋</h3>
-                        <br>
-                        <p>興聯快樂農場，採用全國獨家興聯農業科技技術之無藥物健康養殖系統，以低密度之人道飼養管理方式，讓每隻雞都能自在的活動與熱情地奔跑，快樂的雞，才能有Fun蛋.</p>
-                      </div>
-                    </div>
-                    <div class="egg_pic" style="text-align: center;">
-                      <%= image_tag('fun_egg-01.png', :class=>'brand_ico') %>
-                    </div>
-                    <h4>
-                      Fun蛋
-                    </h4>
-                    <p style="width:450px;">興聯快樂農場，採用全國獨家興聯農業科技技術之無藥物健康...</p>
-                    <br>
-                    <a class="btn-black wow fadeIn readmore" id="readmore5" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
-                  </div>
-                </div>
-
-                <div class="grid_6 element-item second" data-category="second">
-                  <div class="box7 indent">
-                    <div class="black_box_holder" id="black_box_holder6">
-                      <p class="closeButton" id="closeButton6">×</p>
-                      <div class="black_box">
-                        <h3>Fun飼元氣滴雞精</h3>
-                        <br>
-                        <p>興聯Fun飼元氣滴雞精，精選興聯農場生產Fun飼雞，全雞精萃煉製，保留雞肉營養，含豐富膠質、小分子蛋白質、胺基酸，滋補養生，營養好吸收，產前後及病後補養，一年四季皆可食用，無須立即冷凍，常溫或冷藏放置保存，隨時補充一天滿滿的營養與活力.</p>
-                      </div>
-                    </div>
-                    <div class="egg_pic" style="text-align: center;">
-                      <%= image_tag('lowgg-01.png', :class=>'brand_ico') %>
-                    </div>
-                    <h4>
-                      Fun飼元氣滴雞精
-                    </h4>
-                    <p style="width:450px;">興聯Fun飼元氣滴雞精，精選興聯農場生產Fun飼雞，全雞精萃煉製...</p>
-                    <br>
-                    <a class="btn-black wow fadeIn readmore" id="readmore6" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
-                  </div>
-                </div>
-              </div> -->
-
             </div>
-          </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
     </section>
