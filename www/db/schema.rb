@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150903070615) do
+ActiveRecord::Schema.define(version: 20160512074853) do
 
   create_table "admin_abouts", force: true do |t|
     t.string   "title_area_1"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20150903070615) do
     t.date     "date_of_news"
     t.string   "main_visual2"
     t.boolean  "is_order_form"
+    t.string   "news_link"
   end
 
   create_table "admin_og_main_pages", force: true do |t|

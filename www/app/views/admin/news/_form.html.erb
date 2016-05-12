@@ -37,9 +37,13 @@
     <%= f.label '是否公開' %><br>
     <%= f.check_box :is_public %>
   </div>
-    <div class="form-group">
+  <div class="form-group">
     <%= f.label '顯示訂購表單' %><br>
     <%= f.check_box :is_order_form %>
+  </div>
+  <div class="form-group">
+    <%= f.label '新聞連結' %><br>
+    <%= f.text_field :news_link, :class => "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit '更新新聞', :class => "btn btn-primary btn-full" %>
