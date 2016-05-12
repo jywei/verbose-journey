@@ -146,34 +146,20 @@
       </div>
       <div class="row">
         <div class="grid_12">
-          <div class="post1">
-            <div class="image-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-              <img src="<%= asset_path('page4_img3.png') %>" alt=""/>
-              <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                <h3>
-                  <strong><a href="http://www.theguardian.com/sustainable-business/2015/jun/18/is-it-time-for-antibiotic-free-label-on-our-food" target="_blank" > Is it time for an antibiotic-free label on our food?</a></strong>
-                </h3>
-                <time datetime="2015-06-18">18 june, 2015</time>
+          <% @admin_news.each do |news| %>
+            <div class="post1">
+              <div class="image-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                <%= image_tag(news.main_visual.url) %>
+                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <h3>
+                    <strong><%= link_to "#{news.title}", news.news_link, target: "_blank" %></strong>
+                  </h3>
+                  <time datetime="2014-01-01"><%= news.date_of_news.to_formatted_s(:long) %></time>
+                </div>
               </div>
+              <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"><%= strip_tags(news.get_long_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
             </div>
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">A post-antibiotic age in which common infections and minor injuries can kill is too frightening to contemplate. Yet it is a very real possibility for this century, says the World Health Organisation (WHO).To help slow the emergence of bacteria resistant to antibiotics we need to reduce our dependence on antimicrobial drugs and drastically cut their misuse and overuse in humans and animals, say experts.....</p>
-          </div>
-
-          <div class="post1">
-            <div class="image-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-              <img src="<%= asset_path('page4_img4.png') %>" alt=""/>
-              <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                <h3>
-                  <strong><a href="http://money.cnn.com/2016/01/10/news/economy/raw-ingredients-antibiotics-food-health-superbug/index.html" target="_blank" >How antibiotics in our food system affect your health</a></strong>
-                </h3>
-                <time datetime="2016-01-10">10 January, 2016</time>
-              </div>
-            </div>
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">More than 70% of antibiotics sold in the U.S. are for food production animals, according to the Johns Hopkins Center for a Livable Future.The problem is that many experts believe this is an overuse of antibiotics, and they fear significant public health consequences.Every time we use antibiotics, some bacteria survive -- and those drug-resistant bacteria can then multiply and spread. This can result in 'superbugs'......</p>
-          </div>
-          <div class="button-wrapper1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <a class="btn-default" href="/news/">See all</a>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
