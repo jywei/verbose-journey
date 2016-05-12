@@ -17,7 +17,7 @@
                 <%= image_tag(news.main_visual.url) %>
                 <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <h3>
-                    <strong><a href="#" target="_blank" ><%= news.title %></a></strong>
+                    <strong><%= link_to "#{news.title}", news.news_link, target: "_blank" %></strong>
                   </h3>
                   <time datetime="2014-01-01"><%= news.date_of_news.to_formatted_s(:long) %></time>
                 </div>
