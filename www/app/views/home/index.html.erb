@@ -90,87 +90,20 @@
 
       <div class="row">
         <!-- 第一排icon -->
-        <div class="grid_4">
-          <div class="box2">
-            <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="1">
-              <%= image_tag('page1_img10.png', :class=>'brand_ico') %>
+        <% @admin_products.each do |product| %>
+          <div class="grid_4">
+            <div class="box2">
+              <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="1">
+                <%= image_tag(product.main_visual.url, :class=>'brand_ico') %>
+              </div>
+              <!-- <i class="fa fa-pagelines wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"></i> -->
+              <h3 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                <a href="/products/"><strong><%= product.name %></strong></a>
+              </h3>
+              <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s"><%= strip_tags(product.get_short_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
             </div>
-            <!-- <i class="fa fa-pagelines wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"></i> -->
-            <h3 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-              <a href="/products/"><strong>樂活蛋</strong></a>
-            </h3>
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">在歐美國家外國人總以生活快樂，樂活的步調悠然自在的享受生活，日本則以"優自慢"恬然生活，透過興聯快樂農場所產出的"樂活蛋"讓每位消費者於日常食衣住行中，皆能樂在其中快活優想於生活品味中.</p>
           </div>
-        </div>
-
-        <div class="grid_4">
-          <div class="box2">
-            <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="1">
-              <%= image_tag('drgee-01.png', class: 'brand_ico') %>
-            </div>
-            <!-- <i class="fa fa-pagelines wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"></i> -->
-            <h3 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-              <a href="/products/"><strong>達人蛋</strong></a>
-            </h3>
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">以出產優良雞肉和蛋品為傲，故以達人自許，期盼所出產之蛋品皆為蛋品類之佼佼者，如同達人雞蛋博士一樣，為消費者品質把關與嚴選每一顆蛋.</p>
-          </div>
-        </div>
-
-        <div class="grid_4">
-          <div class="box2">
-            <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="1">
-              <%= image_tag('jan_shan-01.png', class: 'brand_ico') %>
-            </div>
-            <!-- <i class="fa fa-pagelines wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"></i> -->
-            <h3 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-              <a href="/products/"><strong>珍香蛋</strong></a>
-            </h3>
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">所成立的興聯第一個蛋品品牌，珍香蛋能讓每位家庭及婆婆媽媽們的桌上佳餚，添加珍香味美與健康，不僅於價格上親民，更能為大家精心挑選每一顆食用無虞的良心好蛋.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- 第一排icon -->
-        <div class="grid_4">
-          <div class="box2">
-            <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="1">
-              <%= image_tag('fun_egg-01.png', class: 'brand_ico') %>
-            </div>
-            <!-- <i class="fa fa-pagelines wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"></i> -->
-            <h3 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-              <a href="/products/"><strong>Fun蛋</strong></a>
-            </h3>興聯快樂農場，採用全國獨家興聯農業科技技術之無藥物健康養殖系統，以低密度之人道飼養管理方式，讓每隻雞都能自在的活動與熱情地奔跑，快樂的雞，才能有Fun蛋.</p>
-          </div>
-        </div>
-
-        <div class="grid_4">
-          <div class="box2">
-            <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="1">
-              <%= image_tag('shiwhoegg.png', class: 'brand_ico') %>
-            </div>
-            <!-- <i class="fa fa-pagelines wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"></i> -->
-            <h3 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-              <a href="/products/"><strong>石虎蛋</strong></a>
-            </h3>
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">全國第一家結合農委會特有生物研究保育中心之石虎保育類動物所推出合作商品，由農委會特生組，特別給予一個對於商品品質，農場人到管理及無抗生素等之優良產品認證編號。為石虎好朋友之001石虎蛋，不僅僅喚起對...</p>
-          </div>
-        </div>
-
-        <div class="grid_4">
-          <div class="box2">
-            <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="1">
-              <%= image_tag('lowgg-01.png', class: 'brand_ico') %>
-            </div>
-            <!-- <i class="fa fa-pagelines wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"></i> -->
-            <h3 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-              <a href="/products/"><strong>Fun飼元氣滴雞精</strong></a>
-            </h3>
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">興聯Fun飼元氣滴雞精，精選興聯農場生產Fun飼雞，全雞精萃煉製，保留雞肉營養，含豐富膠質、小分子蛋白質、胺基酸，滋補養生，營養好吸收，產前後及病後補養，一年四季皆可食用，無須立即冷凍，常溫或冷藏放置保存，隨時補充一天滿滿的營養與活力.</p>
-          </div>
-        </div>
-      </div>
-
+        <% end %>
       </div>
     </div>
   </div>

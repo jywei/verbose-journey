@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 	def index
 		@admin_brands = Admin::Brand.where(:is_public => true)
 		@admin_news = Admin::News.where(:is_public => true).order(:date_of_news => :desc).limit(3)
-		@admin_products = Admin::Product.limit(3)
+		@admin_products = Admin::Product.limit(6)
 		@admin_infos = Admin::Info.limit(3)
 		@admin_story = Admin::Story.first
 
@@ -48,7 +48,7 @@ class HomeController < ApplicationController
 			end
 		end
 	end
-	
+
 	def terms_of_service
 		@main_visials = Admin::SiteConfig.first.get_pc_images.limit(1)
 		@phone_main_visials = Admin::SiteConfig.first.get_phone_images.limit(1)
