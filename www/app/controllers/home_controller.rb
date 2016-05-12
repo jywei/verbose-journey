@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 	def index
 		@admin_brands = Admin::Brand.where(:is_public => true)
-		@admin_news = Admin::News.where(:is_public => true).order(:date_of_news => :desc).limit(3)
+		@admin_news = Admin::News.where(:is_public => true).order(id: :desc).limit(2)
 		@admin_products = Admin::Product.limit(3)
 		@admin_infos = Admin::Info.limit(3)
 		@admin_story = Admin::Story.first
