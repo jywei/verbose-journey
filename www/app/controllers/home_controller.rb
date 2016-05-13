@@ -59,4 +59,19 @@ class HomeController < ApplicationController
 		@phone_main_visials = Admin::SiteConfig.first.get_phone_images.limit(1)
 	end
 
+	def translate
+		language = params[:language]
+
+		respond_to do |format|
+			if language.present?
+
+				session[:language] = language
+
+				format.json { render json: "success", status: 200 }
+			else
+				format.json { render json: "error", status: :unprocessable_entity }
+			end
+		end
+	end
+
 end
