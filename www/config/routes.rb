@@ -18,6 +18,9 @@ Rails.application.routes.draw do
 
   post "stores/search" => "stores#search"
 
+  get "home/translate" => "home#translate"
+
+
   resources :brands
   resources :abouts
   resources :contacts

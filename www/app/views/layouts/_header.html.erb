@@ -21,7 +21,7 @@
     </h1>
 
     <nav>
-      <ul class="sf-menu common">
+      <ul class="sf-menu common en">
         <li class="<%= current_path(root_path) %>"><%= link_to "Home", root_path %></li>
         <li class="<%= current_path(abouts_path) %>"><%= link_to "About", abouts_path %></li>
         <!-- <li><a href="index-1.html">About</a> -->
@@ -50,6 +50,15 @@
         <li class="<%= current_path(stores_path) %>"><%= link_to "Where To Buy", stores_path %></li>
         <!-- <li><a href="#" class='commingsoon_alert' onclick="alert('CommingSoon..資料上傳中')">Where to buy</a></li> -->
       </ul>
+      <ul class="sf-menu common zh">
+        <li class="<%= current_path(root_path) %>"><%= link_to "主頁", root_path %></li>
+        <li class="<%= current_path(abouts_path) %>"><%= link_to "關於我們", abouts_path %></li>
+        <li class="<%= current_path(products_path) %>"><%= link_to "產品", products_path %></li>
+        <li class="<%= current_path(inspections_path) %>"><%= link_to "認證", inspections_path %></li>
+        <li class="<%= current_path(news_index_path) %>"><%= link_to "新聞", news_index_path %></li>
+        <li class="<%= current_path(contacts_path) %>"><%= link_to "聯絡我們", contacts_path %></li>
+        <li class="<%= current_path(stores_path) %>"><%= link_to "銷售通路", stores_path %></li>
+      </ul>
       <div class="clearfix"></div>
     </nav>
   </div>
@@ -74,13 +83,27 @@
       <div class="row">
         <div class="grid_10 preffix_1">
           <div class="slogan">
-            <h6 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">Opul Union</h6>
-            <h5 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">Way back to happiness</h5>
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">We uphold the purpose of the spirit of scientific experiment and social welfare contribution.</p>
-            <ul  class="socials1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+            <span class="en">
+              <h6 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">Opul Union</h6>
+              <h5 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">Way back to happiness</h5>
+              <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">We uphold the purpose of the spirit of scientific experiment and social welfare contribution.</p>
+            </span>
+            <span class="zh">
+              <h6 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">Opul Union</h6>
+              <h5 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">尋回幸福</h5>
+              <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">我們秉承科學實驗精神和社會福利貢獻為宗旨</p>
+            </span>
+            <ul  class="socials1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
             </ul>
+            <nav id="language">
+              <ul>
+                <li><a onclick="trans_en(this);" style="cursor: pointer;"><span class="zh">英</span><span class="en">English</span></a> /</li>
+                <li> <a onclick="TongWen.trans2Trad(document);trans(this,'trad');" style="cursor: pointer;"><span class="zh">繁中</span><span class="en">Chinese(Traditional)</span></a> /</li>
+                <li><a onclick="TongWen.trans2Simp(document);trans(this,'simp');" style="cursor: pointer"><span class="zh">簡中</span><span class="en">Chinese(Simplified)</span></a></li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>

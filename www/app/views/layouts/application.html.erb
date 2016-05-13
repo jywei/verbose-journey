@@ -104,6 +104,47 @@
 	<!-- /footer -->
 
   <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script> -->
+  <script type="text/javascript">
+    function trans(obj,language){
+      $(".zh").css("display",'');
+      $(".en").hide();
 
+      $.ajax(
+        {url: "/home/translate?language=" + language,
+        complete: function(xhr, status){
+        }
+      });
+    }
+    function trans_en(obj){
+      $(".en").css("display",'');
+      $(".zh").hide();
+
+      $.ajax(
+        {url: "/home/translate?language=en",
+        complete: function(xhr, status){
+        }
+      });
+    }
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".en").hide();
+
+      if ("<%= session[:language] %>" == "en") {
+        $(".en").css("display",'');
+        $(".zh").hide();
+      }else if ("<%= session[:language] %>" == "simp") {
+        $(".zh").css("display",'');
+        $(".en").hide();
+        TongWen.trans2Simp(document);
+      }else {
+        $(".zh").css("display",'');
+        $(".en").hide();
+        TongWen.trans2Trad(document);
+
+      }
+    });
+  </script>
 </body>
 </html>
