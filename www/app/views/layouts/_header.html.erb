@@ -2,15 +2,7 @@
                           HEADER
 =========================================================-->
 
-<script type="text/javascript">
-
-// $(".commingsoon_alert").click(function() {
-//   alert('CommingSoon..資料上傳中');
-// });
-</script>
 <header id="header" class="stellar-block header_video" data-stellar-background-ratio="0.5">
-
-
 
   <div id="stuck_container">
     <h1 class='fixed_logo'><!--  #左上logo -->
@@ -37,18 +29,12 @@
             <li><a href="#">Ctetur adipisicing</a></li>
           </ul> -->
         </li>
-
-        <!-- <li><%= link_to "Product", products_path, :class=>'commingsoon_alert' %></li> -->
         <li class="<%= current_path(products_path) %>"><%= link_to "Product", products_path %></li>
-        <!-- <li><a href="#" class='commingsoon_alert' onclick="alert('CommingSoon..資料上傳中')">Product</a></li> -->
-
         <li class="<%= current_path(inspections_path) %>"><%= link_to "Inspection", inspections_path %></li>
-
         <li class="<%= current_path(news_index_path) %>"><%= link_to "News", news_index_path %></li>
         <li class="<%= current_path(contacts_path) %>"><%= link_to "Contacts", contacts_path %></li>
 
         <li class="<%= current_path(stores_path) %>"><%= link_to "Where To Buy", stores_path %></li>
-        <!-- <li><a href="#" class='commingsoon_alert' onclick="alert('CommingSoon..資料上傳中')">Where to buy</a></li> -->
       </ul>
       <ul class="sf-menu common zh">
         <li class="<%= current_path(root_path) %>"><%= link_to "主頁", root_path %></li>
@@ -97,13 +83,13 @@
               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
             </ul>
-            <nav id="language">
+            <!-- <nav id="language">
               <ul>
                 <li><a onclick="trans_en(this);" style="cursor: pointer;"><span class="zh">英</span><span class="en">English</span></a> /</li>
                 <li> <a onclick="TongWen.trans2Trad(document);trans(this,'trad');" style="cursor: pointer;"><span class="zh">繁中</span><span class="en">Chinese(Traditional)</span></a> /</li>
                 <li><a onclick="TongWen.trans2Simp(document);trans(this,'simp');" style="cursor: pointer"><span class="zh">簡中</span><span class="en">Chinese(Simplified)</span></a></li>
               </ul>
-            </nav>
+            </nav> -->
           </div>
         </div>
       </div>
@@ -111,9 +97,9 @@
   </div>
   <div style="position:relative;text-align:center;">
     <ul class="socials1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
-      <li><a href="#"><i class="" style="font-size:15px;width:40px;height:40px;line-height: 40px;">英</i></a></li>
-      <li><a href="#"><i class="" style="font-size:15px;width:40px;height:40px;line-height: 40px;">繁</i></a></li>
-      <li><a href="#"><i class="" style="font-size:15px;width:40px;height:40px;line-height: 40px;">簡</i></a></li>
+      <li><a onclick="trans_en(this);" style="cursor: pointer;"><i class="" style="font-size:15px;width:40px;height:40px;line-height: 40px;"><span class="zh">英</span><span class="en">En</span></i></a></li>
+      <li><a onclick="TongWen.trans2Trad(document);trans(this,'trad');" style="cursor: pointer;"><i class="" style="font-size:15px;width:40px;height:40px;line-height: 40px;"><span class="zh">繁</span><span class="en">TW</span></i></a></li>
+      <li><a onclick="TongWen.trans2Simp(document);trans(this,'simp');" style="cursor: pointer"><i class="" style="font-size:15px;width:40px;height:40px;line-height: 40px;"><span class="zh">簡</span><span class="en">CN</span></i></a></li>
     </ul>
   </div>
 <% end %>
