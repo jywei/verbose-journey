@@ -40,7 +40,7 @@
                   </label>
                 </div>
               </div>
-              <div class="row">
+<!--               <div class="row">
                 <div class="grid_5">
                   <label class="phone wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
                     <input type="text" name="phone" placeholder="Phone:" value=""
@@ -49,7 +49,7 @@
                     <span class="error-message">*This is not a valid phone.</span>
                   </label>
                 </div>
-              </div>
+              </div> -->
               <div class="row">
                 <div class="grid_8">
                   <label class="message wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
@@ -62,7 +62,7 @@
               </div>
               <!-- <label class="recaptcha"><span class="empty-message">*This field is required.</span></label> -->
               <div class="contact-form-buttons">
-                <a href="#" data-type="submit" class="btn-filled wow fadeIn" data-wow-duration="1s"
+                <a href="#" id="send" data-type="submit" class="btn-filled wow fadeIn" data-wow-duration="1s"
                    data-wow-delay="0.5s">Send</a>
               </div>
             </fieldset>
@@ -76,4 +76,36 @@
      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.297800166675!2d121.54142531478125!3d25.023965844848068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAxJzI2LjMiTiAxMjHCsDMyJzM3LjAiRQ!5e0!3m2!1szh-TW!2stw!4v1462132268834" style="border:0"></iframe>
   </div>
 
+</section>
+
+<section class="contact_form">
+<% if flash[:notice] %>
+  <% if flash[:notice] == "發送成功" %>
+    <!-- <div class="notice">您的訊息已經發送成功</div> -->
+    <div class="alert alert-success" style="display: none;padding-top: 7px;padding-bottom: 7px;margin-bottom: 10px;">
+      <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> 發送成功!您的訊息已經成功寄給管理員.
+    </div>
+  <% end %>
+<% end %>
+
+<div style="opacity: 0;height: 0px;width: 0px;">
+<%= form_for(Admin::Contact.new, :url =>{:controller => "contacts", :action => "create"}, :method => "POST", style: "opacity:0;height:0px;width:0px;") do |f| %>
+  <%= f.text_field :name, :required => true, :placeholder => "Full Name"%>
+  <%= f.email_field :email, :required => true, :placeholder => "Email Address" %>
+  <%= f.text_area :message, :required => true, :placeholder => "Your Message" %>
+  <%= f.submit 'Submit' %>
+<% end %>
+</div>
+
+<script>
+  $('#send').click(function(){
+    name = $(':input[name=name]').val();
+    email = $(':input[name=email]').val();
+    message = $(':input[name=message]').val();
+    $('#admin_contact_name').val(name);
+    $('#admin_contact_email').val(email);
+    $('#admin_contact_message').val(message);
+    $('#new_admin_contact').submit();
+  });
+</script>
 </section>

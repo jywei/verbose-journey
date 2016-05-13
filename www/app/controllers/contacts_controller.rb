@@ -21,7 +21,7 @@ class ContactsController < ApplicationController
         form_email = @admin_contact.email
         name = @admin_contact.name
         message = @admin_contact.message
-        UserMailer.contact(to_email,form_email,name,message).deliver
+        # UserMailer.contact(to_email,form_email,name,message).deliver
         format.html { redirect_to contacts_path, notice: '發送成功' }
         format.json { render :show, status: :created, location: @admin_contact }
       else
