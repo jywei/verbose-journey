@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516024249) do
+ActiveRecord::Schema.define(version: 20160516034054) do
 
   create_table "admin_abouts", force: true do |t|
     t.string   "title_area_1"
@@ -101,6 +101,8 @@ ActiveRecord::Schema.define(version: 20160516024249) do
     t.string   "main_visual2"
     t.boolean  "is_order_form"
     t.string   "news_link"
+    t.string   "title_en"
+    t.text     "content_en"
   end
 
   create_table "admin_og_main_pages", force: true do |t|

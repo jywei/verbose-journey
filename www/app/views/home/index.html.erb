@@ -181,7 +181,7 @@
       <div class="row">
         <div class="grid_12">
           <% @admin_news.each do |news| %>
-            <div class="post1">
+            <div class="post1 zh">
               <div class="image-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                 <%= image_tag(news.main_visual.url) %>
                 <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -192,6 +192,19 @@
                 </div>
               </div>
               <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"><%= strip_tags(news.get_long_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
+            </div>
+
+            <div class="post1 en">
+              <div class="image-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                <%= image_tag(news.main_visual.url) %>
+                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <h3>
+                    <strong><%= link_to "#{news.title_en}", news.news_link, target: "_blank" %></strong>
+                  </h3>
+                  <time datetime="2014-01-01"><%= news.date_of_news.to_formatted_s(:long) %></time>
+                </div>
+              </div>
+              <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"><%= strip_tags(news.get_long_content_en).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
             </div>
           <% end %>
           <span class="en">

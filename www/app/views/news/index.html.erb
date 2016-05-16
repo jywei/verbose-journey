@@ -4,27 +4,41 @@
       <div class="row">
         <div class="grid_12">
           <div class="heading1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-            <h2>Latest News</h2>
+            <h2 class="zh">最新消息</h2>
+            <h2 class="en">Latest News</h2>
             <p style="color:#4d4d4d; font-size: 35px;">Feed For Food</p>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="grid_12">
-          <% @admin_news.each do |news| %>
-            <div class="post1">
-              <div class="image-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                <%= image_tag(news.main_visual.url) %>
-                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                  <h3>
-                    <strong><%= link_to "#{news.title}", news.news_link, target: "_blank" %></strong>
-                  </h3>
-                  <time datetime="2014-01-01"><%= news.date_of_news.to_formatted_s(:long) %></time>
+            <% @admin_news.each do |news| %>
+              <div class="post1 zh">
+                <div class="image-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                  <%= image_tag(news.main_visual.url) %>
+                  <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <h3>
+                      <strong><%= link_to "#{news.title}", news.news_link, target: "_blank" %></strong>
+                    </h3>
+                    <time datetime="2014-01-01"><%= news.date_of_news.to_formatted_s(:long) %></time>
+                  </div>
                 </div>
+                <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"><%= strip_tags(news.get_long_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
               </div>
-              <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"><%= strip_tags(news.get_long_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
-            </div>
-          <% end %>
+
+              <div class="post1 en">
+                <div class="image-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                  <%= image_tag(news.main_visual.url) %>
+                  <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <h3>
+                      <strong><%= link_to "#{news.title_en}", news.news_link, target: "_blank" %></strong>
+                    </h3>
+                    <time datetime="2014-01-01"><%= news.date_of_news.to_formatted_s(:long) %></time>
+                  </div>
+                </div>
+                <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"><%= strip_tags(news.get_long_content_en).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
+              </div>
+            <% end %>
 
         </div>
       </div>
