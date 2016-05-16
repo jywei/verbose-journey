@@ -20,10 +20,12 @@
                     <h3>
                       <strong><%= link_to "#{news.title}", news.news_link, target: "_blank" %></strong>
                     </h3>
-                    <time datetime="2014-01-01"><%= news.date_of_news.to_formatted_s(:long) %></time>
+                    <time><%= news.date_of_news.to_formatted_s(:long) %></time>
                   </div>
                 </div>
+                <% if news.content.present? %>
                 <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"><%= strip_tags(news.get_long_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
+                <% end %>
               </div>
 
               <div class="post1 en">
@@ -33,10 +35,12 @@
                     <h3>
                       <strong><%= link_to "#{news.title_en}", news.news_link, target: "_blank" %></strong>
                     </h3>
-                    <time datetime="2014-01-01"><%= news.date_of_news.to_formatted_s(:long) %></time>
+                    <time><%= news.date_of_news.to_formatted_s(:long) %></time>
                   </div>
                 </div>
+                <% if news.content_en.present? %>
                 <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"><%= strip_tags(news.get_long_content_en).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
+                <% end %>
               </div>
             <% end %>
 
