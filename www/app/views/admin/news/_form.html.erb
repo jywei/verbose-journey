@@ -24,11 +24,11 @@
     <%= image_tag(@admin_news.main_visual.thumb.url) %>
     <%= f.file_field :main_visual %>
   </div>
-  <div class="form-group">
-    <%= f.label '主視覺2(裡層)' %><br>
-    <%= image_tag(@admin_news.main_visual2.thumb.url) %>
-    <%= f.file_field :main_visual2 %>
-  </div>
+  <!-- <div class="form-group"> -->
+    <%#= f.label '主視覺2(裡層)' %><br>
+    <%#= image_tag(@admin_news.main_visual2.thumb.url) %>
+    <%#= f.file_field :main_visual2 %>
+  <!-- </div> -->
   <div class="form-group">
     <%= f.label '新聞日期' %>
     <%= f.date_select :date_of_news %>
@@ -37,10 +37,10 @@
     <%= f.label '是否公開' %><br>
     <%= f.check_box :is_public %>
   </div>
-  <div class="form-group">
-    <%= f.label '顯示訂購表單' %><br>
+<!--   <div class="form-group">
+    <%= f.label '顯示訂購表單' %>
     <%= f.check_box :is_order_form %>
-  </div>
+  </div> -->
   <div class="form-group">
     <%= f.label '新聞連結' %><br>
     <%= f.text_field :news_link, :class => "form-control" %>

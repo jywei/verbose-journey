@@ -70,6 +70,6 @@ class Admin::AboutsController < Admin::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_about_params
-      params.require(:admin_about).permit(:title_area_1, :content_area_1, :title_area_2, :content_area_2, staff_attributes: [:office, :name, :slogan, :slogan2, :content, :photo])
+      params.require(:admin_about).permit(:title_area_1, :content_area_1, :title_area_en_1, :content_area_en_1, :title_area_2, :content_area_2, :title_area_en_2, :content_area_en_2, staff_attributes: [:office, :name, :slogan, :slogan2, :content, :photo])
     end
 end

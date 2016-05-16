@@ -22,6 +22,5 @@ module Www
     # config.i18n.default_locale = "zh-TW"
 
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
-    # config.i18n.default_locale = "zh-TW"
   end
 end

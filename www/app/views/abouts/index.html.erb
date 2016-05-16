@@ -4,7 +4,7 @@
       <div class="row">
         <div class="grid_12">
           <div class="heading1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-            <h2>The story about us!</h2>
+            <h2>The Story About Us!</h2>
           </div>
         </div>
       </div>
@@ -23,15 +23,28 @@
     <div class="container">
       <div class="row">
         <div class="grid_12">
-          <div class="slogan">
+          <div class="slogan en">
             <h6 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">Story</h6>
             <br>
+            <br>
             <h5 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">start your day from the healthy way</h5>
-            <div class="row">
+            <!-- <div class="row">
               <div class="grid_10 preffix_1">
                 <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">美好的一天從健康開始</p>
               </div>
-            </div>
+            </div> -->
+          </div>
+
+          <div class="slogan zh">
+            <h6 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">我們的故事</h6>
+            <br>
+            <br>
+            <h5 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">美好的一天從健康開始</h5>
+            <!-- <div class="row">
+              <div class="grid_10 preffix_1">
+                <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">美好的一天從健康開始</p>
+              </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -41,10 +54,16 @@
     <div class="container">
       <div class="row">
         <div class="grid_12">
-          <div class="heading1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+          <div class="heading1 wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.1s">
             <h2><%= @admin_about.title_area_1 %></h2>
             <br>
             <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"><%= simple_format(@admin_about.content_area_1) %></p>
+          </div>
+
+          <div class="heading1 wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.1s">
+            <h2><%= @admin_about.title_area_en_1 %></h2>
+            <br>
+            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"><%= simple_format(@admin_about.content_area_en_1) %></p>
           </div>
         </div>
       </div>
@@ -58,12 +77,20 @@
     <div class="container">
       <div class="row">
         <div class="grid_10 preffix_1">
-          <div class="slogan">
+          <div class="slogan en">
             <h6 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">About Us</h6>
             <br>
             <h5 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">Our layers are also raised in the same non­toxic way.</h5>
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">讓本土農產得以永續經營發展</p>
+            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">Sustain our local argriculture.</p>
             <a class="btn-big wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" href="/products/">Read More</a>
+          </div>
+
+          <div class="slogan zh">
+            <h6 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">關於我們</h6>
+            <br>
+            <h5 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">我們的下游也是以無毒的方式養殖</h5>
+            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">讓本土農產得以永續經營發展</p>
+            <a class="btn-big wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" href="/products/">瞭解更多</a>
           </div>
         </div>
       </div>
@@ -74,15 +101,23 @@
     <div class="container">
       <div class="row">
         <div class="grid_12">
-          <div class="heading1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+          <div class="heading1 wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.1s">
+            <h2><%= @admin_about.title_area_en_2 %></h2>
+          </div>
+
+          <div class="heading1 wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.1s">
             <h2><%= @admin_about.title_area_2 %></h2>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="grid_12">
-          <div class="box3 box3__inset1">
+          <div class="box3 box3__inset1 zh">
             <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"><%= simple_format(@admin_about.content_area_2) %></p>
+          </div>
+
+          <div class="box3 box3__inset1 en">
+            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"><%= simple_format(@admin_about.content_area_en_2) %></p>
           </div>
         </div>
         <!-- <div class="grid_4"></div> -->
