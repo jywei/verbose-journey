@@ -16,16 +16,32 @@
     <%= f.text_field :title_area_1, :class => "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label '標題-區塊1-英文' %><br>
+    <%= f.text_field :title_area_en_1, :class => "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label '內容-區塊1' %><br>
     <%= f.cktext_area :content_area_1, :ckeditor => {:toolbar => 'onlybasicstyles'} %>
+  </div>
+  <div class="form-group">
+    <%= f.label '內容-區塊1-英文' %><br>
+    <%= f.cktext_area :content_area_en_1, :ckeditor => {:toolbar => 'onlybasicstyles'} %>
   </div>
   <div class="form-group">
     <%= f.label '標題-區塊2' %><br>
     <%= f.text_field :title_area_2, :class => "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label '標題-區塊2-英文' %><br>
+    <%= f.text_field :title_area_en_2, :class => "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label '內容-區塊2' %><br>
     <%= f.cktext_area :content_area_2, :ckeditor => {:toolbar => 'onlybasicstyles'} %>
+  </div>
+  <div class="form-group">
+    <%= f.label '內容-區塊2-英文' %><br>
+    <%= f.cktext_area :content_area_en_2, :ckeditor => {:toolbar => 'onlybasicstyles'} %>
   </div>
 
   <%#= f.fields_for :staff do |s|%>
