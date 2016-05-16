@@ -89,8 +89,6 @@
     <%= f.label :show_products_read_more, '產品是否顯現Read More' %><br>
     <%= f.check_box :show_products_read_more %>
   </div>
-
-
   <div class="form-group">
     <%= f.label :og_title, 'OG標題' %><br>
     <%= f.text_field :og_title, :class => "form-control" %>
@@ -104,7 +102,6 @@
     <%= image_tag(@admin_brand.og_image.thumb.url) %>
     <%= f.file_field :og_image %>
   </div>
-
 
   <div class="actions">
     <%= f.submit '品牌 更新', :class => "btn btn-primary btn-full" %>
