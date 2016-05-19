@@ -1,10 +1,8 @@
 <style type="text/css">
-
 .brand_ico{
   width: 60%;
   border-radius: 500px;
 }
-
 </style>
 
 <script>
@@ -64,20 +62,17 @@ $(document).ready(function () {
           </div>
           <div class="row">
             <div class="grid_12">
-              <div id="filters" class="button-group en">
-                <button class="button is-checked wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">show all</button>
-                <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".first">Egg</button>
-                <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s" data-filter=".second">Chicken</button>
-                <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" data-filter=".third">Essence of Chicken</button>
-                <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" data-filter=".forth">Merchandise</button>
-              </div>
-
-              <div id="filters" class="button-group zh">
-                <button class="button is-checked wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">顯示全部</button>
-                <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".first">雞蛋</button>
-                <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s" data-filter=".second">雞肉</button>
-                <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" data-filter=".third">滴雞精</button>
-                <button class="button wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" data-filter=".forth">周邊商品</button>
+              <div id="filters" class="button-group">
+                <button class="button is-checked wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">show all</button>
+                <button class="button is-checked wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">顯示全部</button>
+                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".first">Egg</button>
+                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".first">雞蛋</button>
+                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.3s" data-filter=".second">Chicken</button>
+                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.3s" data-filter=".second">雞肉</button>
+                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.4s" data-filter=".third">Essence of Chicken</button>
+                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.4s" data-filter=".third">滴雞精</button>
+                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.5s" data-filter=".forth">Merchandise</button>
+                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.5s" data-filter=".forth">周邊商品</button>
               </div>
             </div>
           </div>
@@ -123,10 +118,19 @@ $(document).ready(function () {
 
 <script>
 $('.readmore').click(function(){
+  $('.black_box_holder.active').removeClass('active');
+  $(this).css({
+    visibility: "hidden"
+  });
   $(this).parent().find(".black_box_holder").toggleClass('active');
 });
 
+
+
 $('.closeButton').click(function(){
   $(this).parent().removeClass('active');
+  $('.readmore').css({
+    visibility: "visible"
+  });
 });
 </script>
