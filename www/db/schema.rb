@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516034054) do
+ActiveRecord::Schema.define(version: 20160519061811) do
 
   create_table "admin_abouts", force: true do |t|
     t.string   "title_area_1"
@@ -233,6 +233,15 @@ ActiveRecord::Schema.define(version: 20160516034054) do
     t.string   "link_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title_en"
+    t.text     "content_en"
+    t.string   "title_en_2"
+    t.text     "content_2"
+    t.text     "content_en_2"
+    t.string   "title_3"
+    t.string   "title_en_3"
+    t.text     "content_3"
+    t.text     "content_en_3"
   end
 
   create_table "admin_subscribes", force: true do |t|
