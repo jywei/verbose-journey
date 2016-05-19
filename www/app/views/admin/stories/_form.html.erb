@@ -12,25 +12,65 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label '大標題' %><br>
+    <%= f.label '中文標題一' %><br>
     <%= f.text_field :title, :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label '小標題' %><br>
-    <%= f.text_field :title2, :class => "form-control" %>
+    <%= f.label '英文標題一' %><br>
+    <%= f.text_field :title_en, :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label '內容' %><br>
+    <%= f.label '中文內容一' %><br>
     <%= f.text_area :content, :class => "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label '英文內容一' %><br>
+    <%= f.text_area :content_en, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label '中文標題二' %><br>
+    <%= f.text_field :title2, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '英文標題二' %><br>
+    <%= f.text_field :title_en_2, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '中文內容二' %><br>
+    <%= f.text_area :content_2, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '英文內容二' %><br>
+    <%= f.text_area :content_en_2, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label '中文標題三' %><br>
+    <%= f.text_field :title_3, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '英文標題三' %><br>
+    <%= f.text_field :title_en_3, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '中文內容三' %><br>
+    <%= f.text_area :content_3, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '英文內容三' %><br>
+    <%= f.text_area :content_en_3, :class => "form-control" %>
+  </div>
+
+<!--   <div class="form-group">
     <%= f.label '按鈕文字' %><br>
     <%= f.text_field :button_text, :class => "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label '按鈕連結' %><br>
     <%= f.text_field :link_url, :class => "form-control" %>
-  </div>
+  </div> -->
+
   <div class="actions">
     <%= f.submit '更新故事', :class => "btn btn-primary btn-full" %>
   </div>
