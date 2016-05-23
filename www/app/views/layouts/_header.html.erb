@@ -12,40 +12,32 @@
       </a>
     </h1>
 
-    <nav>
-      <ul class="sf-menu common en">
+    <nav class="en">
+      <ul class="sf-menu common">
         <li class="<%= current_path(root_path) %>"><%= link_to "Home", root_path %></li>
         <li class="<%= current_path(abouts_path) %>"><%= link_to "About", abouts_path %></li>
-        <!-- <li><a href="index-1.html">About</a> -->
-          <!-- <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Sit amet conse</a>
-              <ul>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-                <li><a href="#">Sit amet conse</a></li>
-                <li><a href="#">Ctetur adipisicing</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Ctetur adipisicing</a></li>
-          </ul> -->
-        </li>
         <li class="<%= current_path(products_path) %>"><%= link_to "Product", products_path %></li>
         <li class="<%= current_path(inspections_path) %>"><%= link_to "Inspection", inspections_path %></li>
         <li class="<%= current_path(news_index_path) %>"><%= link_to "News", news_index_path %></li>
         <li class="<%= current_path(contacts_path) %>"><%= link_to "Contacts", contacts_path %></li>
-
         <li class="<%= current_path(stores_path) %>"><%= link_to "Where To Buy", stores_path %></li>
       </ul>
-      <ul class="sf-menu common zh">
-        <li class="<%= current_path(root_path) %>"><%= link_to "主頁", root_path %></li>
-        <li class="<%= current_path(abouts_path) %>"><%= link_to "關於我們", abouts_path %></li>
-        <li class="<%= current_path(products_path) %>"><%= link_to "產品", products_path %></li>
-        <li class="<%= current_path(inspections_path) %>"><%= link_to "認證", inspections_path %></li>
-        <li class="<%= current_path(news_index_path) %>"><%= link_to "新聞", news_index_path %></li>
-        <li class="<%= current_path(contacts_path) %>"><%= link_to "聯絡我們", contacts_path %></li>
-        <li class="<%= current_path(stores_path) %>"><%= link_to "銷售通路", stores_path %></li>
-      </ul>
       <div class="clearfix"></div>
+    </nav>
+
+    <nav class="zh">
+      <ul class="sf-menu common">
+        <ul class="sf-menu common zh">
+          <li class="<%= current_path(root_path) %>"><%= link_to "主頁", root_path %></li>
+          <li class="<%= current_path(abouts_path) %>"><%= link_to "關於我們", abouts_path %></li>
+          <li class="<%= current_path(products_path) %>"><%= link_to "產品", products_path %></li>
+          <li class="<%= current_path(inspections_path) %>"><%= link_to "認證", inspections_path %></li>
+          <li class="<%= current_path(news_index_path) %>"><%= link_to "新聞", news_index_path %></li>
+          <li class="<%= current_path(contacts_path) %>"><%= link_to "聯絡我們", contacts_path %></li>
+          <li class="<%= current_path(stores_path) %>"><%= link_to "銷售通路", stores_path %></li>
+        </ul>
+        <div class="clearfix"></div>
+      </ul>
     </nav>
   </div>
 
@@ -97,7 +89,7 @@
   </div>
   <div style="position:relative;text-align:center;">
     <ul class="socials1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
-      <li><a onclick="trans_en(this);" style="cursor: pointer;"><i class="" style="font-size:15px;width:40px;height:40px;line-height: 40px;"><span class="zh">英</span><span class="en">En</span></i></a></li>
+      <li><a onclick="trans_en(this);" style="cursor: pointer;"><i class="" style="font-size:15px;width:40px;height:40px;line-height: 40px;"><span class="zh">英</span><span class="en">EN</span></i></a></li>
       <li><a onclick="TongWen.trans2Trad(document);trans(this,'trad');" style="cursor: pointer;"><i class="" style="font-size:15px;width:40px;height:40px;line-height: 40px;"><span class="zh">繁</span><span class="en">TW</span></i></a></li>
       <li><a onclick="TongWen.trans2Simp(document);trans(this,'simp');" style="cursor: pointer"><i class="" style="font-size:15px;width:40px;height:40px;line-height: 40px;"><span class="zh">簡</span><span class="en">CN</span></i></a></li>
     </ul>
