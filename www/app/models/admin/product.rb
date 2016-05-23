@@ -29,32 +29,32 @@ class Admin::Product < ActiveRecord::Base
   end
 
   def get_long_title
-    if strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 300
-      strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..300] + '......'
+    if strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 125
+      strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..125] + '......'
     else
       strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")
     end
   end
 
   def get_short_title
-    if strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 100
-      strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..100] + '......'
+    if strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 25
+      strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..25] + '......'
     else
       strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")
     end
   end
 
   def get_long_title2
-    if strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 300
-      strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..300] + '......'
+    if strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 200
+      strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..200] + '......'
     else
       strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")
     end
   end
 
   def get_short_title2
-    if strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 100
-      strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..100] + '......'
+    if strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 80
+      strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..80] + '......'
     else
       strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")
     end
