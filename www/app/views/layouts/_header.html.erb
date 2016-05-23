@@ -27,34 +27,50 @@
 
     <nav class="zh">
       <ul class="sf-menu common">
-        <ul class="sf-menu common zh">
-          <li class="<%= current_path(root_path) %>"><%= link_to "主頁", root_path %></li>
-          <li class="<%= current_path(abouts_path) %>"><%= link_to "關於我們", abouts_path %></li>
-          <li class="<%= current_path(products_path) %>"><%= link_to "產品", products_path %></li>
-          <li class="<%= current_path(inspections_path) %>"><%= link_to "認證", inspections_path %></li>
-          <li class="<%= current_path(news_index_path) %>"><%= link_to "新聞", news_index_path %></li>
-          <li class="<%= current_path(contacts_path) %>"><%= link_to "聯絡我們", contacts_path %></li>
-          <li class="<%= current_path(stores_path) %>"><%= link_to "銷售通路", stores_path %></li>
-        </ul>
-        <div class="clearfix"></div>
+        <li class="<%= current_path(root_path) %>"><%= link_to "主頁", root_path %></li>
+        <li class="<%= current_path(abouts_path) %>"><%= link_to "關於我們", abouts_path %></li>
+        <li class="<%= current_path(products_path) %>"><%= link_to "產品", products_path %></li>
+        <li class="<%= current_path(inspections_path) %>"><%= link_to "認證", inspections_path %></li>
+        <li class="<%= current_path(news_index_path) %>"><%= link_to "新聞", news_index_path %></li>
+        <li class="<%= current_path(contacts_path) %>"><%= link_to "聯絡我們", contacts_path %></li>
+        <li class="<%= current_path(stores_path) %>"><%= link_to "銷售通路", stores_path %></li>
       </ul>
+      <div class="clearfix"></div>
     </nav>
   </div>
 
 
 <% if current_page?(:controller => '/home', :action => 'index') %>
-     <div id="js-container" style='z-index:-1;'>
-      <div id="js-wrapper" class="page-home">
-        <header id="js-intro-header">
-          <div class="particles" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-          </div>
+  <div id="js-container" style='z-index:-1;'>
+    <div id="js-wrapper" class="page-home">
+      <header id="js-intro-header">
+        <div class="particles" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+        </div>
+
+        <div class="web">
           <div class="video" style="margin-top: -48px;width:101%; height:100%;position: absolute;">
             <iframe id="js-youtube" class="youtube" style="width: 120%; height: 142%;margin-top: -10%;margin-left: -10%;" frameborder="0" allowfullscreen="1" title="YouTube video player" width="1440" height="860" src="https://www.youtube.com/embed/x_7J9_kxe-8?showinfo=0&amp;autohide=1&amp;autoplay=1&amp;controls=0&amp;rel=0&amp;loop=1&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fzeppelin.co.jp"></iframe>
           </div>
-        </header>
-      </div>
-      <div class="clearfix"></div>
+        </div>
+
+        <!-- <div class="mobile">
+          <%#= image_tag "336661.png" %>
+        </div> -->
+
+      </header>
     </div>
+    <div class="clearfix"></div>
+  </div>
+
+  <script>
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      $('.mobile').show();
+      $('.web').hide();
+    } else {
+      $('.mobile').hide();
+      $('.web').show();
+    };
+  </script>
 
   <div class="banner1" style="">
     <div class="container">
