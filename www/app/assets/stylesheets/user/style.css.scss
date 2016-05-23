@@ -1009,16 +1009,28 @@ nav {
     }
     .stonetiggeregg{
       top:20%;
+      p{
+        font-size: 18px;
+        line-height: 18px;
+      }
       @media (max-width: 979px){
         top:10%;
         p{
           font-size: 15px;
+          line-height: 15px;
+        }
+      }
+      @media (max-width: 767px){
+        top:10%;
+        p{
+          font-size: 18px;
+          line-height: 20px;
         }
       }
       @media (max-width: 479px){
         p{
           font-size: 13px;
-          line-height: 18px;
+          line-height: 15px;
         }
       }
     }
