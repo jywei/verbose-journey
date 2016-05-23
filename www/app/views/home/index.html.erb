@@ -109,23 +109,42 @@
   <div class="wrapper2">
     <div class="container">
 
-      <div class="row">
+      <div class="row zh">
         <!-- 第一排icon -->
         <% @admin_products.each do |product| %>
           <div class="grid_4">
             <div class="box2">
               <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="1">
-                <%= image_tag(product.main_visual.url, :class=>'brand_ico') %>
+                <%= image_tag(product.main_visual.url, class: 'brand_ico') %>
               </div>
               <!-- <i class="fa fa-pagelines wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"></i> -->
               <h3 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                 <a href="/products/"><strong><%= product.name %></strong></a>
               </h3>
-              <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s"><%= strip_tags(product.get_short_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
+              <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s"><%= strip_tags(product.get_short_title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
             </div>
           </div>
         <% end %>
       </div>
+
+      <div class="row en">
+        <!-- 第一排icon -->
+        <% @admin_products.each do |product| %>
+          <div class="grid_4">
+            <div class="box2">
+              <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="1">
+                <%= image_tag(product.main_visual.url, class: 'brand_ico') %>
+              </div>
+              <!-- <i class="fa fa-pagelines wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"></i> -->
+              <h3 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                <a href="/products/"><strong><%= product.url_name %></strong></a>
+              </h3>
+              <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s"><%= strip_tags(product.get_short_title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
     </div>
   </div>
 

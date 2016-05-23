@@ -76,7 +76,7 @@ $(document).ready(function () {
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row zh">
             <div class="isotope wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
               <% i = 1 %>
               <% @admin_products.each do |product| %>
@@ -98,7 +98,7 @@ $(document).ready(function () {
                       <h4>
                         <%= product.name %>
                       </h4>
-                      <p><%= strip_tags(product.get_short_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
+                      <p><%= strip_tags(product.get_short_title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
                       <br>
                       <a class="btn-black wow fadeIn readmore" id="readmore<%= i %>" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
                     </div>
@@ -109,6 +109,41 @@ $(document).ready(function () {
               <% end %>
             </div>
           </div>
+
+          <div class="row en">
+            <div class="isotope wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+              <% i = 1 %>
+              <% @admin_products.each do |product| %>
+              <div class="grid_12">
+                <div class="row" style="overflow: hidden;">
+                  <div class="grid_6 element-item <%= category(product.price) %>" data-category="<%= category(product.price) %>">
+                    <div class="box7 indent">
+                      <div class="black_box_holder" id="black_box_holder<%= i %>">
+                        <p class="closeButton" id="closeButton<%= i %>">×</p>
+                        <div class="black_box <%= "stonetiggeregg" if wordcount(product.title2) > 150 %>">
+                          <h3><%= product.url_name %></h3>
+                          <br>
+                          <p><%= product.title2 %></p>
+                        </div>
+                      </div>
+                      <div class="egg_pic" style="text-align: center;">
+                        <%= image_tag(product.main_visual.url, :class=>'brand_ico') %>
+                      </div>
+                      <h4>
+                        <%= product.url_name %>
+                      </h4>
+                      <p><%= strip_tags(product.get_short_title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
+                      <br>
+                      <a class="btn-black wow fadeIn readmore" id="readmore<%= i %>" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
+                    </div>
+                    <% i += 1 %>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+
         </div>
       </section>
 

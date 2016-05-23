@@ -27,4 +27,36 @@ class Admin::Product < ActiveRecord::Base
       strip_tags(self.content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")
     end
   end
+
+  def get_long_title
+    if strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 300
+      strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..300] + '......'
+    else
+      strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")
+    end
+  end
+
+  def get_short_title
+    if strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 100
+      strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..100] + '......'
+    else
+      strip_tags(self.title).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")
+    end
+  end
+
+  def get_long_title2
+    if strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 300
+      strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..300] + '......'
+    else
+      strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")
+    end
+  end
+
+  def get_short_title2
+    if strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "").length > 100
+      strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")[0..100] + '......'
+    else
+      strip_tags(self.title2).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "")
+    end
+  end
 end
