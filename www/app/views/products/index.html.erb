@@ -98,7 +98,7 @@ $(document).ready(function () {
                       <h4>
                         <%= product.name %>
                       </h4>
-                      <p style="width:450px;"><%= strip_tags(product.get_short_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
+                      <p><%= strip_tags(product.get_short_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %></p>
                       <br>
                       <a class="btn-black wow fadeIn readmore" id="readmore<%= i %>" data-wow-duration="1s" data-wow-delay="0.4s" href="#">Read More</a>
                     </div>
@@ -117,18 +117,21 @@ $(document).ready(function () {
 </section>
 
 <script>
-$('.readmore').click(function(){
-  $('.black_box_holder.active').removeClass('active');
-  $(this).css({
-    visibility: "hidden"
+  $('.readmore').click(function(){
+    $('.readmore').css({
+      visibility: "visible"
+    });
+    $('.black_box_holder.active').removeClass('active');
+    $(this).css({
+      visibility: "hidden"
+    });
+    $(this).parent().find(".black_box_holder").toggleClass('active');
   });
-  $(this).parent().find(".black_box_holder").toggleClass('active');
-});
 
-$('.closeButton').click(function(){
-  $(this).parent().removeClass('active');
-  $('.readmore').css({
-    visibility: "visible"
+  $('.closeButton').click(function(){
+    $(this).parent().removeClass('active');
+    $('.readmore').css({
+      visibility: "visible"
+    });
   });
-});
 </script>

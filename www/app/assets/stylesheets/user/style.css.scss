@@ -133,6 +133,9 @@ h6 {
   border: 2px solid #333333;
   text-align: center;
   padding: 17px 149px 22px;
+  @media (max-width: 479px) {
+    padding: 17px 50px 22px;
+  }
 }
 .btn-black:hover {
   background: #333333;
@@ -981,8 +984,8 @@ nav {
       @media(min-width:1200px){
         top:40%;
       }
-      @media(max-width:480px){
-        top:5px;
+      @media(max-width:479px){
+        top:10%;
       }
       h3{color:white;text-align: center;}
       p{
