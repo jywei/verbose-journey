@@ -777,7 +777,7 @@ nav {
 }
 /* ======= Vimeo video 1 ======= */
 .vimeo-video1 iframe {
-  width: 1170px;
+  width: 100%;
   height: 658.125px;
 }
 @media (max-width: 1170px) {
@@ -798,6 +798,11 @@ nav {
 @media (max-width: 479px) {
   .vimeo-video1 iframe {
     height: 269.4375px;
+  }
+}
+@media (max-width: 640px) {
+  .vimeo-video1 iframe {
+    height: 360px;
   }
 }
 /* ======= Box 6 Our best works ======= */
