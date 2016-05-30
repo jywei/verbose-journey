@@ -42,7 +42,7 @@
       <div class="row service_row">
         <div class="grid_4">
           <div class="box1">
-            <img class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s" src="<%= asset_path('page1_img2.png') %>" alt=""/>
+            <%= link_to (image_tag 'page1_img2.png'), '#', class:"wow fadeInLeft persist", :data => { :'wow-duration' => '1s' }, :data => { :'wow-delay' => '0.5s' } %>
             <span class="zh"><p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
               <h5><%= @admin_story.title %></h5>
               <%= @admin_story.content %>
@@ -56,7 +56,7 @@
 
         <div class="grid_4">
           <div class="box1">
-            <img class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s" src="<%= asset_path('page1_img3.png') %>" alt=""/>
+            <%= link_to (image_tag 'page1_img3.png'), stores_path, class:"wow fadeInLeft", :data => { :'wow-duration' => '1s' }, :data => { :'wow-delay' => '0.5s' } %>
             <span class="zh"><p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
               <h5><%= @admin_story.title2 %></h5>
               <%= @admin_story.content_2 %>
@@ -70,7 +70,7 @@
 
         <div class="grid_4">
           <div class="box1">
-            <img class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.1s" src="<%= asset_path('page1_img4.png') %>" alt=""/>
+            <%= link_to (image_tag 'page1_img4.png'), abouts_path+'#wrapper4', class:"wow fadeInLeft", :data => { :'wow-duration' => '1s' }, :data => { :'wow-delay' => '0.5s' } %>
             <span class="zh"><p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
               <h5><%= @admin_story.title_3 %></h5>
               <%= @admin_story.content_3 %>
@@ -355,3 +355,11 @@
     <iframe src="https://www.google.com/maps/embed/v1/place?q=%E5%8F%B0%E5%8C%97%E5%B8%82%E5%BE%A9%E8%88%88%E5%8C%97%E8%B7%AF333%E8%99%9F10%E6%A8%93%E4%B9%8B2&key=AIzaSyDYmqNHjKXe_isz6EmUu6CZECbWuhUpIfQ" style="border:0"></iframe>
   </div>
 </section>
+
+  <script>
+    $('.persist').click(function(){
+      $('html, body').animate({
+        scrollTop: $('.wrapper4').offset().top
+      },2000);
+    });
+  </script>
