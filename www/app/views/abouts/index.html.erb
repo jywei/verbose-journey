@@ -128,8 +128,8 @@
             <div class="heading1 wow fadeIn slick" data-wow-duration="1s" data-wow-delay="0.2s">
               <div class="slider-for">
                 <% @admin_images.each do |admin_image| %>
-                  <div class="item">
-                    <%= image_tag(admin_image.file.url, size: "1280x853") %>
+                  <div class="item-big">
+                    <%= image_tag(admin_image.file.url) %>
                   </div>
                 <% end %>
               </div>
@@ -139,7 +139,7 @@
               <div class="slider-nav">
                 <% @admin_images.each do |admin_image| %>
                   <div class="item">
-                    <%= image_tag(admin_image.file.url, size: "1280x853") %>
+                    <%= image_tag(admin_image.file.url) %>
                   </div>
                 <% end %>
               </div>
@@ -155,8 +155,8 @@
             <div class="heading1 wow fadeIn slick" data-wow-duration="1s" data-wow-delay="0.2s">
               <div class="slider-for">
                 <% @admin_images.each do |admin_image| %>
-                  <div class="item">
-                    <%= image_tag(admin_image.file.url, size: "1280x853") %>
+                  <div class="item-big">
+                    <%= image_tag(admin_image.file.url) %>
                   </div>
                 <% end %>
               </div>
@@ -166,7 +166,7 @@
               <div class="slider-nav">
                 <% @admin_images.each do |admin_image| %>
                   <div class="item">
-                    <%= image_tag(admin_image.file.url, size: "1280x853") %>
+                    <%= image_tag(admin_image.file.url) %>
                   </div>
                 <% end %>
               </div>
@@ -212,8 +212,8 @@
       dots: false,
       arrows: true,
       infinite: true,
-      autoplay: true,
-      autoplaySpeed: 2000,
+      autoplay: false,
+      // autoplaySpeed: 2000,
       prevArrow:'<i class="fa fa-angle-left slick-prev"></i>',
       nextArrow:'<i class="fa fa-angle-right slick-next"></i>'
   });
@@ -230,6 +230,6 @@
 
 <script>
   $('html, body').animate({
-    scrollTop: $(window.location.hash).offset().top+'500px'
+    scrollTop: $(window.location.hash).offset().top + '500px'
   });
 </script>
