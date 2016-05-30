@@ -101,7 +101,7 @@
     </div>
   </div>
 
-  <div class="wrapper4 wrapper4__inset1">
+  <div class="wrapper4 wrapper4__inset1" id="wrapper4">
     <div class="container">
       <div class="row">
         <div class="grid_12">
@@ -130,3 +130,9 @@
   </div>
   <!-- <div class="banner2 banner2__inset5 stellar-block" data-stellar-background-ratio="0.5"></div> -->
 </section>
+
+<script>
+  $('html,body').animate({
+    scrollTop: $(window.location.hash).offset().top
+  });
+</script>
