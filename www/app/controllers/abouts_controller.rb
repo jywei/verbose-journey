@@ -6,6 +6,7 @@ class AboutsController < ApplicationController
     @admin_histories = Admin::History.all.order(:sort)
     @main_visials = Admin::SiteConfig.first.get_pc_images.limit(1)
     @phone_main_visials = Admin::SiteConfig.first.get_phone_images.limit(1)
+    @admin_images = Admin::Image.all
 
     @og_title = Admin::OgMainPage.first.about_title if Admin::OgMainPage.first.present? && Admin::OgMainPage.first.about_title.present?
     @og_description = Admin::OgMainPage.first.about_description if Admin::OgMainPage.first.present? && Admin::OgMainPage.first.about_description.present?

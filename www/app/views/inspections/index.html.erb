@@ -8,7 +8,6 @@
 </style>
 
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-<!-- Add the slick-theme.css if you want default styling -->
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
 
 <script>
@@ -321,23 +320,10 @@
     $('.slick_box').slick({
       infinite: true,
       slidesToShow: 1,
-
-      //slide animation direction and amount (if set -1 means slder animated from left to right) , the dot will disappear
-      // and you should set rtl = true ,too
       slidesToScroll: 1,
-
-                 // Enables auto play of slides
       autoplay: false,
-
-      // Auto play change interval
-
       arrows: true,
-
-      // prev arrow
       prevArrow: '<button type="button" data-role="none" class="slick-prev">Previous</button>',
-
-      // next arrow
-
       nextArrow: '<button type="button" data-role="none" class="slick-next">Next</button>',
     });
   });

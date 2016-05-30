@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>File:</strong>
-  <%= @admin_image.file %>
+  <strong>Image:</strong>
+  <hr>
+  <br>
+  <%= image_tag(@admin_image.file.thumb.url) %>
 </p>
 
-<%= link_to 'Edit', edit_admin_image_path(@admin_image) %> |
-<%= link_to 'Back', admin_images_path %>
+<br>
+
+<%= link_to 'Edit', edit_admin_image_path(@admin_image), class: "btn btn-link" %> |
+<%= link_to 'Back', admin_images_path, class: "btn btn-link" %>

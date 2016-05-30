@@ -25,31 +25,31 @@ class Admin::ImagesController < Admin::ApplicationController
   # POST /admin/images.json
   def create
 
-    @admin_image = Admin::Image.new(admin_image_params)
-    respond_to do |format|
-      if @admin_image.save
-        if params[:site_config_id].present?
-          created_site_config_relationship()
-        end
-        format.json { render json: {files: [@admin_image.to_jq_upload]}, status: :created }
-      else
-        format.json { render json: @admin_image.errors, status: :unprocessable_entity }
-      end
-    end
-
-
-
     # @admin_image = Admin::Image.new(admin_image_params)
-
     # respond_to do |format|
     #   if @admin_image.save
-    #     format.html { redirect_to @admin_image, notice: 'Image was successfully created.' }
-    #     format.json { render :show, status: :created, location: @admin_image }
+    #     if params[:site_config_id].present?
+    #       created_site_config_relationship()
+    #     end
+    #     format.json { render json: {files: [@admin_image.to_jq_upload]}, status: :created }
     #   else
-    #     format.html { render :new }
     #     format.json { render json: @admin_image.errors, status: :unprocessable_entity }
     #   end
     # end
+
+
+
+    @admin_image = Admin::Image.new(admin_image_params)
+
+    respond_to do |format|
+      if @admin_image.save
+        format.html { redirect_to admin_images_path }
+        format.json { render :show, status: :created, location: @admin_image }
+      else
+        format.html { render :new }
+        format.json { render json: @admin_image.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /admin/images/1
@@ -57,7 +57,7 @@ class Admin::ImagesController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @admin_image.update(admin_image_params)
-        format.html { redirect_to @admin_image, notice: 'Image was successfully updated.' }
+        format.html { redirect_to admin_images_path }
         format.json { render :show, status: :ok, location: @admin_image }
       else
         format.html { render :edit }
@@ -72,7 +72,7 @@ class Admin::ImagesController < Admin::ApplicationController
 
     if @admin_image.destroy!
       respond_to do |format|
-        format.html { render json: 'success' }
+        format.html { redirect_to admin_images_url, notice: '圖片刪除成功' }
         format.json { render json: 'success' }
       end
     else

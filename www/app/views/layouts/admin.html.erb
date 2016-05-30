@@ -63,7 +63,7 @@
             <li><%#= link_to "OG管理", edit_admin_og_main_page_path(:id => 1) %></li>
             <li><%#= link_to "GA", "https://www.google.com/analytics/web/?hl=zh-TW&pli=1#realtime/rt-overview/a63099729w98452077p102496108/", :target => "_blank" %></li>
             <!-- <li><%= link_to "訂閱管理", admin_subscribes_path %></li> -->
-            <!-- <li><%#= link_to "Image", admin_images_path %></li> -->
+            <li><%= link_to "Image", admin_images_path %></li>
             <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
           </ul>
         </div>
