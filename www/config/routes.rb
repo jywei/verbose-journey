@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    resources :media_contents
+    delete 'delete_media', to: "media_contents#delete_media"
+    delete 'delete_all', to: 'media_contents#delete_all'
+  end
+
+  namespace :admin do
     resources :og_main_pages
   end
 

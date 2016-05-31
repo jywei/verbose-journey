@@ -13,7 +13,10 @@
  *= require chosen
  *= require jquery-ui
  *= require jquery-ui/selectmenu
- *= require dropzone/dropzone
  *= require_tree ./user
  *= require_self
+ *= require dropzone/dropzone
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
