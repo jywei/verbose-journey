@@ -1,0 +1,35 @@
+<h1>子產品管理    <%= link_to '新增子產品', new_admin_subproduct_path, class:"btn btn-success" %></h1>
+
+<%= form_tag(admin_subproducts_path, :id => "search_form", :method => "GET") do |f| %>
+  <h1 style="float: left;margin: 0;margin-right: 10px;">搜尋產品 :</h1>
+  <%= select_tag "product_id", options_from_collection_for_select(Admin::Product.all, "id", "select_name"), include_blank: true, style:"background-color: #DDDCDD;width: 30%;height: 40px;  padding-left: 10px;" %>
+<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>商品種類</th>
+      <th>產品</th>
+      <th colspan="2"></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_subproducts.each do |admin_subproduct| %>
+      <tr>
+        <td><%= admin_subproduct.category %></td>
+        <td><%= admin_subproduct.product.name %></td>
+        <!-- <td><%#= link_to 'Show', admin_product %></td> -->
+        <td><%= link_to '編輯', edit_admin_subproduct_path(admin_subproduct), :class => "btn btn-info" %></td>
+        <td><%= link_to '刪除', admin_subproduct, method: :delete, data: { confirm: '確定要刪除?' }, :class => "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script>
+  $('#product_id').change(function(){
+    $('#search_form').submit();
+  });
+</script>

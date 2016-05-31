@@ -1,0 +1,26 @@
+<%= form_for(@admin_subproduct) do |f| %>
+  <% if @admin_subproduct.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_subproduct.errors.count, "error") %> prohibited this admin_product from being saved:</h2>
+
+      <ul>
+      <% @admin_subproduct.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label '商品種類' %>
+    <%= f.text_field :category, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label '產品' %>
+    <%= f.collection_select :product_id, Admin::Product.all, :id, :name, {prompt: "請選擇一個產品"}, { :class => "form-control" } %>
+  </div>
+
+  <div class="action">
+    <%= f.submit '更新產品', :class => 'btn btn-primary btn-full' %>
+  </div>
+<% end %>

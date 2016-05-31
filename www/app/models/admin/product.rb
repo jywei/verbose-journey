@@ -8,6 +8,8 @@ class Admin::Product < ActiveRecord::Base
 	has_many :product_stores , dependent: :destroy
 	has_many :stores ,  :through => :product_stores
 
+  has_many :subproducts , dependent: :destroy
+
 	def select_name
 		'產品 / ' + self.name.upcase
 	end

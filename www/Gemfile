@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'rails-dom-testing'
+gem 'rails-erd'
 gem 'sitemap_generator'
 
 gem 'compass-rails', '2.0.4'

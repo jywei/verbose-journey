@@ -15,6 +15,8 @@ class Admin::ProductsController < Admin::ApplicationController
   # GET /admin/products/1
   # GET /admin/products/1.json
   def show
+    @admin_product = Admin::Product.find(params[:id]).includes(:subproducts)
+    # @admin_subproducts = @admin_product.subproducts.first
   end
 
   # GET /admin/products/new
