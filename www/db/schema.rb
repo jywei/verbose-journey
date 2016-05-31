@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519061811) do
+ActiveRecord::Schema.define(version: 20160531034557) do
 
   create_table "admin_abouts", force: true do |t|
     t.string   "title_area_1"
@@ -242,6 +242,20 @@ ActiveRecord::Schema.define(version: 20160519061811) do
     t.string   "title_en_3"
     t.text     "content_3"
     t.text     "content_en_3"
+  end
+
+  create_table "admin_subproduct_images", force: true do |t|
+    t.integer  "subproduct_id"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "admin_subproducts", force: true do |t|
+    t.string   "category"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "admin_subscribes", force: true do |t|

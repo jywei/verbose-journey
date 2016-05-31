@@ -93,7 +93,7 @@ $(document).ready(function () {
                         </div>
                       </div>
                       <div class="egg_pic" style="text-align: center;">
-                        <%= image_tag(product.main_visual.url, :class=>'brand_ico') %>
+                        <%= link_to image_tag(product.main_visual.url, :class=>'brand_ico'), product_path(product) %>
                       </div>
                       <h4>
                         <%= product.name %>
@@ -127,7 +127,7 @@ $(document).ready(function () {
                         </div>
                       </div>
                       <div class="egg_pic" style="text-align: center;">
-                        <%= image_tag(product.main_visual.url, :class=>'brand_ico') %>
+                        <%= link_to image_tag(product.main_visual.url, :class=>'brand_ico'), product_path(product) %>
                       </div>
                       <h4>
                         <%= product.url_name %>

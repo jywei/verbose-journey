@@ -1,38 +1,81 @@
-<div class="product_wrapper">
-	<section class='main_visual'>
-		<% if @admin_product.brand.main_visual.present? %>
-			<%= image_tag(@admin_product.brand.main_visual.url) %>
-		<% else %>
-			<%= image_tag('brand1_banner_2.png') %>
-		<% end %>
-	</section>
-	<section class="fixed">
-		<article class='product'>
-			<section class='product_img'>
-				<%= image_tag(@admin_product.main_visual.large.url) %>
-			</section>
-			<section class='product_text'>
-				<div class="brand_logo">
-					<%= image_tag(@admin_product.brand.image_of_logo.url) %>
-				</div>
 
-				<h1 class='product_name'><%= @admin_product.name %></h1>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
 
-				<div class='product_description'>
-					<%= simple_format(@admin_product.title) %>
-				</div>
-				<div class='product_description'>
-					<%= simple_format(@admin_product.title2) %>
-				</div>
-				<div class='product_detail'>
-					<%= simple_format(@admin_product.content.gsub(/\r\n?/,"") ) %>
-				</div>
-			</section>
-		</article>
-	</section>
-	
-	<% if @admin_product.is_show_where_to_buy %>
-		<%= render :partial => 'shared/where_block' %>
-	<% end %>
-	
-</div>
+    <section id="content" class="common">
+      <div class="wrapper5" style="overflow: hidden;">
+        <div class="container">
+          <div class="row">
+            <div class="grid_12">
+              <div class="heading1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                <h2 class="en">Our Products</h2>
+                <h2 class="zh">產品</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="grid_12">
+              <div id="filters" class="button-group">
+                <button class="button is-checked wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">show all</button>
+                <button class="button is-checked wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">顯示全部</button>
+                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".fir">Egg</button>
+                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".fir">雞蛋</button>
+                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.3s" data-filter=".second">Chicken</button>
+                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.3s" data-filter=".second">雞肉</button>
+                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.4s" data-filter=".third">Essence of Chicken</button>
+                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.4s" data-filter=".third">滴雞精</button>
+                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.5s" data-filter=".forth">Merchandise</button>
+                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.5s" data-filter=".forth">周邊商品</button>
+              </div>
+            </div>
+          </div>
+          <div class="row zh">
+            <div class="isotope wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+              <% @admin_product.subproducts.each do |subproduct| %>
+              <div class="grid_12">
+                <div class="row" style="overflow: hidden;">
+                  <div class="grid_6 element-item" data-category="">
+                    <div class="box7 indent">
+                      <div class="egg_pic" style="text-align: center;">
+                      	<%#= image_tag(product.main_visual.url, :class=>'brand_ico') %>
+                        <%= image_tag('cargill-01.png', :class=>'brand_ico') %>
+                      </div>
+                      <h4>
+                        <%= subproduct.category %>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row en">
+            <div class="isotope wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+              <% @admin_product.subproducts.each do |subproduct| %>
+              <div class="grid_12">
+                <div class="row" style="overflow: hidden;">
+                  <div class="grid_6 element-item" data-category="">
+                    <div class="box7 indent">
+                      <div class="egg_pic" style="text-align: center;">
+                        <%#= image_tag(product.main_visual.url, :class=>'brand_ico') %>
+                        <%= image_tag('cargill-01.png', :class=>'brand_ico') %>
+                      </div>
+                      <h4>
+                        <%= subproduct.category %>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
