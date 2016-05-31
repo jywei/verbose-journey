@@ -3,6 +3,8 @@ gem 'rails-dom-testing'
 gem 'rails-erd'
 gem 'sitemap_generator'
 
+gem 'dropzonejs-rails'
+
 gem 'compass-rails', '2.0.4'
 gem 'chosen-rails'
 gem 'sass-rails', '5.0.1'

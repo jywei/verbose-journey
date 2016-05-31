@@ -21,4 +21,5 @@
 //= require ckeditor/init
 //= require chosen-jquery
 //= require twitter/bootstrap
+//= require dropzone
 //= require_tree .
