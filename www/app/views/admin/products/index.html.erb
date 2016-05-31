@@ -2,7 +2,7 @@
 
 <%= form_tag(admin_products_path, :id => 'search_form', :method => "GET") do |f| %>
   <h1 style="float: left;margin: 0;margin-right: 10px;">搜尋品牌 :</h1>
-  <%= select_tag "brand_id", options_from_collection_for_select(Admin::Brand.all, "id", "select_name"), include_blank: true, :style => "  background-color: #DDDCDD;width: 30%;height: 40px;  padding-left: 10px;" %>
+  <%= select_tag "brand_id", options_from_collection_for_select(Admin::Brand.all, "id", "select_name"), include_blank: true, style: "background-color: #DDDCDD;width: 30%;height: 40px;padding-left: 10px;" %>
 <% end %>
 
 
@@ -11,9 +11,7 @@
     <tr>
       <th>名字</th>
       <th>內容</th>
-      <!-- <th>內容</th> -->
       <th>主視覺</th>
-      <!-- <th>價格</th> -->
       <th>公開</th>
       <th>品牌</th>
       <th colspan="2"></th>
