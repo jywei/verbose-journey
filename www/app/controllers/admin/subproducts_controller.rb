@@ -18,7 +18,7 @@ class Admin::SubproductsController < Admin::ApplicationController
 
     respond_to do |format|
       if @admin_subproduct.save
-        format.html { redirect_to admin_subproducts_path, notice: '新增產品成功' }
+        format.html { redirect_to admin_subproduct_path(@admin_subproduct) }
         format.json { render :show, status: :created, location: @admin_subproduct }
       else
         format.html { render :new }
@@ -33,7 +33,7 @@ class Admin::SubproductsController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @admin_subproduct.update(admin_subproduct_params)
-        format.html { redirect_to admin_subproducts_path, notice: '更新子產品成功' }
+        format.html { redirect_to admin_subproduct_path(@admin_subproduct) }
         format.json { render :show, status: :ok, location: @admin_subproduct }
       else
         format.html { render :edit }
