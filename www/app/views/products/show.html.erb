@@ -1,4 +1,44 @@
 
+<script>
+$(document).ready(function () {
+  $(function () {
+        // init Isotope
+        var $container = $('.isotope').isotope({
+          itemSelector: '.element-item',
+          layoutMode: 'fitRows'
+        });
+        // filter functions
+        var filterFns = {
+          // show if number is greater than 50
+          numberGreaterThan50: function () {
+            var number = $(this).find('.number').text();
+            return parseInt(number, 10) > 50;
+          },
+          // show if name ends with -ium
+          ium: function () {
+            var name = $(this).find('.name').text();
+            return name.match(/ium$/);
+          }
+        };
+        // bind filter button click
+        $('#filters').on('click', 'button', function () {
+          var filterValue = $(this).attr('data-filter');
+          // use filterFn if matches value
+          filterValue = filterFns[ filterValue ] || filterValue;
+          $container.isotope({ filter: filterValue });
+        });
+        // change is-checked class on buttons
+        $('.button-group').each(function (i, buttonGroup) {
+          var $buttonGroup = $(buttonGroup);
+          $buttonGroup.on('click', 'button', function () {
+            $buttonGroup.find('.is-checked').removeClass('is-checked');
+            $(this).addClass('is-checked');
+          });
+        });
+      });
+});
+</script>
+
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
 
@@ -18,14 +58,10 @@
               <div id="filters" class="button-group">
                 <button class="button is-checked wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">show all</button>
                 <button class="button is-checked wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">顯示全部</button>
-                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".fir">Egg</button>
-                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".fir">雞蛋</button>
-                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.3s" data-filter=".second">Chicken</button>
-                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.3s" data-filter=".second">雞肉</button>
-                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.4s" data-filter=".third">Essence of Chicken</button>
-                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.4s" data-filter=".third">滴雞精</button>
-                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.5s" data-filter=".forth">Merchandise</button>
-                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.5s" data-filter=".forth">周邊商品</button>
+              	<% @admin_product.subproducts.each do |subproduct| %>
+	                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".<%= subproduct.category %>"><%= subproduct.category %></button>
+	                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".<%= subproduct.category %>"><%= subproduct.category %></button>
+	              <% end %>
               </div>
             </div>
           </div>
@@ -34,13 +70,13 @@
               <% @admin_product.subproducts.each do |subproduct| %>
               <div class="grid_12">
                 <div class="row" style="overflow: hidden;">
-                  <div class="grid_6 element-item" data-category="">
-                    <div class="box7 indent">
+                  <div class="grid_6 element-item <%= subproduct.category %>" data-category="<%= subproduct.category %>">
+                    <div class="box7 indent ">
                       <div class="egg_pic" style="text-align: center;">
                       	<%#= image_tag(product.main_visual.url, :class=>'brand_ico') %>
                         <%= image_tag('cargill-01.png', :class=>'brand_ico') %>
                       </div>
-                      <h4>
+                      <h4 class="center">
                         <%= subproduct.category %>
                       </h4>
                     </div>
@@ -56,7 +92,7 @@
               <% @admin_product.subproducts.each do |subproduct| %>
               <div class="grid_12">
                 <div class="row" style="overflow: hidden;">
-                  <div class="grid_6 element-item" data-category="">
+                  <div class="grid_6 element-item <%= subproduct.category %>" data-category="<%= subproduct.category %>">
                     <div class="box7 indent">
                       <div class="egg_pic" style="text-align: center;">
                         <%#= image_tag(product.main_visual.url, :class=>'brand_ico') %>
