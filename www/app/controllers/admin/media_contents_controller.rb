@@ -15,13 +15,15 @@ class Admin::MediaContentsController < Admin::ApplicationController
   end
 
   def delete_media
+    @subproduct = Admin::Subproduct.find(params[:sub_id])
     Admin::Media.where(id: params[:media_contents]).destroy_all
-    redirect_to admin_subproducts_path
+    redirect_to admin_subproduct_path(@subproduct.id)
   end
 
   def delete_all
+    @subproduct = Admin::Subproduct.find(params[:sub_id])
     Admin::Media.delete_all
-    redirect_to admin_subproducts_path
+    redirect_to admin_subproduct_path(@subproduct.id)
   end
 
   def media_params

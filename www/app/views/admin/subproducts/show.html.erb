@@ -37,7 +37,7 @@
         <h4><b>圖片</b></h4><hr>
         <div class="row">
           <div class="col-lg-10">
-            <%= form_tag '/admin/delete_media', method: :delete do %>
+            <%= form_tag "/admin/delete_media?sub_id=#{@admin_subproduct.id}", method: :delete do %>
               <%= submit_tag '刪除圖片', id: 'delete', class: 'btn btn-danger', disabled: @media.empty? %>
               <br><br>
               <div class="row">
@@ -63,7 +63,7 @@
             <% end %>
           </div>
           <div class="col-lg-1">
-            <%= link_to '刪除全部圖片', admin_delete_all_path, method: :delete, id: 'delete-all', class: 'btn btn-danger', disabled: @media.empty? %>
+            <%= link_to '刪除全部圖片', "/admin/delete_all?sub_id=#{@admin_subproduct.id}", method: :delete, id: 'delete-all', class: 'btn btn-danger', disabled: @media.empty? %>
           </div>
         </div>
       </div>
