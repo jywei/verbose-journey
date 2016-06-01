@@ -20,7 +20,7 @@
       <tr>
         <td><%= admin_subproduct.category %></td>
         <td><%= admin_subproduct.product.name %></td>
-        <!-- <td><%#= link_to 'Show', admin_product %></td> -->
+        <td><%= link_to '上傳圖片', admin_subproduct_path(admin_subproduct), class: "btn btn-primary" %></td>
         <td><%= link_to '編輯', edit_admin_subproduct_path(admin_subproduct), :class => "btn btn-info" %></td>
         <td><%= link_to '刪除', admin_subproduct, method: :delete, data: { confirm: '確定要刪除?' }, :class => "btn btn-danger" %></td>
       </tr>

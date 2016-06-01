@@ -1,5 +1,5 @@
 class Admin::SubproductsController < Admin::ApplicationController
-  before_action :set_admin_subproduct, only: [:show,:edit,:update,:destroy]
+  before_action :set_admin_subproduct, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:product_id].present?
@@ -28,6 +28,23 @@ class Admin::SubproductsController < Admin::ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @admin_subproduct.update(admin_subproduct_params)
+        format.html { redirect_to admin_subproducts_path, notice: '更新子產品成功' }
+        format.json { render :show, status: :ok, location: @admin_subproduct }
+      else
+        format.html { render :edit }
+        format.json { render json: @admin_subproduct.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def show
+    @admin_subproduct = Admin::Subproduct.find(params[:id])
+    @media = Admin::Media.where(subproduct_id: params[:id])
   end
 
   private

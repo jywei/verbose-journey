@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531101314) do
+ActiveRecord::Schema.define(version: 20160601042525) do
 
   create_table "admin_abouts", force: true do |t|
     t.string   "title_area_1"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20160531101314) do
     t.string   "file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "subproduct_id"
   end
 
   create_table "admin_news", force: true do |t|

@@ -1,27 +1,51 @@
+<p id="notice"><%= notice %></p>
 
-<h2>子產品圖片拖拉上傳區</h2>
+<h3>
+  <b>產品名稱:</b>
+  <%= @admin_subproduct.product.name %>
+</h3>
+
+<h3>
+  <b>商品種類:</b>
+  <%= @admin_subproduct.category %>
+</h3>
+
+<hr>
+
+<div class="form-actions">
+  <%= link_to '回列表', admin_subproducts_path, :class => 'btn btn-default' %>
+  <%= link_to '編輯', edit_admin_subproduct_path(@admin_subproduct), :class => 'btn btn-default' %>
+  <%= link_to '刪除', admin_subproduct_path,
+                      :method => :delete,
+                      :class => 'btn btn-default',
+                      :data => { :confirm => '確定刪除嗎?' } %>
+</div>
+
+<hr>
+
+<h3><%= @admin_subproduct.product.name %>圖片拖拉上傳區</h3>
 
 <div class="container">
   <div class="row" style="margin-top: 50px;">
-    <div class="col-lg-4 col-lg-offset-1">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Upload New Media</button>
+    <div class="col-lg-10">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">上傳新圖片</button>
     </div>
   </div>
   <div class="row" style="margin-top: 25px;">
-    <div class="col-lg-10 col-lg-offset-1">
+    <div class="col-lg-10">
       <div class="well">
-        <h4><b>Media</b></h4><hr>
+        <h4><b>圖片</b></h4><hr>
         <div class="row">
           <div class="col-lg-10">
             <%= form_tag '/admin/delete_media', method: :delete do %>
-              <%= submit_tag 'Delete', id: 'delete', class: 'btn btn-danger', disabled: @media_contents.empty? %>
+              <%= submit_tag '刪除圖片', id: 'delete', class: 'btn btn-danger', disabled: @media.empty? %>
               <br><br>
               <div class="row">
                 <div id="media-contents" class="col-lg-12">
-                  <% if @media_contents.empty? %>
+                  <% if @media.empty? %>
                     <h5 id="no-media">No Media Found</h5>
                   <% else %>
-                    <% @media_contents.each do |media| %>
+                    <% @media.each do |media| %>
                       <div class="col-lg-4">
                         <div class="thumbnail">
                           <%= image_tag media.file_name.url %>
@@ -39,7 +63,7 @@
             <% end %>
           </div>
           <div class="col-lg-1">
-            <%= link_to 'Delete All', admin_delete_all_path, method: :delete, id: 'delete-all', class: 'btn btn-danger', disabled: @media_contents.empty? %>
+            <%= link_to '刪除全部圖片', admin_delete_all_path, method: :delete, id: 'delete-all', class: 'btn btn-danger', disabled: @media.empty? %>
           </div>
         </div>
       </div>
@@ -52,13 +76,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Upload New</h4>
+        <h4 class="modal-title" id="myModalLabel">上傳新圖片</h4>
       </div>
       <div class="modal-body">
-        <%= form_tag '/admin/media_contents', method: :post, class: 'dropzone form', id: 'media-dropzone' do %>
-          <div class="fallback">
-            <%= file_field_tag 'media', multiple: true %>
-          </div>
+        <%= form_tag "/admin/media_contents?sub_id=#{@admin_subproduct.id}", method: :post, class: 'dropzone form', id: 'media-dropzone' do %>
+          <!-- <div class="fallback"> -->
+            <!-- <input name="fuck_media" type="hidden" value="fuck"> -->
+            <%#= file_field_tag 'media', multiple: true %>
+          <!-- </div> -->
         <% end %>
       </div>
       <div class="modal-footer">
@@ -67,6 +92,9 @@
     </div>
   </div>
 </div>
+
+<br>
+<br>
 
 <script>
 
@@ -115,3 +143,4 @@ var appendContent = function(imageUrl, mediaId) {
 };
 
 </script>
+

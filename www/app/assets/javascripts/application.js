@@ -20,6 +20,6 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require ckeditor/init
 //= require chosen-jquery
-//= require dropzone
 //= require twitter/bootstrap
+//= require dropzone
 //= require_tree .
