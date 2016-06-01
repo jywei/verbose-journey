@@ -44,7 +44,7 @@ class Admin::SubproductsController < Admin::ApplicationController
 
   def show
     @admin_subproduct = Admin::Subproduct.find(params[:id])
-    @media = Admin::Media.where(subproduct_id: params[:id])
+    @media = Admin::Medium.where(subproduct_id: params[:id])
   end
 
   private
@@ -54,6 +54,6 @@ class Admin::SubproductsController < Admin::ApplicationController
     end
 
     def admin_subproduct_params
-      params.require(:admin_subproduct).permit(:category, :product_id)
+      params.require(:admin_subproduct).permit(:category, :category_en, :product_id)
     end
 end

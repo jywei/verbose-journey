@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-    #resources :media_contents
-    post 'media_contents', to: "media_contents#create"
+    resources :media_contents
+    # post 'media_contents', to: "media_contents#create"
     delete 'delete_media', to: "media_contents#delete_media"
     delete 'delete_all', to: 'media_contents#delete_all'
   end

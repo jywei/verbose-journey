@@ -13,6 +13,8 @@ class ProductsController < ApplicationController
       @admin_product = Admin::Product.find(params[:id])
     end
 
+    @admin_subproducts = @admin_product.subproducts
+
     @admin_brand = @admin_product.brand
 
   	@title = @admin_product.name + " | " + Admin::SiteConfig.first.title

@@ -1,11 +1,11 @@
 class Admin::MediaContentsController < Admin::ApplicationController
 
   def index
-    @media_contents = Admin::Media.all
+    @media_contents = Admin::Medium.all
   end
 
   def create
-    @media = Admin::Media.new(file_name: params[:file], subproduct_id: params[:sub_id])
+    @media = Admin::Medium.new(file_name: params[:file], subproduct_id: params[:sub_id])
     if @media.save!
       render json: @media
     else
@@ -16,13 +16,13 @@ class Admin::MediaContentsController < Admin::ApplicationController
 
   def delete_media
     @subproduct = Admin::Subproduct.find(params[:sub_id])
-    Admin::Media.where(id: params[:media_contents]).destroy_all
+    Admin::Medium.where(id: params[:media_contents]).destroy_all
     redirect_to admin_subproduct_path(@subproduct.id)
   end
 
   def delete_all
     @subproduct = Admin::Subproduct.find(params[:sub_id])
-    Admin::Media.delete_all
+    Admin::Medium.delete_all
     redirect_to admin_subproduct_path(@subproduct.id)
   end
 

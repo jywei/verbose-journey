@@ -59,8 +59,8 @@ $(document).ready(function () {
                 <button class="button is-checked wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">show all</button>
                 <button class="button is-checked wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">顯示全部</button>
               	<% @admin_product.subproducts.each do |subproduct| %>
-	                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".<%= subproduct.category %>"><%= subproduct.category %></button>
-	                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.2s" data-filter=".<%= subproduct.category %>"><%= subproduct.category %></button>
+	                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.1s" data-filter=".<%= subproduct.category_en %>"><%= subproduct.category_en %></button>
+	                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.1s" data-filter=".<%= subproduct.category %>"><%= subproduct.category %></button>
 	              <% end %>
               </div>
             </div>
@@ -68,21 +68,22 @@ $(document).ready(function () {
           <div class="row zh">
             <div class="isotope wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
               <% @admin_product.subproducts.each do |subproduct| %>
-              <div class="grid_12">
-                <div class="row" style="overflow: hidden;">
-                  <div class="grid_6 element-item <%= subproduct.category %>" data-category="<%= subproduct.category %>">
-                    <div class="box7 indent ">
-                      <div class="egg_pic" style="text-align: center;">
-                      	<%#= image_tag(product.main_visual.url, :class=>'brand_ico') %>
-                        <%= image_tag('cargill-01.png', :class=>'brand_ico') %>
+                <div class="grid_12">
+                  <div class="row" style="overflow: hidden;">
+                    <% subproduct.media.each do |medium| %>
+                      <div class="grid_6 element-item <%= subproduct.category %>" data-category="<%= subproduct.category %>">
+                        <div class="box7 indent ">
+                          <div class="egg_pic" style="text-align: center;">
+                            <%= image_tag(medium.file_name.url, class: 'brand_ico') %>
+                          </div>
+                          <h4 class="center">
+                            <%= subproduct.category %>
+                          </h4>
+                        </div>
                       </div>
-                      <h4 class="center">
-                        <%= subproduct.category %>
-                      </h4>
-                    </div>
+                    <% end %>
                   </div>
                 </div>
-              </div>
               <% end %>
             </div>
           </div>
@@ -90,21 +91,22 @@ $(document).ready(function () {
           <div class="row en">
             <div class="isotope wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
               <% @admin_product.subproducts.each do |subproduct| %>
-              <div class="grid_12">
-                <div class="row" style="overflow: hidden;">
-                  <div class="grid_6 element-item <%= subproduct.category %>" data-category="<%= subproduct.category %>">
-                    <div class="box7 indent">
-                      <div class="egg_pic" style="text-align: center;">
-                        <%#= image_tag(product.main_visual.url, :class=>'brand_ico') %>
-                        <%= image_tag('cargill-01.png', :class=>'brand_ico') %>
+                <div class="grid_12">
+                  <div class="row" style="overflow: hidden;">
+                    <% subproduct.media.each do |medium| %>
+                      <div class="grid_6 element-item <%= subproduct.category_en %>" data-category="<%= subproduct.category_en %>">
+                        <div class="box7 indent">
+                          <div class="egg_pic" style="text-align: center;">
+                            <%= image_tag(medium.file_name.url, class: 'brand_ico') %>
+                          </div>
+                          <h4 class="center">
+                            <%= subproduct.category_en %>
+                          </h4>
+                        </div>
                       </div>
-                      <h4>
-                        <%= subproduct.category %>
-                      </h4>
-                    </div>
+                    <% end %>
                   </div>
                 </div>
-              </div>
               <% end %>
             </div>
           </div>
