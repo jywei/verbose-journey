@@ -1,5 +1,8 @@
+require 'rubygems'
+require 'sitemap_generator'
+
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.daic.co"
+SitemapGenerator::Sitemap.default_host = "http://www.opulunion.com/"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -25,15 +28,11 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-    add home_privacy_policy_path, :priority => 0.7, :changefreq => 'daily'
-    add home_terms_of_service_path, :priority => 0.7, :changefreq => 'daily'
-    add brands_path, :priority => 0.7, :changefreq => 'daily'
-    Admin::Brand.find_each do |brand|
-      add "/brand/#{brand.url_name}", :lastmod => brand.updated_at
-    end
-    add abouts_path, :priority => 0.7, :changefreq => 'daily'
-    add contacts_path, :priority => 0.7, :changefreq => 'daily'
-    add stores_path, :priority => 0.7, :changefreq => 'daily'
+    add '/abouts', :priority => 0.7, :changefreq => 'daily'
+    add '/news', :priority => 0.7, :changefreq => 'daily'
+    add '/contacts', :priority => 0.7, :changefreq => 'daily'
+    add '/stores', :priority => 0.7, :changefreq => 'daily'
+    add '/inspections', :priority => 0.7, :changefreq => 'daily'
     Admin::Product.find_each do |product|
       add product_path(product), :lastmod => product.updated_at
     end
