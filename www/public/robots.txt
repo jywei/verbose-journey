@@ -3,3 +3,4 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 User-agent: Googlebot
 Allow: http://www.opulunion.com/
+Sitemap: http://www.opulunion.com/sitemap.xml.gz
