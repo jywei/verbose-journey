@@ -11,7 +11,7 @@
 
 <div class="news_post_wrapper">
 	<section class='main_visual'>
-		<%= image_tag('news_banner_2.png') %>	
+		<%= image_tag('news_banner_2.png') %>
 	</section>
 
 	<section class='fixed'>
@@ -51,7 +51,7 @@
 					<p>Address : <a href="http://maps.google.com/maps?daddr=<%= @admin_site_config.address %>"><%= @admin_site_config.address %></a></p>
 				</section>
 				<section class="contact_form">
-					
+
 					<% if flash[:notice] %>
 						<% if flash[:notice]=="發送成功" %>
 							<!-- <div class="notice">您的訊息已經發送成功</div> -->
@@ -77,7 +77,7 @@
 			<article class="other_news">
 				<h1>POPULAR POSTS</h1>
 				<% @other_news.each do |news| %>
-					<a href="<%= news_path(news.id) %>" data-no-turbolink>
+					<a href="<%= news_path(news.id) %>">
 						<section>
 							<%= image_tag(news.main_visual.small.url) %>
 							<div class="title">

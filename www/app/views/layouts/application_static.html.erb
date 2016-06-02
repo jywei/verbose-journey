@@ -4,8 +4,8 @@
   <title><%= @title.present? ? @title : "OpulUnion" %></title>
   <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no">
 <!--   <meta name="google-site-verification" content="AIzaSyDB14uf1LKx6Wm1cwBRcET0JHSWeT_j2xA" />
- -->  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ -->  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= favicon_link_tag asset_path('images/favicon.ico') %>
   <%= csrf_meta_tags %>
   <meta name="description" content="<%= strip_tags(@meta_description) %>">

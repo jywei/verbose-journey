@@ -23,7 +23,7 @@
 <div class='news_wrapper'>
 
 	<section class='main_visual'>
-		<%= image_tag('news_banner.jpg') %>		
+		<%= image_tag('news_banner.jpg') %>
 	</section>
 
 		<section class='fixed'>
@@ -33,9 +33,9 @@
 				</header>
 
 				<% @admin_news.each do |news| %>
-					<a href='<%= news_path(news.id) %>' class='buttom' data-no-turbolink>
+					<a href='<%= news_path(news.id) %>' class='buttom'>
 						<article>
-							
+
 							<section class='share_area'>
 								<div class='time_block'>
 									<span class='d'><%= news.date_of_news.strftime("%d") %>,</span>
@@ -58,7 +58,7 @@
 								<div class='discription'>
 									<%= strip_tags(news.get_long_content).gsub("&nbsp;", "").gsub("&quot;", "").gsub("&amp;", "") %>
 								</div>
-								<div class='buttom' data-no-turbolink>
+								<div class='buttom'>
 									READ MORE
 								</div>
 							</section>
@@ -68,7 +68,7 @@
 				<% end %>
 
 				<!-- <article>
-					
+
 					<section class='share_area'>
 						<div class='time_block'>
 							<span class='d'>21,</span>
@@ -96,7 +96,7 @@
 				</article>
 
 				<article>
-					
+
 					<section class='share_area'>
 						<div class='time_block'>
 							<span class='d'>21,</span>
@@ -123,8 +123,8 @@
 
 				</article> -->
 
-				
-					
+
+
 			</div>
 
 		</section>

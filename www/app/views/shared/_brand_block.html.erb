@@ -2,7 +2,7 @@
 
 	<% if @admin_site_config.brands_list_logo_is_show %>
 		<div class="logo">
-			<a href="/" data-no-turbolink>
+			<a href="/">
 				<%= image_tag("logo/w8.png")  %>
 			</a>
 		</div>
@@ -19,7 +19,7 @@
 
 
 	<% if @admin_brands.present? %>
-		<nav data-no-turbolink>
+		<nav>
 			<ul>
 				<% @admin_brands.order(:sort).each do |brand| %>
 					<!-- <li><%= link_to(brand.name,brand_path(:id => brand.id)) %></li> -->

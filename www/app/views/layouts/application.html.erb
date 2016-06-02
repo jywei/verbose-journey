@@ -4,8 +4,8 @@
   <title><%= @title.present? ? @title : "OpulUnion" %></title>
   <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= favicon_link_tag asset_path('images/favicon.ico') %>
   <%= csrf_meta_tags %>
   <meta name="description" content="<%= strip_tags(@meta_description) %>">
