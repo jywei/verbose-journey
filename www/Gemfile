@@ -6,6 +6,7 @@ gem 'sitemap_generator'
 gem 'dropzonejs-rails'
 gem 'cloudinary', group: :production
 gem 'autoprefixer-rails'
+gem 'awesome_rails_console'
 
 
 gem 'compass-rails', '2.0.4'
@@ -62,3 +63,10 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+group :development, :test do
+  gem "hirb"
+  gem "hirb-unicode"
+  gem "pry-byebug"
+  gem "pry-stack_explorer"
+end

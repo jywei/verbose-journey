@@ -101,16 +101,17 @@
             <h2><%= @admin_about.title_area_en_2 %></h2>
           </div>
 
-          <div class="heading1 wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.2s">
+          <div class="heading1 wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.1s">
             <h2><%= @admin_about.title_area_2 %></h2>
           </div>
 
           <div class="box3 box3__inset1 zh">
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s"><%= simple_format(@admin_about.content_area_2) %></p>
+            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" style="margin-top: 45px;"><%= simple_format(@admin_about.content_area_2) %></p>
           </div>
 
           <div class="box3 box3__inset1 en">
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s"><%= simple_format(@admin_about.content_area_en_2) %></p>
+            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" style="margin-top: 45px;">
+              <%= simple_format(@admin_about.content_area_en_2) %></p>
           </div>
         </div>
 
