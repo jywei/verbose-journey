@@ -23,7 +23,7 @@
       <tr>
         <td><%= admin_product.name %></td>
         <td><%= admin_product.title %></td>
-        <!-- <td><%= strip_tags(admin_product.content).gsub("&nbsp;", "") %></td> -->
+        <!-- <td><%#= strip_tags(admin_product.content).gsub("&nbsp;", "") %></td> -->
         <td>
           <% if admin_product.main_visual.present? %>
             <%= image_tag(admin_product.main_visual.thumb.url) %>
