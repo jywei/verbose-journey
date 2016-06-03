@@ -10,6 +10,7 @@
     <tr>
       <th>商品種類</th>
       <th>產品</th>
+      <th>子產品名稱</th>
       <th colspan="2"></th>
       <th></th>
     </tr>
@@ -20,6 +21,7 @@
       <tr>
         <td><%= admin_subproduct.category %></td>
         <td><%= admin_subproduct.product.name %></td>
+        <td><%= admin_subproduct.title %></td>
         <td><%= link_to '上傳圖片', admin_subproduct_path(admin_subproduct), class: "btn btn-primary" %></td>
         <td><%= link_to '編輯', edit_admin_subproduct_path(admin_subproduct), :class => "btn btn-info" %></td>
         <td><%= link_to '刪除', admin_subproduct, method: :delete, data: { confirm: '確定要刪除?' }, :class => "btn btn-danger" %></td>
