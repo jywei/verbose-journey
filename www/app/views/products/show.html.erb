@@ -58,9 +58,15 @@ $(document).ready(function () {
               <div id="filters" class="button-group">
                 <button class="button is-checked wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">show all</button>
                 <button class="button is-checked wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.1s" data-filter="*">顯示全部</button>
-              	<% @admin_product.subproducts.each do |subproduct| %>
-	                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.1s" data-filter=".<%= subproduct.category_en %>"><%= subproduct.category_en %></button>
-	                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.1s" data-filter=".<%= subproduct.category %>"><%= subproduct.category %></button>
+              	<% @admin_product.subproducts.map(&:category_en).uniq.each do |category_en| %>
+	                <button class="button wow fadeIn en" data-wow-duration="1s" data-wow-delay="0.1s" data-filter=".<%= category_en %>">
+                    <%= category_en %>
+                  </button>
+                <% end %>
+                <% @admin_product.subproducts.map(&:category).uniq.each do |category| %>
+	                <button class="button wow fadeIn zh" data-wow-duration="1s" data-wow-delay="0.1s" data-filter=".<%= category %>">
+                    <%= category %>
+                  </button>
 	              <% end %>
               </div>
             </div>

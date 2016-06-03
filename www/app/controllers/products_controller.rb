@@ -15,6 +15,9 @@ class ProductsController < ApplicationController
 
     @admin_subproducts = @admin_product.subproducts
 
+    @subproducts_category = @admin_subproducts.select(:category).uniq
+    @subproducts_category_en = @admin_subproducts.select(:category_en).uniq
+
     @admin_brand = @admin_product.brand
 
   	@title = @admin_product.name + " | " + Admin::SiteConfig.first.title
