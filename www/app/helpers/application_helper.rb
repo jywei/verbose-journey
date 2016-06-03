@@ -6,7 +6,7 @@ module ApplicationHelper
 
   def category(price)
     if price == 1
-      "fir"
+      "first"
     elsif price == 2
       "second"
     elsif price == 3
