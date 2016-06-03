@@ -43,19 +43,19 @@ class ApplicationController < ActionController::Base
   end
 
   def get_controller
-        if params[:controller].present?
-                @controller_name = params[:controller]
-        else
-            	''
-        end
+    if params[:controller].present?
+            @controller_name = params[:controller]
+    else
+        	''
+    end
   end
 
   def get_action
-        if params[:action].present?
-                @action_name = params[:action]
-        else
-            	''
-        end
+    if params[:action].present?
+            @action_name = params[:action]
+    else
+        	''
+    end
   end
 
 
