@@ -11,8 +11,14 @@ module ApplicationHelper
       "second"
     elsif price == 3
       "third"
-    else
+    elsif price == 4
       "forth"
+    elsif price == 5
+      "fifth"
+    elsif price == 6
+      "sixth"
+    else
+      "seventh"
     end
   end
 
