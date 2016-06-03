@@ -54,6 +54,6 @@ class Admin::SubproductsController < Admin::ApplicationController
     end
 
     def admin_subproduct_params
-      params.require(:admin_subproduct).permit(:category, :category_en, :product_id)
+      params.require(:admin_subproduct).permit(:category, :category_en, :product_id, :title, :title_en)
     end
 end

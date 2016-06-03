@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="form-group">
+    <%= f.label '產品' %>
+    <%= f.collection_select :product_id, Admin::Product.all, :id, :name, {prompt: "請選擇一個產品"}, { :class => "form-control" } %>
+  </div>
+  <div class="form-group">
     <%= f.label '商品種類' %>
     <%= f.text_field :category, class: "form-control" %>
   </div>
@@ -20,9 +24,14 @@
     <%= f.text_field :category_en, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label '產品' %>
-    <%= f.collection_select :product_id, Admin::Product.all, :id, :name, {prompt: "請選擇一個產品"}, { :class => "form-control" } %>
+    <%= f.label '商品名稱' %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label '商品名稱英文' %>
+    <%= f.text_field :title_en, class: "form-control" %>
+  </div>
+
 
   <div class="action">
     <%= f.submit '更新產品', :class => 'btn btn-primary btn-full' %>
