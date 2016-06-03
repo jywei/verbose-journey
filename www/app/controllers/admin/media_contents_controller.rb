@@ -22,7 +22,7 @@ class Admin::MediaContentsController < Admin::ApplicationController
 
   def delete_all
     @subproduct = Admin::Subproduct.find(params[:sub_id])
-    Admin::Medium.delete_all
+    Admin::Medium.where(subproduct_id: params[:sub_id]).delete_all
     redirect_to admin_subproduct_path(@subproduct.id)
   end
 
