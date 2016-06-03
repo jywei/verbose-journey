@@ -79,9 +79,6 @@ $(document).ready(function () {
                           <h4 class="center zh">
                             <%= subproduct.title %>
                           </h4>
-                          <h4 class="center en">
-                            <%= subproduct.title_en %>
-                          </h4>
                         </div>
                       </div>
                     <% end %>
@@ -102,8 +99,8 @@ $(document).ready(function () {
                           <div class="egg_pic" style="text-align: center;">
                             <%= image_tag(medium.file_name.url, class: 'brand_ico') %>
                           </div>
-                          <h4 class="center">
-                            <%= subproduct.category_en %>
+                          <h4 class="center en">
+                            <%= subproduct.title_en %>
                           </h4>
                         </div>
                       </div>
